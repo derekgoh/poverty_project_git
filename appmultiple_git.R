@@ -9,6 +9,7 @@ library(DT)
 library(plotly)
 library(shinydashboard)
 
+shortlist <- read.csv("shortlist.csv")
 baseline <- read.csv("baseline.publicuse.oct17.csv")
 f3 <- read.csv("followup3.csv")
 f6 <- read.csv("followup6.csv")
@@ -29,26 +30,36 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                             # Select variable for y-axis 
                                                                                             selectInput(inputId = "y", 
                                                                                                         label = "Y-axis:",
-                                                                                                        choices = c("Total Monthly Rent" = "qa9x",
-                                                                                                                    "Gender" = "r_gender", 
-                                                                                                                    "Age" = "r_age", 
-                                                                                                                    "Number of Bedrooms" = "qa11",
-                                                                                                                    "Ratings of Neighborhood" = "qb1",
-                                                                                                                    "Personal Income Level" = "qh1x_tc",
-                                                                                                                    "Education Status" = "qi5"),
-                                                                                                        selected = "qa9x"),
+                                                                                                        choices = c("Gender" = "imp_female",
+                                                                                                                    "Education Level" = "imp_educat", 
+                                                                                                                    "Race" = "imp_race", 
+                                                                                                                    "Household Resources" = "spmres",
+                                                                                                                    "Poverty Line" = "spmpov",
+                                                                                                                    "Severe Health Issue" = "sevhealthd",
+                                                                                                                    "Severe Hardship" = "sevhard", 
+                                                                                                                    "Age" = "r_age",
+                                                                                                                    "Severe Housing Hardship" = "imp_houseindsev", 
+                                                                                                                    "Severe Food Hardship" = "imp_foodindsev",
+                                                                                                                    "Severe Financial Hardship" = "imp_financindsev",
+                                                                                                                    "Severe Billing Hardship" = "imp_billindsev"),
+                                                                                                        selected = "spmres"),
                                                                                             
                                                                                             # Select variable for x-axis 
                                                                                             selectInput(inputId = "x",
                                                                                                         label = "X-axis:",
-                                                                                                        choices = c("Total Monthly Rent" = "qa9x",
-                                                                                                                    "Gender" = "r_gender", 
-                                                                                                                    "Age" = "r_age", 
-                                                                                                                    "Number of Bedrooms" = "qa11",
-                                                                                                                    "Ratings of Neighborhood" = "qb1",
-                                                                                                                    "Personal Income Level" = "qh1x_tc",
-                                                                                                                    "Education Status" = "qi5"), 
-                                                                                                        selected = "qh1x_tc"),
+                                                                                                        choices = c("Gender" = "imp_female",
+                                                                                                                    "Education Level" = "imp_educat", 
+                                                                                                                    "Race" = "imp_race", 
+                                                                                                                    "Household Resources" = "spmres",
+                                                                                                                    "Poverty Line" = "spmpov",
+                                                                                                                    "Severe Health Issue" = "sevhealthd",
+                                                                                                                    "Severe Hardship" = "sevhard", 
+                                                                                                                    "Age" = "r_age",
+                                                                                                                    "Severe Housing Hardship" = "imp_houseindsev", 
+                                                                                                                    "Severe Food Hardship" = "imp_foodindsev",
+                                                                                                                    "Severe Financial Hardship" = "imp_financindsev",
+                                                                                                                    "Severe Billing Hardship" = "imp_billindsev"), 
+                                                                                                        selected = "imp_educat"),
                                                                                             
                                                                                             # Enter text for plot title
                                                                                             textInput(inputId = "plot_title", 
@@ -168,7 +179,7 @@ server <- function(input, output, session) {
   # Create scatterplot object the plotOutput function is expecting 
   output$scatterplot <- renderPlotly({
     ggplotly({
-      p <- ggplot(data = baseline, aes_string(x = input$x, y = input$y)) +
+      p <- ggplot(data = shortlist, aes_string(x = input$x, y = input$y)) +
       geom_point(size = input$size, col = input$color) +
       labs(x = x(),
            y = y(),
