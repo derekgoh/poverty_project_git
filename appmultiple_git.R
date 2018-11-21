@@ -10,6 +10,8 @@ library(plotly)
 library(shinydashboard)
 
 shortlist <- read.csv("shortlist.csv")
+shortlistpie <- read.csv("shortlistpie.csv")
+shortlistscatter <- read.csv("shortlistscatter.csv")
 baseline <- read.csv("baseline.publicuse.oct17.csv")
 f3 <- read.csv("followup3.csv")
 f6 <- read.csv("followup6.csv")
@@ -26,106 +28,69 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                       id = "tabsetpanel",
                                                       tabPanel(title = "Plot", sidebarPanel(width = 4,
                                                                                             h2("Plotting"),
-                                                       
-                                                                                            # Select variable for y-axis 
-                                                                                            selectInput(inputId = "y", 
-                                                                                                        label = "Y-axis:",
-                                                                                                        choices = c("Gender" = "imp_female",
-                                                                                                                    "Education Level" = "imp_educat", 
-                                                                                                                    "Race" = "imp_race", 
-                                                                                                                    "Household Resources" = "spmres",
-                                                                                                                    "Poverty Line" = "spmpov",
-                                                                                                                    "Severe Health Issue" = "sevhealthd",
-                                                                                                                    "Severe Hardship" = "sevhard", 
-                                                                                                                    "Age" = "r_age",
-                                                                                                                    "Severe Housing Hardship" = "imp_houseindsev", 
-                                                                                                                    "Severe Food Hardship" = "imp_foodindsev",
-                                                                                                                    "Severe Financial Hardship" = "imp_financindsev",
-                                                                                                                    "Severe Billing Hardship" = "imp_billindsev"),
-                                                                                                        selected = "spmres"),
                                                                                             
-                                                                                            # Select variable for x-axis 
-                                                                                            selectInput(inputId = "x",
-                                                                                                        label = "X-axis:",
-                                                                                                        choices = c("Gender" = "imp_female",
-                                                                                                                    "Education Level" = "imp_educat", 
-                                                                                                                    "Race" = "imp_race", 
-                                                                                                                    "Household Resources" = "spmres",
-                                                                                                                    "Poverty Line" = "spmpov",
-                                                                                                                    "Severe Health Issue" = "sevhealthd",
-                                                                                                                    "Severe Hardship" = "sevhard", 
-                                                                                                                    "Age" = "r_age",
-                                                                                                                    "Severe Housing Hardship" = "imp_houseindsev", 
-                                                                                                                    "Severe Food Hardship" = "imp_foodindsev",
-                                                                                                                    "Severe Financial Hardship" = "imp_financindsev",
-                                                                                                                    "Severe Billing Hardship" = "imp_billindsev"), 
-                                                                                                        selected = "imp_educat"),
+                                                                                            #Type of plot
+                                                                                            radioButtons(inputId = "type", 
+                                                                                                         label = "Type of Plot:", 
+                                                                                                         choices = c("Scatter Plot", "Pie Chart", "Bar Chart"), 
+                                                                                                         selected = "Scatter Plot"),
                                                                                             
-                                                                                            # Enter text for plot title
-                                                                                            textInput(inputId = "plot_title", 
-                                                                                                      label = "Plot title", 
-                                                                                                      placeholder = "Enter text to be used as plot title"),
+                                                                                            uiOutput("x1"),
+                                                                                            uiOutput("y1"),
+                                                                                            uiOutput("title"), 
+                                                                                            uiOutput("point"), 
+                                                                                            uiOutput("pointc"), 
+                                                                                            uiOutput("best")
+                                                      ),
                                                                                             
-                                                                                            #Size of points
-                                                                                            sliderInput(inputId = "size", label = "Point Size", value = 1, min = 1, max = 6),
-                                                                                            
-                                                                                            #Color of points
-                                                                                            selectInput(inputId = "color", label = "Point Color", 
-                                                                                                        choices = c("Black", "Red", " Dark Green", "Blue", "Orange"), 
-                                                                                                        selected = "Black"),
-                                                                                            
-                                                                                            #Line of best fit
-                                                                                            checkboxInput(inputId = "fit", label = "Add line of best fit", value = FALSE)
-                                                                                            ),
-                                                               
                                                                mainPanel(width = 8,
                                                                          br(), br(), 
-                                                                         plotlyOutput(outputId = "scatterplot"),
+                                                                         plotlyOutput(outputId = "plot"),
                                                                          br(),
                                                                          h5(textOutput("description"))
                                                                          )
-                                                                        ),
+                                                                        ), 
                                                       
                                                       tabPanel(title = "Datasets", sidebarPanel(width = 4,
-                                                                                                h2("Download Data"),
-                                                                                                HTML("Select filetype, dataset and variables, then hit 'Download Data'"), 
-                                                                                                br(), br(),
-                                                                                                radioButtons(inputId = "filetype",
-                                                                                                             label = "Filetype:",
-                                                                                                             choices = "csv",
-                                                                                                             selected = "csv"),
-                                                                                                
-                                                                                                radioButtons(inputId = "source", 
-                                                                                                             label = "Dataset:", 
-                                                                                                             choices = c(
-                                                                                                               "Baseline" = "baseline", 
-                                                                                                               "Adult and Child Health and Wellbeing" = "f3", 
-                                                                                                               "Neighborhoods and Service Utilization" = "f6", 
-                                                                                                               "Assets and Debts" = "f9", 
-                                                                                                               "First Annual Core Follow-Up" = "f12", 
-                                                                                                               "Consumer Expenditures" = "f15", 
-                                                                                                               "Employment and Job Search" = "f18", 
-                                                                                                               "Adult and Child Health and Wellbeing, Immigration History" = "f21", 
-                                                                                                               "Second Annual Core Follow-up" = "f24"), 
-                                                                                                             selected = "baseline"), 
-                                                                                                
-                                                                                                uiOutput("colnames"),
-                                                                                                downloadButton(outputId = "download_data", label = "Download Data")
-                                                                                                ),
-                                                               
-                                                               mainPanel(width = 8,
-                                                                         br(), br(),
-                                                                         HTML ("Select the relevant variables on the left"),
-                                                                         br(), br(), 
-                                                                         DT::dataTableOutput(outputId = "povertytable"), 
-                                                                         br(), br(), 
-                                                                         HTML ("For a more detailed explanation of each variable, please refer to the codebook below:"),
-                                                                         br(), br(), 
-                                                                         downloadButton(outputId = "codebook", label = "Download codebook"))
+                                                                    h2("Download Data"),
+                                                                    HTML("Select filetype, dataset and variables, then hit 'Download Data'"), 
+                                                                    br(), br(),
+                                                                    radioButtons(inputId = "filetype",
+                                                                                 label = "Filetype:",
+                                                                                 choices = "csv",
+                                                                                 selected = "csv"),
+                                                                    
+                                                                    radioButtons(inputId = "source", 
+                                                                                 label = "Dataset:", 
+                                                                                 choices = c(
+                                                                                   "Baseline" = "baseline", 
+                                                                                   "Adult and Child Health and Wellbeing" = "f3", 
+                                                                                   "Neighborhoods and Service Utilization" = "f6", 
+                                                                                   "Assets and Debts" = "f9", 
+                                                                                   "First Annual Core Follow-Up" = "f12", 
+                                                                                   "Consumer Expenditures" = "f15", 
+                                                                                   "Employment and Job Search" = "f18", 
+                                                                                   "Adult and Child Health and Wellbeing, Immigration History" = "f21", 
+                                                                                   "Second Annual Core Follow-up" = "f24"), 
+                                                                                 selected = "baseline"), 
+                                                                    
+                                                                    uiOutput("colnames"),
+                                                                    downloadButton(outputId = "download_data", label = "Download Data")
+                                                      ), 
+                                                      
+                                                      mainPanel(width = 8,
+                                                                br(), br(),
+                                                                HTML ("Select the relevant variables on the left"),
+                                                                br(), br(), 
+                                                                DT::dataTableOutput(outputId = "povertytable"), 
+                                                                br(), br(), 
+                                                                HTML ("For a more detailed explanation of each variable, please refer to the codebook below:"),
+                                                                br(), br(), 
+                                                                downloadButton(outputId = "codebook", label = "Download codebook"))
                                                       )
                  )
-                 ), 
-    
+                 ),
+                 
                  tabPanel("About", sidebarPanel(width = 4, tags$img(src = "graphic.png", width = "85%", height = "85%", style = "display:block; margin-left:auto; margin-right: auto;")
                  ), 
                  mainPanel(width = 8, tags$b("ROBIN HOOD POVERTY TRACKER"), br(), br(),"With funding from Robin Hood, the Poverty Tracker documents the dynamics of poverty and disadvantage in New York City. 
@@ -138,10 +103,57 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                  
                  )
 )
-
+                
 # Server
 server <- function(input, output, session) {
-
+  
+  #Reactive Variables
+  variable_source <- reactive ({
+    if(input$type == "Scatter Plot") {
+      variable <- shortlistscatter
+    } else if (input$type == "Pie Chart") {
+      variable <- shortlistpie
+    } else if (input$type == "Bar Chart") {
+      variable <- shortlistpie
+    }
+    return(variable)
+  })
+  
+  #Variables
+  output$y1 <- renderUI ({
+    vnames <- colnames(variable_source())
+    radioButtons("y", "Y Variable", vnames, "Household.Resources")
+  })
+  
+  output$x1 <- renderUI ({
+    vnames <- colnames(variable_source())
+    radioButtons("x", "X Variable", vnames, "Age")
+  })
+  
+  # Enter text for plot title
+  output$title <- renderUI ({
+  textInput(inputId = "plot_title", 
+            label = "Plot title", 
+            placeholder = "Enter text to be used as plot title")
+  })
+  
+  #Size of points
+  output$point <- renderUI ({
+  sliderInput(inputId = "size", label = "Point Size", value = 1, min = 1, max = 6)
+  })
+  
+  #Color of points
+  output$pointc <- renderUI ({ 
+    selectInput(inputId = "color", label = "Point Color", 
+              choices = c("Black", "Red", " Dark Green", "Blue", "Orange"), 
+              selected = "Black")
+  })
+  
+  #Line of best fit
+  output$best <- renderUI ({ 
+    checkboxInput(inputId = "fit", label = "Add line of best fit", value = FALSE)
+  })
+  
   # x and y as reactive expressions
   x <- reactive({ toTitleCase(str_replace_all(input$x, "_", " ")) })
   y <- reactive({ toTitleCase(str_replace_all(input$y, "_", " ")) })
@@ -176,15 +188,15 @@ server <- function(input, output, session) {
     checkboxGroupInput("selected_var", "Variables:", names, "subject_id")
   })
   
-  # Create scatterplot object the plotOutput function is expecting 
-  output$scatterplot <- renderPlotly({
+  # Create plot 
+  output$plot <- renderPlotly({
     ggplotly({
-      p <- ggplot(data = shortlist, aes_string(x = input$x, y = input$y)) +
-      geom_point(size = input$size, col = input$color) +
-      labs(x = x(),
-           y = y(),
-           color = toTitleCase(str_replace_all(input$z, "_", " ")),
-           title = toTitleCase(input$plot_title))
+      p <- ggplot(data = variable_source(), aes_string(x = input$x, y = input$y)) +
+        geom_point(size = input$size, col = input$color) +
+        labs(x = x(),
+             y = y(),
+             color = toTitleCase(str_replace_all(input$z, "_", " ")),
+             title = toTitleCase(input$plot_title))
 
   # Create line of best fit
       
@@ -202,7 +214,7 @@ server <- function(input, output, session) {
           "and",
           y(),
           "for",
-          nrow(baseline),
+          nrow(shortlist),
           "participants.")
   })
   
