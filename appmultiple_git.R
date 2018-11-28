@@ -38,7 +38,7 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                             uiOutput("x1"),
                                                                                             uiOutput("y1"),
                                                                                             uiOutput("title"), 
-                                                                                            uiOutput("size"),
+                                                                                            uiOutput("sizep"),
                                                                                             uiOutput("pointc"), 
                                                                                             uiOutput("best")
                                                       ),
@@ -119,15 +119,40 @@ server <- function(input, output, session) {
     return(variable)
   })
   
+  selectiony <- reactive({
+    if (input$type == "Scatter Plot"){
+      vnames <- colnames(variable_source())
+      radioButtons("y", "Y Variable", vnames, "Household.Resources")
+    } else if (input$type == "Pie Chart") {
+      vnames <- colnames(variable_source())
+      radioButtons("y", "Y Variable", vnames, "Education")
+    } else if (input$type == "Bar Chart") {
+      vnames <- colnames(variable_source())
+      radioButtons("y", "Y Variable", vnames, "Education")
+    }
+  })
+  
+  selectionx <- reactive({
+    if (input$type == "Scatter Plot"){
+      vnames <- colnames(variable_source())
+      radioButtons("x", "X Variable", vnames, "Age")
+    } else if (input$type == "Pie Chart") {
+      vnames <- colnames(variable_source())
+      radioButtons("x", "X Variable", vnames, "Gender")
+    } else if (input$type == "Bar Chart") {
+      vnames <- colnames(variable_source())
+      radioButtons("x", "X Variable", vnames, "Gender")
+    }
+  })
+  
+
   #Variables
   output$y1 <- renderUI ({
-    vnames <- colnames(variable_source())
-    radioButtons("y", "Y Variable", vnames, "Household.Resources")
+    selectiony()
   })
   
   output$x1 <- renderUI ({
-    vnames <- colnames(variable_source())
-    radioButtons("x", "X Variable", vnames, "Age")
+    selectionx()
   })
   
   # Enter text for plot title
@@ -137,25 +162,39 @@ server <- function(input, output, session) {
             placeholder = "Enter text to be used as plot title")
   })
   
-  #Size of points
-  output$size <- renderUI ({
-    isolate ({
-      if (input$type == "Scatter Plot") {
-        sliderInput(inputId = "size", label = "Point Size", value = 1, min = 1, max = 6)
-      }
-    })
+  psize <- reactive ({
+    if(input$type == "Scatter Plot") {
+      sliderInput(inputId = "size", label = "Point Size", value = 1, min = 1, max = 6)
+  }
   })
-    
+  
+  #Size of points
+  output$sizep <- renderUI ({
+    psize()
+  })
+  
+  pcolor <- reactive({
+    if(input$type == "Scatter Plot") {
+      selectInput(inputId = "color", label = "Point Color", 
+                  choices = c("Black", "Red", " Dark Green", "Blue", "Orange"), 
+                  selected = "Black")
+    }
+  })
+  
   #Color of points
-  output$pointc <- renderUI ({ 
-    selectInput(inputId = "color", label = "Point Color", 
-              choices = c("Black", "Red", " Dark Green", "Blue", "Orange"), 
-              selected = "Black")
+  output$pointc <- renderUI ({
+    pcolor()
+  })
+  
+  lbest <- reactive ({
+    if(input$type == "Scatter Plot") {
+      checkboxInput(inputId = "fit", label = "Add line of best fit", value = FALSE)
+    }
   })
   
   #Line of best fit
-  output$best <- renderUI ({ 
-    checkboxInput(inputId = "fit", label = "Add line of best fit", value = FALSE)
+  output$best <- renderUI ({
+    lbest()
   })
   
   # x and y as reactive expressions
