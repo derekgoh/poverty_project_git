@@ -38,7 +38,7 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                             uiOutput("x1"),
                                                                                             uiOutput("y1"),
                                                                                             uiOutput("title"), 
-                                                                                            uiOutput("point"), 
+                                                                                            uiOutput("size"),
                                                                                             uiOutput("pointc"), 
                                                                                             uiOutput("best")
                                                       ),
@@ -138,10 +138,14 @@ server <- function(input, output, session) {
   })
   
   #Size of points
-  output$point <- renderUI ({
-  sliderInput(inputId = "size", label = "Point Size", value = 1, min = 1, max = 6)
+  output$size <- renderUI ({
+    isolate ({
+      if (input$type == "Scatter Plot") {
+        sliderInput(inputId = "size", label = "Point Size", value = 1, min = 1, max = 6)
+      }
+    })
   })
-  
+    
   #Color of points
   output$pointc <- renderUI ({ 
     selectInput(inputId = "color", label = "Point Color", 
