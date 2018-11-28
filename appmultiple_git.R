@@ -12,6 +12,7 @@ library(shinydashboard)
 shortlist <- read.csv("shortlist.csv")
 shortlistpie <- read.csv("shortlistpie.csv")
 shortlistscatter <- read.csv("shortlistscatter.csv")
+
 baseline <- read.csv("baseline.publicuse.oct17.csv")
 f3 <- read.csv("followup3.csv")
 f6 <- read.csv("followup6.csv")
@@ -122,7 +123,7 @@ server <- function(input, output, session) {
   selectiony <- reactive({
     if (input$type == "Scatter Plot"){
       vnames <- colnames(variable_source())
-      radioButtons("y", "Y Variable", vnames, "Household.Resources")
+      radioButtons("y", "Y Variable", vnames, "Household_Resources")
     } else if (input$type == "Pie Chart") {
       vnames <- colnames(variable_source())
       radioButtons("y", "Y Variable", vnames, "Education")
