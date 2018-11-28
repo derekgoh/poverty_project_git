@@ -231,9 +231,10 @@ server <- function(input, output, session) {
     checkboxGroupInput("selected_var", "Variables:", names, "subject_id")
   })
   
-  # Create plot 
+  # Create plot
   output$plot <- renderPlotly({
-    ggplotly({
+    if (input$type == "Scatter Plot") {
+      ggplotly({
       p <- ggplot(data = variable_source(), aes_string(x = input$x, y = input$y)) +
         geom_point(size = input$size, col = input$color) +
         labs(x = x(),
@@ -248,6 +249,15 @@ server <- function(input, output, session) {
       }
       p
     })
+    } else if (input$type == "Pie Chart") {
+      a <- count(shortlistpie, input$y)
+      b <- rownames(a[1])
+      c <- a[, 2]
+      plot_ly(shortlistpie, labels = ~b, values = ~c, type = 'pie') %>%
+        layout(title = toTitleCase(input$plot_title),
+               xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+               yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+    }
   })
 
   # Create description of plot
