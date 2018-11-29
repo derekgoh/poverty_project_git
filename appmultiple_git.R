@@ -48,6 +48,7 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                mainPanel(width = 8,
                                                                          br(), br(), 
                                                                          plotlyOutput(outputId = "plot"),
+                                                                         plotOutput(outputId = "plot2"),
                                                                          br(),
                                                                          h5(textOutput("description"))
                                                                          )
@@ -251,22 +252,29 @@ server <- function(input, output, session) {
       }
       p
     })
-    } else if (input$type == "Pie Chart") {
-      f <- data.frame(shortlistpie$Education, shortlistpie$Gender)
+    } else NULL
+  })
+  
+  output$plot2 <- renderPlot({
+    if (input$type == "Pie Chart") {
+      f <- data.frame(variable_source()$Education, variable_source()$Gender)
       data.m <- melt(table(f))
       names(data.m)[3] <- "count"
-      m1 <- ddply(data.m, .(shortlistpie.Gender), summarize, ratio = count/sum(count))
-      m2 <- data.m[order(data.m$shortlistpie.Gender), ]
+      names(data.m)[1] <- "educ"
+      names(data.m)[2] <- "gend"
+      m1 <- ddply(data.m, .(gend), summarize, ratio = count/sum(count))
+      m2 <- data.m[order(data.m$gend), ]
       mydf <- data.frame(m2, ratio = m1$ratio)
       mydf
       
-      d <- ggplot(mydf, aes(x = "", y = ratio, fill = shortlistpie.Education)) + 
+      d <- ggplot(mydf, aes(x = "", y = ratio, fill = educ)) + 
         geom_bar(stat = "identity", width = 1) + 
-        coord_polar("y", start = 0) +
+        coord_polar("y", start = 0) + 
+        facet_wrap( ~ gend) +
         theme_void() 
       
-      d <- plot_ly(d)
-    }
+      d
+    } else NULL
   })
 
   # Create description of plot
