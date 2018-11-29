@@ -1,0 +1,2287 @@
+Severe_Billing_Hardship,Education,Gender,Severe_Financial_Hardship,Severe_Food_Hardship,Severe_Housing_Hardship,Race,Severe_Hardship,Severe_Health_Issue,Poverty_Line
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+1,4,0,0,0,0,2. Black Non-Hispanic,1,0,0
+0,1,1,1,1,0,2. Black Non-Hispanic,1,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,1,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,0,0,0,1. White Non-Hispanic,0,0,1
+0,3,0,0,0,0,1. White Non-Hispanic,1,1,0
+1,3,1,1,0,0,2. Black Non-Hispanic,1,0,1
+0,3,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,1,0,1. White Non-Hispanic,1,1,0
+0,3,1,1,1,0,5. Hispanic,1,1,1
+0,2,1,1,0,0,2. Black Non-Hispanic,1,1,0
+1,4,1,1,0,0,5. Hispanic,1,1,1
+0,4,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,1,0,1,0,0,5. Hispanic,1,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,1,0
+0,2,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,0,0,0,0,5. Hispanic,0,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,1
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,0,0,0,0,5. Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,1,0,1
+0,4,0,0,0,0,5. Hispanic,0,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,1
+0,3,1,1,1,0,2. Black Non-Hispanic,1,1,0
+0,2,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,0,0,0,5. Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,1,0,0,1. White Non-Hispanic,1,0,0
+0,4,0,0,0,0,4. Other / MultiRacial,0,1,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+1,2,1,1,1,0,5. Hispanic,1,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,1
+0,2,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,3,1,1,1,0,5. Hispanic,1,0,0
+0,3,1,0,1,0,2. Black Non-Hispanic,1,1,1
+1,2,0,0,1,0,2. Black Non-Hispanic,1,1,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,3,0,0,1,0,2. Black Non-Hispanic,1,1,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,1,1
+1,2,1,1,0,0,2. Black Non-Hispanic,1,1,0
+0,2,0,0,0,0,5. Hispanic,0,0,0
+0,3,0,0,0,0,5. Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+1,2,1,0,0,0,2. Black Non-Hispanic,1,1,1
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,0,0,0,1. White Non-Hispanic,0,0,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,1
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,1,1,0,4. Other / MultiRacial,1,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,1,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,4,0,0,0,0,5. Hispanic,0,0,0
+0,3,1,0,0,0,4. Other / MultiRacial,0,1,0
+0,2,1,1,0,0,2. Black Non-Hispanic,1,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,1
+1,4,1,1,1,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,1,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,1,1,0
+0,3,1,1,1,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,1,0,0
+0,1,1,0,0,0,4. Other / MultiRacial,0,0,1
+0,3,1,1,1,0,1. White Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,1
+0,4,1,1,0,0,3. Asian Non-Hispanic,1,0,1
+0,4,0,0,0,0,2. Black Non-Hispanic,1,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+1,2,0,0,0,0,2. Black Non-Hispanic,1,0,0
+1,4,1,0,0,0,5. Hispanic,1,0,0
+0,4,0,1,0,0,2. Black Non-Hispanic,1,0,0
+0,1,0,0,0,1,5. Hispanic,1,1,1
+0,4,1,0,0,1,3. Asian Non-Hispanic,1,1,1
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,1,0,0
+0,1,1,1,1,0,5. Hispanic,1,1,0
+1,4,0,0,1,0,2. Black Non-Hispanic,1,1,1
+0,2,0,0,0,1,2. Black Non-Hispanic,1,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,3,1,0,0,0,2. Black Non-Hispanic,1,1,1
+0,2,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,1,0,1,0,2. Black Non-Hispanic,1,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,1,0,0,5. Hispanic,1,1,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,2,1,0,0,0,2. Black Non-Hispanic,1,0,1
+0,2,0,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,0,1,1,0,2. Black Non-Hispanic,1,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,1,1,0,2. Black Non-Hispanic,1,1,1
+0,3,1,0,0,0,5. Hispanic,1,1,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,1,1
+0,3,0,0,0,0,1. White Non-Hispanic,1,0,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,1,1
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,1,0
+0,2,0,1,0,0,2. Black Non-Hispanic,1,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,1
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,1,1,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,1,1,0,1. White Non-Hispanic,1,1,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,1,1
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,2,1,0,0,0,1. White Non-Hispanic,1,0,1
+0,4,1,1,0,0,1. White Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,1,0,2. Black Non-Hispanic,1,1,1
+0,1,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+1,1,1,0,1,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,5. Hispanic,0,1,0
+0,1,1,0,0,0,1. White Non-Hispanic,0,0,1
+0,3,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,1,0
+0,4,1,1,0,0,2. Black Non-Hispanic,1,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,1,0,1. White Non-Hispanic,1,1,0
+0,3,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,0,0,0,0,4. Other / MultiRacial,0,0,1
+1,3,1,1,0,1,1. White Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,2,1,0,0,0,4. Other / MultiRacial,1,0,0
+1,2,1,1,0,0,2. Black Non-Hispanic,1,1,0
+1,2,1,1,0,0,2. Black Non-Hispanic,1,1,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,2,1,0,0,0,5. Hispanic,1,0,1
+0,1,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,1,1,0,0,4. Other / MultiRacial,1,1,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,2,0,0,1,0,4. Other / MultiRacial,1,0,0
+0,3,0,1,0,0,1. White Non-Hispanic,1,1,0
+0,4,1,1,0,0,2. Black Non-Hispanic,1,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,1,0,0,4. Other / MultiRacial,1,1,0
+1,3,1,1,0,0,1. White Non-Hispanic,1,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,0,0,2. Black Non-Hispanic,0,1,1
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,0,0,0,0,1. White Non-Hispanic,0,0,1
+0,3,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,1,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,1,0,0,2. Black Non-Hispanic,1,0,0
+1,2,1,1,1,0,2. Black Non-Hispanic,1,1,0
+0,1,1,0,0,0,2. Black Non-Hispanic,0,0,0
+1,3,1,0,0,0,1. White Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,1,0,1,1. White Non-Hispanic,1,0,0
+0,4,0,0,0,0,4. Other / MultiRacial,0,1,0
+0,1,1,1,1,0,5. Hispanic,1,1,1
+0,2,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,0,0,0,0,5. Hispanic,0,0,1
+0,3,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,0,0,0,0,2. Black Non-Hispanic,0,0,1
+0,3,1,0,0,0,1. White Non-Hispanic,1,1,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,0,0,1,0,3. Asian Non-Hispanic,1,1,0
+0,1,1,1,1,0,5. Hispanic,1,1,1
+0,1,0,0,0,0,5. Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,0,0,0
+1,2,0,1,1,0,4. Other / MultiRacial,1,1,1
+0,2,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+1,3,0,1,0,0,5. Hispanic,1,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,1,0,5. Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,1,0,0,5. Hispanic,1,0,0
+1,1,1,1,0,0,1. White Non-Hispanic,1,1,0
+0,2,1,1,0,0,2. Black Non-Hispanic,1,0,1
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,1,0,1
+0,1,0,0,0,0,5. Hispanic,0,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,1,1,0
+0,2,1,1,1,0,5. Hispanic,1,1,1
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,4,0,0,0,0,4. Other / MultiRacial,1,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,4,1,0,1,0,5. Hispanic,1,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,1,0,0,4. Other / MultiRacial,1,1,1
+0,2,1,0,0,0,5. Hispanic,0,0,1
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,2,1,0,0,0,4. Other / MultiRacial,0,1,0
+0,3,1,0,0,0,5. Hispanic,0,1,0
+0,2,1,0,0,0,5. Hispanic,0,1,1
+0,2,0,0,0,0,5. Hispanic,0,0,1
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,2,1,1,0,1,2. Black Non-Hispanic,1,0,1
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+1,2,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,1,1,0,5. Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+1,4,0,0,0,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,1,1,0,0,1. White Non-Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+1,3,1,0,0,0,3. Asian Non-Hispanic,1,0,1
+0,4,0,0,0,0,3. Asian Non-Hispanic,1,0,1
+0,3,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,4. Other / MultiRacial,0,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,1
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,2,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,2,1,1,0,0,1. White Non-Hispanic,1,0,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,1,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,3,1,1,0,0,2. Black Non-Hispanic,1,1,0
+0,2,1,1,1,0,2. Black Non-Hispanic,1,1,0
+0,2,1,0,0,0,5. Hispanic,0,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,1,0,0,0,0,2. Black Non-Hispanic,1,1,0
+0,2,0,0,0,0,5. Hispanic,0,1,1
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,0,0,0,5. Hispanic,0,1,0
+0,1,1,0,0,0,5. Hispanic,0,1,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,0,0,0,1,1. White Non-Hispanic,1,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,1,1
+0,3,1,0,0,0,5. Hispanic,0,0,1
+0,4,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,0,0,1. White Non-Hispanic,0,0,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,1,0,5. Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,1,0,1
+0,3,1,1,0,0,5. Hispanic,1,1,0
+0,3,0,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,0,1,1
+0,4,0,0,0,0,1. White Non-Hispanic,1,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,5. Hispanic,0,0,0
+0,3,1,1,0,0,5. Hispanic,1,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,1
+0,1,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,1,1,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,1,0,5. Hispanic,1,0,0
+0,4,1,0,1,0,1. White Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,5. Hispanic,0,0,0
+0,1,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,1. White Non-Hispanic,1,1,0
+0,3,1,0,0,1,4. Other / MultiRacial,1,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,1
+1,4,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,2,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,1,1,0,5. Hispanic,1,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,1,0
+1,2,0,1,0,0,2. Black Non-Hispanic,1,0,1
+0,2,0,1,1,0,5. Hispanic,1,0,1
+0,3,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,1,1
+0,3,1,0,1,0,5. Hispanic,1,0,0
+1,2,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+1,4,0,0,0,0,4. Other / MultiRacial,1,0,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,5. Hispanic,0,0,0
+0,1,0,0,0,0,1. White Non-Hispanic,0,1,1
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,1
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,4,1,0,0,0,5. Hispanic,1,0,1
+0,4,1,0,0,0,5. Hispanic,1,0,0
+0,1,1,0,0,0,5. Hispanic,0,1,0
+0,2,1,1,1,0,5. Hispanic,1,0,0
+0,1,0,0,0,0,5. Hispanic,0,1,0
+1,3,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,0,0,5. Hispanic,0,1,1
+0,1,0,0,1,0,5. Hispanic,1,1,1
+0,4,1,0,0,0,5. Hispanic,1,0,0
+0,1,1,1,0,0,5. Hispanic,1,0,0
+0,3,1,0,0,0,5. Hispanic,1,1,1
+0,4,1,0,0,0,4. Other / MultiRacial,0,1,1
+0,1,0,0,0,0,5. Hispanic,0,0,1
+0,2,1,0,0,0,5. Hispanic,0,0,0
+0,4,0,0,0,0,5. Hispanic,0,0,0
+1,4,1,1,1,0,2. Black Non-Hispanic,1,0,0
+0,2,0,0,1,0,5. Hispanic,1,0,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,1,0,1
+1,3,1,0,0,0,2. Black Non-Hispanic,1,1,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,1,0,0,5. Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,1,0,1,2. Black Non-Hispanic,1,0,0
+1,4,1,1,1,0,2. Black Non-Hispanic,1,1,1
+0,2,0,0,0,0,5. Hispanic,0,0,1
+0,1,0,1,1,0,5. Hispanic,1,1,0
+0,2,1,1,1,0,5. Hispanic,1,0,0
+0,2,1,1,1,0,5. Hispanic,1,0,0
+1,4,1,1,1,0,4. Other / MultiRacial,1,1,0
+0,2,1,1,0,0,2. Black Non-Hispanic,1,0,1
+0,2,1,1,1,0,5. Hispanic,1,0,0
+0,2,0,0,1,0,5. Hispanic,1,0,1
+1,2,1,0,1,0,5. Hispanic,1,0,1
+0,1,1,0,1,0,3. Asian Non-Hispanic,1,1,0
+1,3,0,0,0,0,2. Black Non-Hispanic,1,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,3,0,0,1,0,2. Black Non-Hispanic,1,1,1
+0,2,1,1,1,0,5. Hispanic,1,0,1
+0,4,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,3,1,0,0,0,5. Hispanic,0,1,1
+1,4,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,2,1,0,0,1,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,1,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,1,1,0,2. Black Non-Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,3,1,0,1,0,2. Black Non-Hispanic,1,0,0
+1,3,1,0,0,0,2. Black Non-Hispanic,1,0,0
+1,1,0,0,0,0,3. Asian Non-Hispanic,1,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,0,0,0,0,3. Asian Non-Hispanic,0,1,0
+0,3,1,1,0,0,1. White Non-Hispanic,1,0,0
+0,2,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,1,1,1,1,0,2. Black Non-Hispanic,1,1,1
+0,4,1,0,0,0,2. Black Non-Hispanic,0,1,1
+1,4,1,0,0,0,3. Asian Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,1,1,0,2. Black Non-Hispanic,1,1,1
+0,2,0,1,0,0,2. Black Non-Hispanic,1,0,0
+0,1,1,0,0,0,5. Hispanic,0,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,4,1,1,1,0,5. Hispanic,1,0,1
+0,3,0,1,0,0,1. White Non-Hispanic,1,0,0
+1,2,0,0,0,0,3. Asian Non-Hispanic,1,1,1
+0,4,0,0,0,0,5. Hispanic,0,1,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+1,4,1,0,0,0,2. Black Non-Hispanic,1,0,0
+1,2,1,0,0,0,5. Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,1,1,0,5. Hispanic,1,1,1
+0,4,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,2,0,1,0,0,2. Black Non-Hispanic,1,0,1
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,3,1,0,0,0,5. Hispanic,0,0,1
+0,4,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,1,1,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,2,1,0,0,0,1. White Non-Hispanic,1,0,0
+0,2,1,1,0,1,2. Black Non-Hispanic,1,0,0
+0,4,1,1,0,0,4. Other / MultiRacial,1,1,0
+0,1,1,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,1
+0,3,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,1,1,0
+1,3,1,0,1,0,1. White Non-Hispanic,1,0,0
+0,2,1,1,1,0,2. Black Non-Hispanic,1,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,1,1,0
+1,3,1,1,0,0,5. Hispanic,1,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,1,1,0
+0,4,1,0,0,0,5. Hispanic,1,0,1
+0,2,1,0,0,0,5. Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,1,1,0,5. Hispanic,1,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,1,0,0,5. Hispanic,1,0,0
+0,3,1,1,0,0,5. Hispanic,1,1,0
+0,1,1,1,0,0,5. Hispanic,1,1,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,1,1,0,0,0,5. Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,1
+0,3,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,1,1,0,5. Hispanic,1,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,3,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,2,1,1,1,0,2. Black Non-Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,1
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,2,1,1,1,0,1. White Non-Hispanic,1,1,0
+0,2,1,0,0,0,5. Hispanic,0,1,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,0,1,0,0,1. White Non-Hispanic,1,0,0
+0,4,1,0,0,0,4. Other / MultiRacial,0,0,0
+1,2,1,0,0,0,4. Other / MultiRacial,1,1,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,1,1,1,0,0,5. Hispanic,1,1,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,0,0,5. Hispanic,1,0,0
+0,2,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,1
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,1,1,1,0,0,5. Hispanic,1,1,0
+0,4,1,1,0,0,1. White Non-Hispanic,1,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,1,1,0,0,0,5. Hispanic,0,0,0
+0,2,0,0,0,0,5. Hispanic,0,0,1
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,1,0,0,5. Hispanic,1,1,0
+0,3,0,0,0,0,5. Hispanic,0,0,1
+1,2,0,0,0,0,2. Black Non-Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,0,0,0,0,4. Other / MultiRacial,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,1
+1,3,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,1,1,0,0,0,5. Hispanic,0,1,1
+0,1,0,0,0,0,5. Hispanic,0,0,1
+0,2,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,2,1,0,0,0,5. Hispanic,0,1,0
+0,2,1,0,1,0,1. White Non-Hispanic,1,0,0
+1,4,1,0,0,0,5. Hispanic,1,1,0
+0,2,1,1,1,0,5. Hispanic,1,1,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,1,0,0,2. Black Non-Hispanic,1,1,0
+1,4,1,1,1,0,2. Black Non-Hispanic,1,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,1,1,1,0,3. Asian Non-Hispanic,1,1,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,1,0,5. Hispanic,1,1,0
+0,1,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,1,1,0,5. Hispanic,1,1,1
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,0,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,1
+0,2,1,0,1,0,2. Black Non-Hispanic,1,1,1
+0,1,1,0,0,0,5. Hispanic,0,0,1
+0,3,1,1,1,0,2. Black Non-Hispanic,1,1,0
+0,3,1,1,0,0,1. White Non-Hispanic,1,0,0
+0,2,1,0,0,0,5. Hispanic,0,0,1
+0,3,1,0,0,0,4. Other / MultiRacial,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,1,0,0,1. White Non-Hispanic,1,1,0
+0,1,1,0,0,0,4. Other / MultiRacial,0,1,1
+0,1,1,0,0,0,5. Hispanic,0,1,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,1
+0,2,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,2,1,0,1,0,5. Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,1,1. White Non-Hispanic,1,0,0
+0,3,1,0,1,0,5. Hispanic,1,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,2,0,1,0,0,2. Black Non-Hispanic,1,0,1
+0,1,1,0,0,0,5. Hispanic,0,1,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,1,0,0,0,0,1. White Non-Hispanic,0,1,1
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,1,1,0,1. White Non-Hispanic,1,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,0,1,0,5. Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,1,0,0
+0,1,1,0,0,0,2. Black Non-Hispanic,0,0,1
+1,4,1,1,1,0,5. Hispanic,1,1,0
+0,1,1,0,0,0,5. Hispanic,0,1,1
+0,3,0,0,0,0,1. White Non-Hispanic,0,1,1
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,3,0,0,0,0,2. Black Non-Hispanic,1,0,0
+0,4,0,0,0,0,5. Hispanic,0,0,1
+0,4,0,0,0,0,5. Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,1,1,0,5. Hispanic,1,0,1
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,1
+0,4,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,2,0,1,1,1,5. Hispanic,1,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,0,0,1,0,1. White Non-Hispanic,1,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+1,2,1,0,1,0,4. Other / MultiRacial,1,1,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,1,1
+0,2,1,0,0,0,5. Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,1,1,1,1,0,5. Hispanic,1,0,0
+0,3,1,0,0,0,5. Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,0,0,0,5. Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+1,2,0,0,1,0,2. Black Non-Hispanic,1,1,0
+0,4,0,0,0,0,5. Hispanic,0,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,4. Other / MultiRacial,1,0,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,1,0,1,2. Black Non-Hispanic,1,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,1,1,0,0,0,5. Hispanic,0,1,1
+0,3,1,1,0,0,1. White Non-Hispanic,1,0,1
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+1,3,1,0,0,0,5. Hispanic,1,0,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,3,1,1,0,0,1. White Non-Hispanic,1,0,1
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,1,1,0,5. Hispanic,1,0,0
+0,3,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,1,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+1,1,1,1,0,0,4. Other / MultiRacial,1,0,1
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,1,1. White Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,1
+0,4,1,0,0,1,5. Hispanic,1,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,2,1,1,1,0,1. White Non-Hispanic,1,1,1
+0,3,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,1,1,1,0,2. Black Non-Hispanic,1,0,1
+0,4,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,4,0,0,0,0,5. Hispanic,0,0,1
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,1,0
+1,2,0,0,1,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+1,1,0,1,1,1,2. Black Non-Hispanic,1,0,1
+0,2,0,0,0,0,5. Hispanic,0,0,1
+0,1,1,0,0,0,5. Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,0,0,0,0,5. Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,1,0,0
+1,3,0,0,1,0,3. Asian Non-Hispanic,1,0,0
+0,4,0,1,0,0,4. Other / MultiRacial,1,0,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,2,0,0,0,0,5. Hispanic,0,0,0
+0,2,1,0,0,0,5. Hispanic,0,0,1
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,2,0,0,0,0,5. Hispanic,0,0,0
+0,2,1,1,0,0,5. Hispanic,1,0,0
+0,2,1,0,0,0,5. Hispanic,0,0,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+1,3,1,0,0,1,5. Hispanic,1,1,0
+1,2,0,1,0,0,2. Black Non-Hispanic,1,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,5. Hispanic,0,0,0
+0,3,0,0,0,0,4. Other / MultiRacial,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,0,1,1
+0,1,1,1,0,0,2. Black Non-Hispanic,1,0,1
+1,2,0,0,0,0,5. Hispanic,1,0,0
+0,3,1,0,0,1,2. Black Non-Hispanic,1,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,1
+0,3,0,1,0,0,2. Black Non-Hispanic,1,0,1
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,1,0,0
+0,2,1,0,0,1,5. Hispanic,1,0,0
+0,2,0,1,0,0,5. Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,1,0,1
+0,2,1,1,1,0,1. White Non-Hispanic,1,1,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,1,0,0,1. White Non-Hispanic,1,1,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+1,3,1,0,0,0,1. White Non-Hispanic,1,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+1,2,0,1,1,1,2. Black Non-Hispanic,1,0,0
+0,3,0,1,0,0,5. Hispanic,1,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,0,1,0,1,5. Hispanic,1,1,0
+0,3,0,1,0,0,1. White Non-Hispanic,1,0,0
+0,2,0,1,0,0,1. White Non-Hispanic,1,0,0
+0,1,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,5. Hispanic,0,0,1
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+1,3,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,1,1,1
+0,2,0,1,0,0,5. Hispanic,1,1,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+1,2,0,0,0,0,5. Hispanic,1,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,3,0,0,0,0,2. Black Non-Hispanic,1,0,0
+0,4,0,0,0,0,5. Hispanic,0,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,0,0,0,0,4. Other / MultiRacial,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,1,0,1
+0,2,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,1,0,0,3. Asian Non-Hispanic,1,0,1
+1,4,1,0,1,1,5. Hispanic,1,0,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,1,1,2. Black Non-Hispanic,1,1,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,0,0,0,0,5. Hispanic,0,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,0,0,1,0,2. Black Non-Hispanic,1,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,3,0,0,1,0,2. Black Non-Hispanic,1,1,0
+1,4,1,1,1,1,5. Hispanic,1,0,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,1
+0,3,0,0,0,0,4. Other / MultiRacial,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,0,0,0,0,5. Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,0,0,0,5. Hispanic,0,0,0
+0,2,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,1
+0,1,1,0,0,0,5. Hispanic,0,1,1
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,1,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,3,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,3,0,1,0,1,4. Other / MultiRacial,1,0,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,1,1,1,4. Other / MultiRacial,1,0,1
+0,4,0,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,0,1,0,0,4. Other / MultiRacial,1,0,0
+0,4,0,0,0,1,4. Other / MultiRacial,1,0,0
+0,2,0,0,0,0,5. Hispanic,0,0,1
+1,2,0,1,1,1,2. Black Non-Hispanic,1,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,1,0,1,4. Other / MultiRacial,1,1,1
+0,3,1,0,0,0,5. Hispanic,0,0,1
+0,2,1,1,0,0,2. Black Non-Hispanic,1,1,0
+0,2,0,0,0,0,5. Hispanic,0,0,0
+0,3,0,0,0,0,5. Hispanic,0,0,0
+0,2,1,1,1,1,2. Black Non-Hispanic,1,1,0
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,1,0,0,1,0,5. Hispanic,1,0,0
+0,3,0,0,0,0,5. Hispanic,0,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+1,1,1,0,0,0,5. Hispanic,1,1,0
+1,3,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,2,1,0,0,0,5. Hispanic,1,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,1,1,1,1,0,2. Black Non-Hispanic,1,1,0
+1,1,1,1,1,1,1. White Non-Hispanic,1,1,0
+0,1,1,1,0,0,4. Other / MultiRacial,1,0,0
+1,3,1,0,0,0,5. Hispanic,1,1,0
+0,2,1,0,0,0,5. Hispanic,0,0,0
+1,2,0,0,0,1,2. Black Non-Hispanic,1,0,1
+0,1,1,0,0,0,5. Hispanic,0,0,0
+0,2,1,0,0,0,5. Hispanic,0,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,0,1,0,0,5. Hispanic,1,1,1
+0,1,1,0,1,0,1. White Non-Hispanic,1,1,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+1,3,1,0,0,0,5. Hispanic,1,0,0
+0,2,0,0,0,0,5. Hispanic,0,0,1
+0,1,0,0,0,0,5. Hispanic,0,0,0
+1,4,0,0,0,1,1. White Non-Hispanic,1,1,0
+1,3,1,0,1,0,2. Black Non-Hispanic,1,0,0
+0,2,1,0,0,0,3. Asian Non-Hispanic,0,0,1
+0,1,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,4,1,1,0,0,1. White Non-Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,0,0,0,5. Hispanic,0,0,0
+0,2,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,1,1
+1,2,0,1,0,1,2. Black Non-Hispanic,1,0,0
+0,2,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,2,1,1,0,0,5. Hispanic,1,0,0
+0,2,1,0,0,0,5. Hispanic,0,0,0
+1,3,1,1,0,0,1. White Non-Hispanic,1,0,1
+0,1,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,0,0,0,3. Asian Non-Hispanic,0,0,1
+1,2,0,1,0,0,5. Hispanic,1,0,1
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,1,0,0
+0,1,1,0,0,0,5. Hispanic,0,0,0
+0,2,0,0,0,0,4. Other / MultiRacial,1,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,3,0,1,1,0,2. Black Non-Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+1,1,1,1,1,0,5. Hispanic,1,1,1
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,2,0,0,0,0,1. White Non-Hispanic,0,0,0
+1,3,1,0,0,1,2. Black Non-Hispanic,1,0,0
+0,1,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,2,0,0,0,0,5. Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,1,0,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,1
+1,4,1,0,0,0,4. Other / MultiRacial,1,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+1,2,0,1,1,0,4. Other / MultiRacial,1,0,0
+1,2,1,0,0,0,2. Black Non-Hispanic,1,0,1
+1,1,0,1,1,0,1. White Non-Hispanic,1,1,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+1,4,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,1,2. Black Non-Hispanic,1,0,0
+0,3,0,0,0,0,5. Hispanic,0,1,0
+0,4,0,0,0,0,5. Hispanic,0,0,1
+0,1,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,1,0,0,5. Hispanic,1,0,0
+0,1,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,2,1,1,0,0,5. Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+1,2,0,0,0,0,2. Black Non-Hispanic,1,0,0
+0,1,1,0,0,0,5. Hispanic,0,0,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,1,3. Asian Non-Hispanic,1,0,1
+0,1,1,1,1,0,2. Black Non-Hispanic,1,0,0
+0,4,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,1
+1,1,0,0,0,0,5. Hispanic,1,0,1
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+1,4,1,0,0,0,4. Other / MultiRacial,1,0,0
+0,1,0,0,0,0,2. Black Non-Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,1,0,0
+1,2,1,1,0,0,2. Black Non-Hispanic,1,0,0
+1,3,0,1,0,0,5. Hispanic,1,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,0,0,5. Hispanic,0,0,1
+0,4,0,0,0,0,3. Asian Non-Hispanic,1,0,1
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,1,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,1
+1,1,1,1,1,0,2. Black Non-Hispanic,1,0,0
+0,4,1,1,0,0,5. Hispanic,1,0,1
+1,3,1,1,1,1,5. Hispanic,1,1,1
+0,4,0,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,0,0,1,5. Hispanic,1,1,1
+0,1,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,1,0,0,5. Hispanic,1,0,1
+1,2,1,1,1,0,1. White Non-Hispanic,1,1,1
+1,3,1,1,0,1,1. White Non-Hispanic,1,0,0
+0,2,1,0,1,0,5. Hispanic,1,0,1
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,1,1,0,5. Hispanic,1,1,1
+0,2,0,0,0,0,5. Hispanic,0,0,1
+0,1,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,4,1,0,0,0,3. Asian Non-Hispanic,1,0,1
+0,2,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,2,0,0,0,1,1. White Non-Hispanic,1,0,0
+0,1,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+1,1,0,0,0,1,5. Hispanic,1,1,1
+0,2,1,1,0,0,5. Hispanic,1,0,0
+0,3,0,1,1,1,2. Black Non-Hispanic,1,1,0
+1,2,1,1,1,0,5. Hispanic,1,0,0
+0,1,0,1,1,0,5. Hispanic,1,1,1
+0,1,1,1,0,0,5. Hispanic,1,0,0
+0,2,0,0,0,0,5. Hispanic,0,0,0
+0,1,1,0,0,0,5. Hispanic,1,1,1
+1,2,1,0,0,0,5. Hispanic,1,0,1
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,2,0,0,0,0,5. Hispanic,0,0,0
+0,1,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+1,1,1,0,0,1,5. Hispanic,1,0,1
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+1,1,0,0,0,0,5. Hispanic,1,0,1
+0,2,0,0,0,0,5. Hispanic,0,0,1
+0,4,0,0,0,0,4. Other / MultiRacial,0,0,0
+0,2,1,0,0,0,5. Hispanic,0,0,0
+0,2,0,1,0,0,2. Black Non-Hispanic,1,0,1
+0,2,1,0,0,0,5. Hispanic,0,0,1
+0,2,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,0,1,0,0,1. White Non-Hispanic,1,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,1,0
+1,2,0,0,0,1,5. Hispanic,1,0,1
+0,4,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,1,1,0,1,0,5. Hispanic,1,0,1
+0,1,0,0,0,0,5. Hispanic,0,1,0
+0,1,1,1,0,0,5. Hispanic,1,1,0
+0,3,0,0,0,0,1. White Non-Hispanic,1,0,0
+1,1,1,1,1,0,2. Black Non-Hispanic,1,0,0
+0,3,0,0,0,1,5. Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,1
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,1,0,5. Hispanic,1,1,0
+1,1,1,0,0,1,5. Hispanic,1,0,0
+0,3,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,1,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,1,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,5. Hispanic,0,1,0
+0,4,0,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+1,1,0,1,1,1,2. Black Non-Hispanic,1,1,1
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,3,0,1,1,0,2. Black Non-Hispanic,1,1,0
+0,2,0,0,0,0,5. Hispanic,0,0,1
+0,3,1,0,0,0,5. Hispanic,0,1,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,1,0
+1,4,0,0,0,0,3. Asian Non-Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,1,1
+0,4,1,0,1,0,3. Asian Non-Hispanic,1,1,0
+0,3,0,0,0,0,3. Asian Non-Hispanic,0,1,0
+0,1,1,0,1,0,5. Hispanic,1,0,1
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,0,1,1,0,5. Hispanic,1,0,0
+0,1,0,1,0,0,2. Black Non-Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,4. Other / MultiRacial,0,1,0
+0,3,1,1,0,0,5. Hispanic,1,1,0
+0,3,1,0,0,0,5. Hispanic,0,0,0
+1,3,0,1,0,1,5. Hispanic,1,0,0
+0,4,0,1,0,0,5. Hispanic,1,0,0
+0,3,0,1,0,1,2. Black Non-Hispanic,1,0,0
+1,4,0,0,0,1,5. Hispanic,1,0,0
+0,3,0,0,0,0,5. Hispanic,0,0,0
+0,1,0,0,0,0,5. Hispanic,1,0,1
+0,3,0,0,0,0,3. Asian Non-Hispanic,0,0,1
+1,2,0,0,0,0,5. Hispanic,1,1,1
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,0,0,0,0,5. Hispanic,0,1,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,2,0,0,0,0,5. Hispanic,1,0,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,2,0,0,0,0,5. Hispanic,0,0,1
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,0,1,5. Hispanic,1,0,0
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,1
+0,1,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,1,1. White Non-Hispanic,1,0,0
+0,1,1,0,1,0,5. Hispanic,1,0,1
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,1,1,0,0,1,5. Hispanic,1,0,1
+1,3,0,1,0,0,5. Hispanic,1,1,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,1,0,0,1,0,4. Other / MultiRacial,1,0,1
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,3,1,1,1,0,2. Black Non-Hispanic,1,1,1
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,1,0,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,1,1,0,4. Other / MultiRacial,1,1,1
+0,2,0,0,0,1,2. Black Non-Hispanic,1,0,1
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,1,0,1. White Non-Hispanic,1,0,1
+0,4,0,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,1,0,0
+1,4,1,1,1,0,2. Black Non-Hispanic,1,0,1
+0,1,1,1,0,0,1. White Non-Hispanic,1,1,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,1
+0,4,0,0,0,0,5. Hispanic,0,0,0
+1,1,0,0,0,1,5. Hispanic,1,1,1
+0,2,1,0,0,0,3. Asian Non-Hispanic,0,0,1
+0,3,1,0,0,0,5. Hispanic,0,0,1
+1,3,1,0,0,0,5. Hispanic,1,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,1
+0,3,1,1,1,0,5. Hispanic,1,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+1,3,0,0,0,0,1. White Non-Hispanic,1,0,0
+0,2,1,0,0,1,4. Other / MultiRacial,1,0,0
+0,1,0,0,0,0,5. Hispanic,0,0,0
+0,2,0,0,0,0,5. Hispanic,0,0,1
+0,3,0,0,0,0,4. Other / MultiRacial,0,1,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,1,0,1,2. Black Non-Hispanic,1,0,0
+0,3,0,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,1,0,1. White Non-Hispanic,1,0,0
+0,4,1,1,0,0,4. Other / MultiRacial,1,0,1
+0,3,1,0,1,0,3. Asian Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,1,1,0,0,0,5. Hispanic,0,1,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,1,0,1,2. Black Non-Hispanic,1,0,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+1,2,0,0,1,1,2. Black Non-Hispanic,1,1,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+1,4,1,1,1,0,2. Black Non-Hispanic,1,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,1,0,0
+0,1,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,0,1,0,0,1. White Non-Hispanic,1,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,1
+1,3,1,0,0,0,5. Hispanic,1,0,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,1,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,0,1,0,5. Hispanic,1,0,1
+0,3,0,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,3,0,0,0,0,2. Black Non-Hispanic,0,1,1
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,1,1,0,0,0,5. Hispanic,0,0,0
+0,1,0,0,0,0,1. White Non-Hispanic,0,0,0
+1,1,1,1,0,0,5. Hispanic,1,1,1
+1,2,0,0,1,0,5. Hispanic,1,0,1
+0,4,1,0,0,0,5. Hispanic,0,0,0
+1,3,1,1,0,1,2. Black Non-Hispanic,1,0,1
+0,3,1,0,0,0,5. Hispanic,0,0,1
+0,1,0,0,0,0,5. Hispanic,0,0,0
+0,4,1,1,0,1,5. Hispanic,1,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,1,1,1,1,0,2. Black Non-Hispanic,1,0,1
+1,3,1,0,0,0,3. Asian Non-Hispanic,1,0,1
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+1,2,1,0,0,0,5. Hispanic,1,1,0
+1,2,0,1,1,1,2. Black Non-Hispanic,1,0,1
+0,4,1,0,0,0,5. Hispanic,0,0,0
+1,3,1,0,1,0,5. Hispanic,1,1,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+1,2,1,0,0,0,5. Hispanic,1,0,1
+0,2,0,0,0,0,1. White Non-Hispanic,1,1,1
+1,1,1,1,1,0,2. Black Non-Hispanic,1,1,0
+0,2,0,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,3,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,1
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,1,1
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,0,0,0,0,5. Hispanic,0,0,0
+0,2,1,1,0,0,2. Black Non-Hispanic,1,1,1
+0,2,1,1,1,0,1. White Non-Hispanic,1,1,1
+0,3,0,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,1,0,0,1. White Non-Hispanic,1,0,0
+0,3,1,1,0,0,2. Black Non-Hispanic,1,1,1
+0,4,0,0,0,0,5. Hispanic,0,0,0
+0,2,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,0,1,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,2,0,1,0,0,2. Black Non-Hispanic,1,1,0
+0,3,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,0,1,2. Black Non-Hispanic,1,1,1
+1,3,1,1,0,0,2. Black Non-Hispanic,1,0,1
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,1
+0,3,1,0,0,1,2. Black Non-Hispanic,1,1,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,0,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,3,0,1,0,0,5. Hispanic,1,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,1
+0,4,1,1,1,0,2. Black Non-Hispanic,1,0,1
+1,1,1,1,0,0,2. Black Non-Hispanic,1,1,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,0,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,1,1,0,5. Hispanic,1,0,0
+1,4,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,1,5. Hispanic,1,0,0
+0,2,1,1,1,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,3,0,1,1,0,5. Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,3,1,1,1,1,1. White Non-Hispanic,1,1,1
+0,3,0,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+1,4,0,1,0,0,1. White Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,0,0,0,5. Hispanic,0,0,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+1,1,1,1,1,0,5. Hispanic,1,1,0
+0,4,1,1,1,0,5. Hispanic,1,1,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,1,1,1
+0,2,1,1,1,0,2. Black Non-Hispanic,1,1,0
+0,1,0,0,1,0,4. Other / MultiRacial,1,1,1
+0,4,1,1,0,1,1. White Non-Hispanic,1,1,0
+0,3,1,1,1,0,3. Asian Non-Hispanic,1,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,3,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,2,1,1,0,0,5. Hispanic,1,0,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,1,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,1
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,1
+1,3,0,0,0,0,4. Other / MultiRacial,1,0,1
+0,4,0,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,1,0
+1,3,1,1,1,0,1. White Non-Hispanic,1,1,0
+0,3,1,0,1,0,2. Black Non-Hispanic,1,1,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,1,0,0,0,0,1. White Non-Hispanic,0,1,0
+1,3,1,1,0,0,2. Black Non-Hispanic,1,0,1
+0,1,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,0,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,1,1,0,5. Hispanic,1,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,1,0,0
+1,3,1,1,1,0,1. White Non-Hispanic,1,0,0
+0,1,1,1,1,0,2. Black Non-Hispanic,1,1,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,1,0,1,1. White Non-Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,1,0,1,1,0,4. Other / MultiRacial,1,1,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,1,0,0,0,4. Other / MultiRacial,0,1,1
+0,1,0,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,3,1,1,0,0,2. Black Non-Hispanic,1,0,0
+1,1,0,0,1,1,5. Hispanic,1,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,0,0,1,0,3. Asian Non-Hispanic,1,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,3,1,0,0,0,4. Other / MultiRacial,1,1,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,3,0,1,0,0,2. Black Non-Hispanic,1,1,0
+1,3,0,1,0,0,4. Other / MultiRacial,1,1,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,3,0,1,0,0,5. Hispanic,1,0,0
+0,4,1,0,0,0,5. Hispanic,1,0,1
+0,4,0,0,0,0,5. Hispanic,1,0,1
+0,2,1,1,0,0,2. Black Non-Hispanic,1,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,4,0,0,0,0,5. Hispanic,1,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,1,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,3,1,0,0,0,2. Black Non-Hispanic,1,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,1,1,0
+0,4,1,1,1,0,3. Asian Non-Hispanic,1,1,1
+0,1,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,0,0,5. Hispanic,0,1,0
+1,1,1,0,1,1,4. Other / MultiRacial,1,0,1
+0,3,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,1,1,0,2. Black Non-Hispanic,1,1,1
+0,1,0,0,0,0,1. White Non-Hispanic,1,0,1
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,0,0,0,0,5. Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,1,0,2. Black Non-Hispanic,1,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,5. Hispanic,1,0,0
+1,4,1,1,0,0,1. White Non-Hispanic,1,0,0
+0,2,0,1,0,0,2. Black Non-Hispanic,1,0,0
+0,4,1,1,0,0,4. Other / MultiRacial,1,0,0
+0,1,1,1,1,0,2. Black Non-Hispanic,1,1,1
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,1,1,0,2. Black Non-Hispanic,1,1,1
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,1
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,1
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,1,1,0,2. Black Non-Hispanic,1,1,1
+0,4,0,0,0,0,5. Hispanic,0,1,0
+0,2,0,0,0,0,2. Black Non-Hispanic,1,0,0
+1,4,1,0,0,0,3. Asian Non-Hispanic,1,0,0
+1,3,1,0,0,0,5. Hispanic,1,0,1
+0,1,1,0,0,0,5. Hispanic,0,0,1
+0,4,0,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,1,1,0,2. Black Non-Hispanic,1,1,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,1,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,0,0,1,5. Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,3,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,1,1,0
+0,2,1,0,0,0,5. Hispanic,0,0,0
+0,3,0,0,0,0,5. Hispanic,0,0,0
+1,4,1,1,1,1,5. Hispanic,1,0,0
+0,2,1,1,1,0,5. Hispanic,1,1,1
+0,2,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,4. Other / MultiRacial,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,4. Other / MultiRacial,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,1,0,1,1,0,5. Hispanic,1,1,0
+0,2,1,0,0,0,5. Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+1,3,1,0,0,1,5. Hispanic,1,1,0
+1,2,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,1,1,1,0,0,5. Hispanic,1,1,1
+1,2,1,0,1,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,1,4. Other / MultiRacial,1,1,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,1,0
+1,3,0,0,0,0,2. Black Non-Hispanic,1,1,0
+0,3,0,0,0,0,4. Other / MultiRacial,0,1,0
+0,2,0,0,0,0,1. White Non-Hispanic,0,0,0
+1,2,0,0,0,0,5. Hispanic,1,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,1,0,0
+0,2,1,1,0,0,2. Black Non-Hispanic,1,0,1
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,1,1,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+1,3,1,1,0,0,5. Hispanic,1,0,0
+0,3,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+1,2,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,3,1,0,0,0,4. Other / MultiRacial,0,1,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,5. Hispanic,0,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,1,0,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,1,0,0,2. Black Non-Hispanic,1,0,1
+0,2,1,1,0,0,5. Hispanic,1,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,1,1,0,0,0,5. Hispanic,0,0,0
+0,3,1,1,0,0,2. Black Non-Hispanic,1,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,0,0,1,0,5. Hispanic,1,1,1
+0,2,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,5. Hispanic,0,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,1,0,0
+0,1,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,0,0,1
+1,3,1,1,1,0,5. Hispanic,1,0,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,0,1,0,0,3. Asian Non-Hispanic,1,1,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,1
+1,2,1,0,0,1,5. Hispanic,1,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,1,1
+0,2,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,1
+0,3,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,1,1,0,0,0,5. Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,0,0,0
+1,3,1,1,0,0,5. Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,4,1,0,0,0,1. White Non-Hispanic,1,0,0
+1,4,1,0,1,0,2. Black Non-Hispanic,1,1,1
+0,3,1,0,0,0,5. Hispanic,0,0,1
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,1,0,0
+0,2,1,1,0,0,5. Hispanic,1,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,4. Other / MultiRacial,0,1,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+1,2,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,1,0,0,2. Black Non-Hispanic,1,0,0
+1,3,1,1,0,0,5. Hispanic,1,1,0
+1,4,1,0,0,1,1. White Non-Hispanic,1,0,0
+0,1,1,0,0,0,2. Black Non-Hispanic,0,1,1
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,0,0,0,5. Hispanic,0,0,0
+0,1,1,1,0,0,5. Hispanic,1,1,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,0,0,0,5. Hispanic,0,0,1
+0,3,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,2,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,0,0,0,0,5. Hispanic,0,0,0
+0,1,1,0,0,0,5. Hispanic,0,1,0
+1,2,1,1,0,0,2. Black Non-Hispanic,1,1,1
+0,2,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,0,0,0,0,2. Black Non-Hispanic,0,0,1
+1,3,1,0,0,1,2. Black Non-Hispanic,1,0,0
+0,2,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,1,0,1
+0,3,1,0,0,0,4. Other / MultiRacial,0,0,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,3,1,1,1,0,5. Hispanic,1,0,0
+1,1,0,0,1,0,4. Other / MultiRacial,1,0,0
+1,2,1,1,1,0,5. Hispanic,1,1,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,1,0,0
+0,1,0,0,0,0,5. Hispanic,0,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,1,1
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,1,1,0,5. Hispanic,1,1,0
+0,2,0,1,1,1,1. White Non-Hispanic,1,1,0
+0,3,1,0,0,0,3. Asian Non-Hispanic,0,0,1
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,0,0,0,5. Hispanic,0,1,1
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,0,0,0,5. Hispanic,0,1,0
+0,4,0,1,1,0,5. Hispanic,1,0,0
+0,1,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,0,0,1,0,5. Hispanic,1,1,1
+0,2,0,0,1,0,5. Hispanic,1,0,1
+0,4,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,0,0,1,4. Other / MultiRacial,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,1
+0,2,0,0,0,0,4. Other / MultiRacial,0,0,1
+1,3,1,1,0,0,1. White Non-Hispanic,1,1,0
+0,3,0,0,0,0,5. Hispanic,1,0,1
+0,1,0,1,1,0,2. Black Non-Hispanic,1,1,0
+0,2,1,0,0,0,5. Hispanic,0,1,0
+1,1,0,0,0,0,5. Hispanic,1,0,1
+0,3,1,0,0,0,1. White Non-Hispanic,0,1,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,1,0,0,2. Black Non-Hispanic,1,1,0
+0,1,1,1,0,0,5. Hispanic,1,1,1
+0,1,0,0,0,0,5. Hispanic,1,1,0
+1,4,1,0,0,0,5. Hispanic,1,0,0
+0,4,0,0,0,0,5. Hispanic,0,0,0
+0,2,1,1,0,0,5. Hispanic,1,0,0
+0,1,0,0,0,0,5. Hispanic,0,1,1
+0,2,0,0,0,0,5. Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,5. Hispanic,0,0,0
+0,2,1,0,0,0,5. Hispanic,0,1,0
+0,2,1,0,0,0,5. Hispanic,0,0,0
+0,3,0,0,0,0,5. Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,1,1,0,0,0,5. Hispanic,1,1,1
+0,1,1,1,1,0,5. Hispanic,1,1,0
+0,4,0,1,1,0,3. Asian Non-Hispanic,1,0,1
+0,3,1,0,0,0,5. Hispanic,1,1,0
+0,1,1,1,1,0,5. Hispanic,1,1,0
+0,4,1,1,1,0,1. White Non-Hispanic,1,0,1
+0,1,0,0,0,0,5. Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,1,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,1,1,0,0,0,5. Hispanic,1,0,1
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,1,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+1,2,0,1,0,0,2. Black Non-Hispanic,1,1,1
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,0,0,0,1. White Non-Hispanic,1,1,0
+1,2,1,0,1,0,5. Hispanic,1,0,0
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,4,1,1,1,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,5. Hispanic,1,1,0
+0,1,0,0,0,0,5. Hispanic,0,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,1,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,1
+0,2,1,1,1,0,2. Black Non-Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,1,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,1,1,0,0,0,5. Hispanic,0,1,0
+1,3,0,1,0,0,2. Black Non-Hispanic,1,0,0
+0,2,1,1,1,0,2. Black Non-Hispanic,1,0,0
+0,1,0,0,0,0,5. Hispanic,1,1,0
+0,1,1,0,1,0,2. Black Non-Hispanic,1,0,1
+0,3,1,0,0,0,1. White Non-Hispanic,1,1,0
+0,3,1,1,1,0,5. Hispanic,1,1,0
+0,4,1,1,1,0,2. Black Non-Hispanic,1,1,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,2,0,1,1,0,2. Black Non-Hispanic,1,1,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,1,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,2,1,0,1,0,5. Hispanic,1,0,1
+0,4,1,0,0,1,5. Hispanic,1,0,1
+0,1,1,0,0,0,5. Hispanic,0,1,0
+0,1,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,1,0,0
+0,3,1,0,0,0,5. Hispanic,1,0,0
+1,3,0,1,1,0,2. Black Non-Hispanic,1,1,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,1
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,2,1,1,0,0,5. Hispanic,1,0,0
+0,1,1,0,1,0,2. Black Non-Hispanic,1,0,0
+0,3,0,0,0,0,5. Hispanic,0,0,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,1,0,0,5. Hispanic,1,0,1
+1,2,0,0,0,0,5. Hispanic,1,0,1
+0,2,1,1,1,0,5. Hispanic,1,0,1
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,1,1,1,1,0,2. Black Non-Hispanic,1,0,1
+0,4,1,1,0,0,3. Asian Non-Hispanic,1,0,1
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,2,1,1,0,0,1. White Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,1
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,0,1,1,0,5. Hispanic,1,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,0,0,0,0,1. White Non-Hispanic,1,1,0
+0,4,1,1,0,0,2. Black Non-Hispanic,1,0,0
+1,1,1,0,0,0,1. White Non-Hispanic,1,1,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,4. Other / MultiRacial,0,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,2,0,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,0,0,0,2. Black Non-Hispanic,1,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,1,1,1,0,0,5. Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,1
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+1,2,1,1,1,0,4. Other / MultiRacial,1,0,0
+1,1,1,1,0,0,5. Hispanic,1,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,1,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,2,1,0,0,0,4. Other / MultiRacial,0,1,1
+0,3,0,0,0,0,5. Hispanic,0,1,1
+0,3,0,0,0,0,5. Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,1,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,0,1,0,0,4. Other / MultiRacial,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,1
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,1,1,0,1,0,5. Hispanic,1,0,1
+0,4,1,1,0,0,5. Hispanic,1,1,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,2,0,0,1,0,5. Hispanic,1,0,1
+0,2,0,0,0,0,1. White Non-Hispanic,0,0,0
+1,2,0,0,0,0,5. Hispanic,1,1,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,0,1,5. Hispanic,1,1,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,1,0,0,5. Hispanic,1,1,0
+0,3,0,0,0,0,5. Hispanic,0,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,0,0,0,5. Hispanic,0,1,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,1,1,0,0,0,5. Hispanic,0,0,1
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,1
+1,2,1,0,0,0,2. Black Non-Hispanic,1,0,0
+1,3,1,1,0,0,5. Hispanic,1,0,0
+0,1,0,0,1,0,2. Black Non-Hispanic,1,0,1
+1,2,1,1,1,0,2. Black Non-Hispanic,1,0,0
+0,2,1,0,0,0,5. Hispanic,1,0,0
+0,1,1,0,0,0,5. Hispanic,0,0,0
+0,2,1,1,0,0,1. White Non-Hispanic,1,0,0
+1,2,1,1,1,0,2. Black Non-Hispanic,1,1,0
+1,3,1,1,1,0,5. Hispanic,1,0,1
+0,1,1,0,0,0,5. Hispanic,0,1,0
+0,3,1,0,0,1,1. White Non-Hispanic,1,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,5. Hispanic,0,1,0
+0,3,1,0,0,0,1. White Non-Hispanic,1,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,1,0
+0,1,1,0,1,0,5. Hispanic,1,1,0
+0,1,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,1,0,1,5. Hispanic,1,1,0
+0,4,1,0,1,1,1. White Non-Hispanic,1,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,1,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,2,1,1,0,0,5. Hispanic,1,1,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+1,2,1,1,1,0,5. Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,1,1,0
+0,4,1,0,0,0,5. Hispanic,1,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,0,0,5. Hispanic,1,1,0
+0,2,0,0,0,0,1. White Non-Hispanic,0,0,1
+0,4,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,1,0,0,1. White Non-Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,1,0,0,1,5. Hispanic,1,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,1,1,0,0,0,5. Hispanic,0,0,0
+0,2,0,0,0,0,1. White Non-Hispanic,0,1,1
+0,4,1,0,0,0,4. Other / MultiRacial,1,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,0,1,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,1,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,2,0,0,0,0,5. Hispanic,0,0,1
+0,1,0,0,0,0,5. Hispanic,0,1,1
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+1,2,1,0,0,0,1. White Non-Hispanic,1,1,0
+1,4,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,4,1,1,0,0,1. White Non-Hispanic,1,0,0
+0,3,1,0,1,0,2. Black Non-Hispanic,1,0,1
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,1,4. Other / MultiRacial,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,2,0,1,0,0,2. Black Non-Hispanic,1,0,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,1,0,0,1. White Non-Hispanic,1,0,1
+0,1,1,0,0,0,5. Hispanic,0,1,0
+0,2,1,1,0,0,1. White Non-Hispanic,1,1,0
+0,2,0,0,0,0,1. White Non-Hispanic,0,1,1
+0,3,0,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,5. Hispanic,0,0,0
+0,2,0,1,0,0,2. Black Non-Hispanic,1,1,0
+0,3,0,0,0,0,5. Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,5. Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,0,0,5. Hispanic,1,0,0
+0,1,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,1,0,0
+0,1,0,1,1,0,2. Black Non-Hispanic,1,0,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,2,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,3. Asian Non-Hispanic,0,0,1
+0,3,1,0,1,0,2. Black Non-Hispanic,1,0,0
+1,3,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,0,0,0,0,5. Hispanic,1,1,1
+0,4,1,0,0,0,1. White Non-Hispanic,1,0,0
+0,3,1,0,0,0,5. Hispanic,1,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,5. Hispanic,0,1,0
+0,3,1,1,0,0,4. Other / MultiRacial,1,1,1
+0,3,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,1,0,1,5. Hispanic,1,0,1
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,0,1,0,5. Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,1,0,0,1. White Non-Hispanic,1,1,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,1,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,0,0,0
+1,2,1,1,1,0,5. Hispanic,1,0,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+1,2,1,0,0,0,5. Hispanic,1,1,0
+0,2,0,0,0,0,5. Hispanic,0,0,0
+1,3,1,1,1,0,5. Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,3,0,0,0,0,5. Hispanic,0,0,0
+0,1,1,0,1,0,5. Hispanic,1,1,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,0,1,0,0,5. Hispanic,1,1,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,1,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,3,1,1,1,0,5. Hispanic,1,1,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,0,0,0
+1,3,0,0,0,0,2. Black Non-Hispanic,1,0,0
+1,4,1,0,0,0,1. White Non-Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,1,0,5. Hispanic,1,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,1,1,0,0,0,5. Hispanic,1,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+1,4,0,0,0,0,5. Hispanic,1,0,1
+0,1,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,1,1,0,0,0,5. Hispanic,0,1,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,1,0,0,5. Hispanic,1,0,1
+0,3,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,1,1
+0,1,0,0,1,0,5. Hispanic,1,1,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,1,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+1,2,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,1,1,0
+0,2,0,1,1,0,2. Black Non-Hispanic,1,1,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,1
+1,4,1,0,0,0,1. White Non-Hispanic,1,1,1
+0,2,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,3,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,0,0,1,5. Hispanic,1,0,1
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,5. Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,1,0,0,0,0,2. Black Non-Hispanic,0,0,1
+0,3,1,0,0,0,1. White Non-Hispanic,1,0,1
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,1
+0,2,1,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,1,0,0
+1,1,1,1,0,0,2. Black Non-Hispanic,1,1,0
+0,4,1,0,0,0,2. Black Non-Hispanic,1,1,1
+0,4,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,2,0,0,0,0,1. White Non-Hispanic,0,0,1
+0,3,0,1,1,0,2. Black Non-Hispanic,1,1,1
+0,2,1,1,1,0,2. Black Non-Hispanic,1,0,0
+0,2,0,0,0,0,4. Other / MultiRacial,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,1,1,0,0,0,5. Hispanic,1,0,1
+1,1,1,1,0,1,5. Hispanic,1,0,0
+0,2,1,1,0,0,5. Hispanic,1,0,0
+0,2,1,0,0,0,5. Hispanic,1,0,1
+0,3,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,1,1,0,0,0,5. Hispanic,0,0,1
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,4. Other / MultiRacial,0,1,0
+0,4,0,0,0,0,4. Other / MultiRacial,0,0,0
+1,3,1,0,0,0,1. White Non-Hispanic,1,0,1
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,1,1
+0,3,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+1,3,1,0,0,0,5. Hispanic,1,0,0
+0,2,1,0,0,1,5. Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,5. Hispanic,0,0,0
+1,2,0,0,0,1,2. Black Non-Hispanic,1,1,1
+0,4,0,0,0,0,5. Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,0,0,0,0,5. Hispanic,0,1,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,0,0,0,0,5. Hispanic,1,1,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+1,4,1,0,0,0,5. Hispanic,1,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,1,1
+0,3,1,0,0,0,5. Hispanic,1,0,1
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,0,0,5. Hispanic,0,0,1
+0,1,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,1
+0,3,1,0,0,0,4. Other / MultiRacial,1,0,1
+0,3,1,0,0,0,1. White Non-Hispanic,0,1,1
+1,3,1,0,0,0,2. Black Non-Hispanic,1,1,0
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,3,1,1,0,0,5. Hispanic,1,0,1
+0,2,1,0,0,0,5. Hispanic,0,0,1
+0,3,1,0,0,0,5. Hispanic,0,1,0
+0,1,1,0,0,0,5. Hispanic,0,0,0
+0,1,1,0,0,0,5. Hispanic,0,1,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,0,1,0,5. Hispanic,1,1,1
+0,1,1,1,0,0,5. Hispanic,1,0,0
+0,3,0,0,0,0,5. Hispanic,0,0,0
+0,4,0,0,0,0,5. Hispanic,0,0,0
+0,2,1,1,0,0,5. Hispanic,1,0,0
+0,1,0,0,0,0,5. Hispanic,0,0,0
+0,1,0,0,0,0,5. Hispanic,0,0,1
+0,2,0,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,3,1,1,1,1,5. Hispanic,1,1,0
+0,1,1,0,0,0,5. Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,3,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,3,1,1,1,0,2. Black Non-Hispanic,1,1,0
+1,3,1,0,1,0,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,1,0,0,2. Black Non-Hispanic,1,1,0
+0,3,1,1,1,0,2. Black Non-Hispanic,1,0,1
+0,1,1,1,1,1,5. Hispanic,1,1,1
+0,2,1,0,0,1,2. Black Non-Hispanic,1,0,0
+0,3,1,1,0,1,1. White Non-Hispanic,1,1,0
+0,2,1,0,0,1,2. Black Non-Hispanic,1,1,1
+0,1,1,0,0,1,5. Hispanic,1,0,0
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,0,0,0
+1,3,1,1,1,1,5. Hispanic,1,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,1,0
+0,3,1,0,1,0,5. Hispanic,1,0,1
+0,1,0,0,0,0,5. Hispanic,0,0,1
+0,3,1,0,0,0,5. Hispanic,0,1,0
+0,3,0,1,0,0,2. Black Non-Hispanic,1,0,0
+0,1,1,0,0,0,5. Hispanic,0,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,1,1,0,2. Black Non-Hispanic,1,1,0
+0,2,1,1,0,0,2. Black Non-Hispanic,1,1,0
+0,1,1,1,1,0,5. Hispanic,1,0,1
+0,1,1,1,1,0,2. Black Non-Hispanic,1,1,0
+0,3,1,1,0,0,2. Black Non-Hispanic,1,1,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,4,1,0,0,0,5. Hispanic,1,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,1,0,0
+1,2,1,1,0,0,5. Hispanic,1,1,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,1,1
+0,3,0,0,0,0,5. Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,1,0,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+1,4,1,0,0,0,5. Hispanic,1,1,0
+0,1,1,0,0,0,5. Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,1,1
+0,1,1,0,0,1,2. Black Non-Hispanic,1,1,0
+0,3,0,0,0,0,5. Hispanic,0,1,0
+0,1,0,1,0,0,2. Black Non-Hispanic,1,0,1
+0,4,0,1,0,0,2. Black Non-Hispanic,1,1,1
+0,1,0,0,1,1,5. Hispanic,1,0,1
+0,1,0,0,0,0,4. Other / MultiRacial,0,0,1
+0,3,1,1,1,0,1. White Non-Hispanic,1,0,1
+0,2,1,0,0,1,2. Black Non-Hispanic,1,1,1
+0,2,0,0,0,1,2. Black Non-Hispanic,1,0,1
+0,2,0,1,1,1,4. Other / MultiRacial,1,1,1
+0,1,0,0,0,1,2. Black Non-Hispanic,1,0,0
+0,2,1,0,0,1,5. Hispanic,1,1,1
+0,2,0,1,1,1,5. Hispanic,1,0,1
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,2. Black Non-Hispanic,0,0,0
+1,2,0,0,0,1,2. Black Non-Hispanic,1,1,0
+0,3,0,1,1,0,4. Other / MultiRacial,1,1,0
+0,1,1,0,1,0,5. Hispanic,1,0,1
+0,3,1,1,0,0,2. Black Non-Hispanic,1,0,1
+0,2,1,1,0,0,3. Asian Non-Hispanic,1,1,1
+0,3,1,1,1,0,5. Hispanic,1,1,0
+0,1,1,0,0,0,5. Hispanic,1,0,1
+0,1,0,0,0,0,5. Hispanic,0,1,1
+0,1,0,0,1,0,5. Hispanic,1,1,0
+0,3,0,1,1,1,5. Hispanic,1,1,1
+0,1,1,0,1,0,5. Hispanic,1,0,0
+0,1,0,0,0,0,2. Black Non-Hispanic,0,0,1
+0,4,1,0,0,0,5. Hispanic,0,1,0
+0,1,1,0,0,0,5. Hispanic,0,0,0
+0,3,1,1,0,0,5. Hispanic,1,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,0,0,0,0,5. Hispanic,0,0,0
+0,1,0,1,0,0,2. Black Non-Hispanic,1,0,0
+0,4,0,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+1,2,0,0,0,0,5. Hispanic,1,0,0
+0,1,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,0,0,0,5. Hispanic,0,0,1
+0,3,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,3,0,1,0,0,3. Asian Non-Hispanic,1,0,0
+0,2,1,1,0,0,5. Hispanic,1,0,1
+1,2,1,0,0,0,5. Hispanic,1,0,0
+1,3,1,0,0,0,5. Hispanic,1,0,0
+0,2,1,0,0,0,5. Hispanic,0,0,0
+0,2,1,0,0,0,5. Hispanic,0,0,0
+0,2,0,0,0,0,3. Asian Non-Hispanic,1,0,0
+0,2,0,1,0,1,5. Hispanic,1,0,0
+0,1,1,1,0,0,5. Hispanic,1,1,1
+0,3,1,1,0,0,2. Black Non-Hispanic,1,1,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,3,0,1,1,0,5. Hispanic,1,1,0
+0,1,1,1,0,0,2. Black Non-Hispanic,1,1,0
+0,2,1,0,0,1,5. Hispanic,1,1,1
+0,3,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,1,1,0,0,0,1. White Non-Hispanic,0,1,1
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,4,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,3,1,1,1,1,1. White Non-Hispanic,1,1,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,1,0,0,1,1,5. Hispanic,1,1,1
+0,1,0,1,1,1,5. Hispanic,1,1,0
+0,2,0,1,1,1,5. Hispanic,1,0,1
+0,3,0,1,1,1,2. Black Non-Hispanic,1,0,0
+0,2,0,1,0,0,4. Other / MultiRacial,1,1,0
+0,2,1,1,1,1,2. Black Non-Hispanic,1,1,0
+0,1,1,1,1,1,5. Hispanic,1,1,0
+1,1,0,0,1,1,5. Hispanic,1,1,1
+0,1,0,1,0,0,2. Black Non-Hispanic,1,0,0
+0,2,0,1,1,1,2. Black Non-Hispanic,1,1,1
+0,1,1,0,0,1,2. Black Non-Hispanic,1,0,0
+1,3,0,0,1,1,2. Black Non-Hispanic,1,1,0
+0,1,0,0,1,1,2. Black Non-Hispanic,1,1,1
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,3,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,3,0,1,1,0,5. Hispanic,1,0,1
+0,1,1,0,1,0,2. Black Non-Hispanic,1,1,1
+0,1,0,0,0,0,2. Black Non-Hispanic,1,1,1
+1,2,0,1,1,1,2. Black Non-Hispanic,1,1,1
+0,4,0,0,0,0,4. Other / MultiRacial,0,0,0
+0,1,0,0,0,1,2. Black Non-Hispanic,1,0,1
+0,1,0,0,0,1,5. Hispanic,1,1,0
+0,2,0,1,1,1,2. Black Non-Hispanic,1,1,1
+0,2,0,0,0,1,2. Black Non-Hispanic,1,0,1
+0,3,0,1,0,0,2. Black Non-Hispanic,1,0,1
+1,2,0,0,0,1,5. Hispanic,1,1,1
+0,1,0,0,1,1,2. Black Non-Hispanic,1,1,1
+0,2,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,3,0,1,0,1,2. Black Non-Hispanic,1,1,0
+0,1,1,0,0,0,5. Hispanic,0,1,0
+0,3,1,1,1,1,2. Black Non-Hispanic,1,1,1
+0,4,1,1,0,0,5. Hispanic,1,1,1
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,1,1,1,1,1,5. Hispanic,1,1,0
+0,1,1,0,0,0,5. Hispanic,0,0,0
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,2,1,0,0,0,5. Hispanic,0,0,1
+0,3,1,0,0,0,5. Hispanic,0,1,0
+0,3,1,0,0,0,5. Hispanic,1,0,0
+0,1,1,0,0,0,5. Hispanic,0,0,0
+0,1,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,3,1,0,0,0,5. Hispanic,0,0,0
+0,3,1,1,0,0,5. Hispanic,1,0,0
+1,1,1,0,0,1,5. Hispanic,1,0,1
+0,2,0,0,0,0,4. Other / MultiRacial,0,0,0
+0,2,1,0,0,1,2. Black Non-Hispanic,1,0,0
+0,2,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+1,2,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,2,1,0,0,0,5. Hispanic,0,0,1
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,2,1,1,0,0,5. Hispanic,1,0,0
+0,1,1,0,0,1,3. Asian Non-Hispanic,1,0,0
+0,2,0,1,1,0,5. Hispanic,1,0,0
+1,1,1,0,0,0,5. Hispanic,1,0,1
+1,1,1,1,1,1,4. Other / MultiRacial,1,1,1
+0,1,0,0,1,1,2. Black Non-Hispanic,1,0,0
+1,1,1,1,1,1,5. Hispanic,1,1,0
+0,4,1,1,1,1,4. Other / MultiRacial,1,1,1
+0,4,0,1,1,1,2. Black Non-Hispanic,1,1,0
+1,2,0,1,1,1,2. Black Non-Hispanic,1,1,1
+0,3,0,0,1,1,2. Black Non-Hispanic,1,1,1
+0,1,0,0,1,1,2. Black Non-Hispanic,1,1,1
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+1,3,0,0,0,1,2. Black Non-Hispanic,1,1,0
+0,3,1,1,0,0,2. Black Non-Hispanic,1,0,0
+1,3,1,0,0,1,2. Black Non-Hispanic,1,0,0
+0,3,0,0,0,0,5. Hispanic,0,0,0
+0,2,0,0,0,1,5. Hispanic,1,0,0
+0,2,1,0,0,0,5. Hispanic,0,1,0
+0,3,1,1,0,1,2. Black Non-Hispanic,1,0,1
+1,3,1,1,0,0,2. Black Non-Hispanic,1,1,1
+1,4,1,1,0,0,1. White Non-Hispanic,1,1,1
+0,2,0,0,0,0,2. Black Non-Hispanic,0,0,1
+0,4,0,1,1,1,2. Black Non-Hispanic,1,1,1
+0,2,1,0,0,0,5. Hispanic,0,0,1
+0,2,0,0,1,0,2. Black Non-Hispanic,1,0,0
+0,2,0,0,0,1,2. Black Non-Hispanic,1,1,0
+0,3,1,1,1,1,5. Hispanic,1,1,0
+0,3,0,1,1,1,2. Black Non-Hispanic,1,1,0
+0,2,0,1,0,1,2. Black Non-Hispanic,1,1,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,1,1
+0,4,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,2,0,1,1,1,5. Hispanic,1,0,1
+0,2,0,0,0,1,2. Black Non-Hispanic,1,0,1
+1,3,0,1,1,1,2. Black Non-Hispanic,1,1,1
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,2,0,1,0,0,5. Hispanic,1,1,0
+0,1,0,1,0,0,2. Black Non-Hispanic,1,0,1
+0,3,1,0,0,0,5. Hispanic,0,1,1
+0,2,1,0,0,1,5. Hispanic,1,0,0
+0,2,1,0,0,0,5. Hispanic,0,0,0
+0,4,0,0,0,1,5. Hispanic,1,0,0
+0,4,1,0,0,0,5. Hispanic,0,0,1
+0,2,1,0,0,0,5. Hispanic,0,0,1
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,3,1,0,0,1,5. Hispanic,1,1,1
+0,3,1,0,1,0,5. Hispanic,1,1,0
+0,4,1,1,1,1,5. Hispanic,1,0,0
+0,1,0,1,0,0,5. Hispanic,1,1,1
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,1,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,3. Asian Non-Hispanic,0,0,0
+0,2,0,0,0,1,2. Black Non-Hispanic,1,1,0
+0,3,0,0,0,1,2. Black Non-Hispanic,1,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,2,1,0,0,0,5. Hispanic,0,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,0,0,0,4. Other / MultiRacial,0,0,0
+0,2,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,2,1,0,0,0,5. Hispanic,0,1,0
+0,2,1,0,0,0,5. Hispanic,0,1,0
+0,1,1,0,0,0,5. Hispanic,0,1,1
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+1,3,1,0,0,0,2. Black Non-Hispanic,1,1,0
+0,4,1,0,0,0,5. Hispanic,0,0,0
+0,1,1,1,0,0,5. Hispanic,1,1,0
+0,2,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,2,1,1,0,0,5. Hispanic,1,0,0
+0,2,0,1,1,1,5. Hispanic,1,1,1
+0,3,1,0,0,0,2. Black Non-Hispanic,0,0,0
+1,2,1,1,0,1,2. Black Non-Hispanic,1,0,1
+0,3,1,0,0,0,2. Black Non-Hispanic,0,1,0
+0,1,1,0,0,0,2. Black Non-Hispanic,1,0,0
+0,2,1,0,0,0,2. Black Non-Hispanic,0,0,1
+0,3,1,1,0,0,2. Black Non-Hispanic,1,0,0
+0,1,0,0,0,0,2. Black Non-Hispanic,0,1,0
+0,2,1,0,1,1,2. Black Non-Hispanic,1,0,0
+0,2,0,0,0,1,5. Hispanic,1,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,1
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,1,0,0,0,0,5. Hispanic,0,0,0
+0,4,1,0,0,0,2. Black Non-Hispanic,0,0,0
+0,3,0,0,0,0,2. Black Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,1,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,1,1,0,0,3. Asian Non-Hispanic,1,0,0
+0,3,0,1,0,0,2. Black Non-Hispanic,1,1,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+1,4,1,1,0,1,2. Black Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,1,0,0
+1,4,0,0,0,1,1. White Non-Hispanic,1,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,0,1,1,0,3. Asian Non-Hispanic,1,0,0
+0,3,1,1,0,0,1. White Non-Hispanic,1,0,0
+0,3,1,0,0,0,1. White Non-Hispanic,0,0,0
+0,2,0,0,0,1,1. White Non-Hispanic,1,0,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,3,0,0,0,0,1. White Non-Hispanic,0,0,0
+0,4,1,0,0,0,1. White Non-Hispanic,1,0,0
+1,4,0,0,0,1,5. Hispanic,1,0,0

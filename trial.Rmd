@@ -1,0 +1,125 @@
+---
+title: "Untitled"
+output: html_document
+---
+```{r}
+library(plyr)
+shortlistpie <- read.csv("shortlistpie.csv")
+a <- count(shortlistpie, "Education")
+b <- rownames(a[1])
+c <- a[, 2]
+plot_ly(shortlistpie, labels = ~b, values = ~c, type = 'pie') %>%
+  layout(title = toTitleCase("title"),
+         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+
+plot_ly(shortlistpie, labels = ~b, values = ~c, type = 'pie') %>%
+  layout(title = toTitleCase("title"),
+         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+```
+
+```{r}
+plot_ly(shortlistpie, labels = ~b, values = ~c, type = 'pie') %>%
+  layout(title = 'United States Personal Expenditures by Categories in 1960',
+         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+```
+
+```{r}
+ex_USPersonalExpenditure <- data.frame("Categorie" = rownames(USPersonalExpenditure), USPersonalExpenditure)
+usexp_data <- ex_USPersonalExpenditure[,c('Categorie', 'X1960')]
+plot_ly(usexp_data, labels = ~Categorie, values = ~X1960, type = 'pie') %>%
+  layout(title = 'United States Personal Expenditures by Categories in 1960',
+         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+```
+
+```{r}
+Reserve_Data <- aggregate(.~Gender, FUN = sum, data = shortlistpie)
+Reserve_Data
+```
+
+```{r}
+plot_ly(shortlistpie, labels = ~b, values = ~c, type = 'pie') %>%
+  layout(title = toTitleCase(input$plot_title),
+         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+```
+
+```{r}
+a <- count(shortlistpie, "Education")
+a
+b <- rownames(a[1])
+c <- a[, 2]
+frame <- data.frame(b, c)
+frame
+d <- ggplot(shortlistpie, aes(x = factor(1), y = factor(b), fill = factor(c))) + 
+  geom_bar(stat = "identity", width = 1, position = position_fill())
+d <- d + facet_grid(facets =. ~Gender)
+d <- d + coord_polar(theta = "y")
+d
+```
+
+```{r}
+library(reshape2)
+f <- data.frame(shortlistpie$Gender, shortlistpie$Education)
+data.m <- melt(table(f))
+names(data.m)[3] <- "count"
+m1 <- ddply(data.m, .(shortlistpie.Education), summarize, ratio = count/sum(count))
+m2 <- data.m[order(data.m$shortlistpie.Education), ]
+mydf <- data.frame(m2, ratio = m1$ratio)
+mydf
+
+
+d <- ggplot(mydf, aes(x = "", y = ratio, fill = shortlistpie.Gender)) + 
+  geom_bar(stat = "identity", width = 1) + 
+  coord_polar("y", start = 0) + 
+  facet_wrap(~shortlistpie.Education) +
+  theme_void()
+
+d
+```
+
+```{r}
+library(reshape2)
+f <- data.frame(shortlistpie$Education, shortlistpie$Gender)
+data.m <- melt(table(f))
+names(data.m)[3] <- "count"
+m1 <- ddply(data.m, .(shortlistpie.Gender), summarize, ratio = count/sum(count))
+m2 <- data.m[order(data.m$shortlistpie.Gender), ]
+mydf <- data.frame(m2, ratio = m1$ratio)
+mydf
+
+
+d <- ggplot(mydf, aes(x = "", y = ratio, fill = shortlistpie.Education)) + 
+  geom_bar(stat = "identity", width = 1) + 
+  coord_polar("y", start = 0) + 
+  facet_wrap( ~ shortlistpie.Gender) +
+  theme_void() 
+
+d
+```
+
+
+
+```{r}
+f1 <- f %>%
+  group_by(shortlistpie.Gender) %>%
+  count() %>%
+  mutate(per = paste0(round(100*freq/sum(freq), 2), '%')) %>%
+  arrange(shortlistpie.Gender)
+
+f1
+```
+
+```{r}
+newdata <- data.frame(shortlistpie$Education, shortlistpie$Gender)
+data.m <- melt(table(newdata))
+names(data.m)[3] <- "count"
+m1 <- ddply(data.m, .(shortlistpie.Gender), summarize, ratio = count/sum(count))
+m2 <- data.m[order(data.m$shortlistpie.Gender), ]
+mydf <- data.frame(m2, ratio = m1$ratio)
+mydf
+```
+

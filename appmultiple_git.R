@@ -8,6 +8,7 @@ library(tools)
 library(DT)
 library(plotly)
 library(shinydashboard)
+library(reshape2)
 
 shortlist <- read.csv("shortlist.csv")
 shortlistpie <- read.csv("shortlistpie.csv")
@@ -251,13 +252,20 @@ server <- function(input, output, session) {
       p
     })
     } else if (input$type == "Pie Chart") {
-      a <- count(shortlistpie, input$y)
-      b <- rownames(a[1])
-      c <- a[, 2]
-      plot_ly(shortlistpie, labels = ~b, values = ~c, type = 'pie') %>%
-        layout(title = toTitleCase(input$plot_title),
-               xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
-               yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+      f <- data.frame(shortlistpie$Education, shortlistpie$Gender)
+      data.m <- melt(table(f))
+      names(data.m)[3] <- "count"
+      m1 <- ddply(data.m, .(shortlistpie.Gender), summarize, ratio = count/sum(count))
+      m2 <- data.m[order(data.m$shortlistpie.Gender), ]
+      mydf <- data.frame(m2, ratio = m1$ratio)
+      mydf
+      
+      d <- ggplot(mydf, aes(x = "", y = ratio, fill = shortlistpie.Education)) + 
+        geom_bar(stat = "identity", width = 1) + 
+        coord_polar("y", start = 0) +
+        theme_void() 
+      
+      d <- plot_ly(d)
     }
   })
 
