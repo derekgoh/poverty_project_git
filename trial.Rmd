@@ -63,16 +63,16 @@ d
 
 ```{r}
 library(reshape2)
-f <- data.frame(shortlistpie$Gender, shortlistpie$Education)
+f <- data.frame(input$x, input$y)
 data.m <- melt(table(f))
 names(data.m)[3] <- "count"
-m1 <- ddply(data.m, .(shortlistpie.Education), summarize, ratio = count/sum(count))
-m2 <- data.m[order(data.m$shortlistpie.Education), ]
+m1 <- ddply(data.m, .(input$x), summarize, ratio = count/sum(count))
+m2 <- data.m[order(data.m$input$x), ]
 mydf <- data.frame(m2, ratio = m1$ratio)
 mydf
 
 
-d <- ggplot(mydf, aes(x = "", y = ratio, fill = shortlistpie.Gender)) + 
+d <- ggplot(mydf, aes(x = "", y = ratio, fill = Gender)) + 
   geom_bar(stat = "identity", width = 1) + 
   coord_polar("y", start = 0) + 
   facet_wrap(~shortlistpie.Education) +
@@ -86,16 +86,19 @@ library(reshape2)
 f <- data.frame(shortlistpie$Education, shortlistpie$Gender)
 data.m <- melt(table(f))
 names(data.m)[3] <- "count"
-m1 <- ddply(data.m, .(shortlistpie.Gender), summarize, ratio = count/sum(count))
-m2 <- data.m[order(data.m$shortlistpie.Gender), ]
+names(data.m)[1] <- "educ"
+names(data.m)[2] <- "gend"
+data.m
+m1 <- ddply(data.m, .(gend), summarize, ratio = count/sum(count))
+m2 <- data.m[order(data.m$gend), ]
 mydf <- data.frame(m2, ratio = m1$ratio)
 mydf
 
 
-d <- ggplot(mydf, aes(x = "", y = ratio, fill = shortlistpie.Education)) + 
+d <- ggplot(mydf, aes(x = "", y = ratio, fill = educ)) + 
   geom_bar(stat = "identity", width = 1) + 
   coord_polar("y", start = 0) + 
-  facet_wrap( ~ shortlistpie.Gender) +
+  facet_wrap( ~ gend) +
   theme_void() 
 
 d
@@ -121,5 +124,16 @@ m1 <- ddply(data.m, .(shortlistpie.Gender), summarize, ratio = count/sum(count))
 m2 <- data.m[order(data.m$shortlistpie.Gender), ]
 mydf <- data.frame(m2, ratio = m1$ratio)
 mydf
+```
+
+```{r}
+shortlistpied <- shortlistpie %>%
+  select(Education, Gender) %>%
+  group_by(Gender) %>%
+  count() %>%
+  mutate(per = paste0(round(100*freq/sum(freq), 2), '%')) %>%
+  arrange(Gender)
+
+shortlistpied
 ```
 
