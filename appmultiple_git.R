@@ -1,5 +1,6 @@
 library(shiny)
 library(shinythemes)
+library(plyr)
 library(dplyr)
 library(readr)
 library(ggplot2)
@@ -257,22 +258,17 @@ server <- function(input, output, session) {
   
   output$plot2 <- renderPlot({
     if (input$type == "Pie Chart") {
-      f <- data.frame(shortlistpie$Education, shortlistpie$Gender)
-      data.m <- melt(table(f))
-      names(data.m)[3] <- "count"
-      names(data.m)[1] <- "educ"
-      names(data.m)[2] <- "gend"
-      data.m
-      m1 <- ddply(data.m, .(gend), summarize, ratio = count/sum(count))
-      m2 <- data.m[order(data.m$gend), ]
-      mydf <- data.frame(m2, ratio = m1$ratio)
-      mydf
-      
-      
-      d <- ggplot(mydf, aes(x = "", y = ratio, fill = educ)) + 
+      shortlistpied <- shortlistpie %>%
+        group_by(input$y, input$x) %>%
+        summarize(Percentage = n()) %>%
+        group_by(input$x) %>%
+        mutate(Percentage = Percentage / sum(Percentage) * 100) %>%
+        arrange(input$x)
+
+      d <- ggplot(shortlistpied, aes(x = "", y = Percentage, fill = input$y)) + 
         geom_bar(stat = "identity", width = 1) + 
         coord_polar("y", start = 0) + 
-        facet_wrap( ~ gend) +
+        facet_wrap( ~input$x) +
         theme_void() 
       
       d
