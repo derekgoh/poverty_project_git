@@ -183,7 +183,7 @@ d
   
   output$plot2 <- renderPlot({
     if (input$type == "Pie Chart") {
-        ggplot(shortlistpied, aes(x = "", y = Percentage, fill = input$y)) + 
+        ggplot(shortlistpied(), aes_string(x = "", y = 'Percentage', fill = input$y)) + 
         geom_bar(stat = "identity", width = 1) + 
         coord_polar("y", start = 0) + 
         facet_wrap( ~input$x) +
