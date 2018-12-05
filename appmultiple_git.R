@@ -192,7 +192,7 @@ server <- function(input, output, session) {
   
   lbest <- reactive ({
     if(input$type == "Scatter Plot") {
-      checkboxInput(inputId = "fit", label = "Add line of best fit", value = FALSE)
+      checkboxInput(inputId = "fit", label = "Add line of best fit", value = FALSE)   
     }
   })
   
@@ -267,12 +267,11 @@ server <- function(input, output, session) {
   
   output$plot2 <- renderPlot({
     if (input$type == "Pie Chart") {
-      print(shortlistpied())
-        ggplot(shortlistpied(), aes_string(x = "", y = get(Percentage, envir = shortlistpied()), fill = input$y)) + 
-          geom_bar(stat = "identity", width = 1) + 
-          coord_polar("y", start = 0) + 
-          facet_wrap( ~input$x) +
-          theme_void()
+      ggplot(shortlistpied(), aes_string(x = factor(1),  y = "Percentage", fill = input$y)) + 
+        geom_bar(stat = "identity", width = 1, position = position_fill()) + 
+        coord_polar("y") + 
+        facet_wrap( ~input$x) + 
+        theme_void()
     } else NULL
   })
 
