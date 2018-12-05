@@ -262,13 +262,16 @@ server <- function(input, output, session) {
       summarize(Percentage = n()) %>%
       group_by_(input$x) %>%
       mutate(Percentage = Percentage / sum(Percentage) * 100) %>%
-      arrange_(input$x)
+      arrange_(input$x) %>% 
+      mutate(label_pos = cumsum(Percentage) - Percentage / 2,
+             perc_text = paste0(round(Percentage), "%"))
   })
   
   output$plot2 <- renderPlot({
     if (input$type == "Pie Chart") {
       ggplot(shortlistpied(), aes_string(x = factor(1),  y = "Percentage", fill = input$y)) + 
         geom_bar(stat = "identity", width = 1, position = position_fill()) +
+        geom_text(aes(x = 1.25, y = label_pos, label = perc_text), size = 4) +
         coord_polar("y") + 
         facet_wrap( ~get(input$x)) + 
         theme_void()
