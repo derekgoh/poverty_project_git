@@ -257,23 +257,21 @@ server <- function(input, output, session) {
   })
 
   shortlistpied <- reactive({
-    a <- as.character(input$y)
-    b <- as.character(input$x)
     shortlistpie %>% 
-      group_by(shortlistpie$a, shortlistpie$b) %>% 
+      group_by(Gender, Education) %>% 
       summarize(Percentage = n()) %>%
-      group_by(shortlistpie$b) %>%
+      group_by(Education) %>%
       mutate(Percentage = Percentage / sum(Percentage) * 100) %>%
-      arrange(shortlistpie$b)
+      arrange(Education)
   })
   
   output$plot2 <- renderPlot({
     if (input$type == "Pie Chart") {
       print(shortlistpied())
-      ggplot(shortlistpied(), aes(x = "", y = Percentage, fill = shortlistpie$a)) + 
+      ggplot(shortlistpied(), aes(x = "", y = Percentage, fill = Gender)) + 
         geom_bar(stat = "identity", width = 1) + 
         coord_polar("y", start = 0) + 
-        facet_wrap( ~shortlistpie$b) +
+        facet_wrap( ~Education) +
         theme_void()
     } else NULL
   })
