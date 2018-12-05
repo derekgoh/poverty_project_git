@@ -139,6 +139,8 @@ shortlistpied <- shortlistpie %>%
   mutate(Percentage = Percentage / sum(Percentage) * 100) %>%
   arrange(Gender)
 
+print(shortlistpied)
+
 d <- ggplot(shortlistpied, aes(x = "", y = Percentage, fill = Education)) + 
   geom_bar(stat = "identity", width = 1) + 
   coord_polar("y", start = 0) + 
@@ -148,3 +150,43 @@ d <- ggplot(shortlistpied, aes(x = "", y = Percentage, fill = Education)) +
 d
 ```
 
+ shortlistpied <- reactive({
+    shortlistpie %>% 
+      group_by(Gender, Education) %>% 
+      summarize(Percentage = n()) %>%
+      group_by(Education) %>%
+      mutate(Percentage = Percentage / sum(Percentage) * 100) %>%
+      arrange(Education)
+  })
+  
+  output$plot2 <- renderPlot({
+    if (input$type == "Pie Chart") {
+      print(shortlistpied())
+      ggplot(shortlistpied(), aes(x = "", y = Percentage, fill = Gender)) + 
+        geom_bar(stat = "identity", width = 1) + 
+        coord_polar("y", start = 0) + 
+        facet_wrap( ~Education) +
+        theme_void()
+    } else NULL
+  })
+  
+  shortlistpied <- reactive({
+    shortlistpie %>% 
+      group_by(input$y, input$x) %>% 
+      summarize(Percentage = n()) %>%
+      group_by(input$x) %>%
+      mutate(Percentage = Percentage / sum(Percentage) * 100) %>%
+      arrange(input$x)
+    
+    return(shortlistpied)
+  })
+  
+  output$plot2 <- renderPlot({
+    if (input$type == "Pie Chart") {
+        ggplot(shortlistpied, aes(x = "", y = Percentage, fill = input$y)) + 
+        geom_bar(stat = "identity", width = 1) + 
+        coord_polar("y", start = 0) + 
+        facet_wrap( ~input$x) +
+        theme_void()
+    } else NULL
+  })

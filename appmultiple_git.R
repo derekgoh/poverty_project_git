@@ -255,23 +255,26 @@ server <- function(input, output, session) {
     })
     } else NULL
   })
+
+  shortlistpied <- reactive({
+    a <- as.character(input$y)
+    b <- as.character(input$x)
+    shortlistpie %>% 
+      group_by(shortlistpie$a, shortlistpie$b) %>% 
+      summarize(Percentage = n()) %>%
+      group_by(shortlistpie$b) %>%
+      mutate(Percentage = Percentage / sum(Percentage) * 100) %>%
+      arrange(shortlistpie$b)
+  })
   
   output$plot2 <- renderPlot({
     if (input$type == "Pie Chart") {
-      shortlistpied <- shortlistpie %>%
-        group_by(input$y, input$x) %>%
-        summarize(Percentage = n()) %>%
-        group_by(input$x) %>%
-        mutate(Percentage = Percentage / sum(Percentage) * 100) %>%
-        arrange(input$x)
-
-      d <- ggplot(shortlistpied, aes(x = "", y = Percentage, fill = input$y)) + 
+      print(shortlistpied())
+      ggplot(shortlistpied(), aes(x = "", y = Percentage, fill = shortlistpie$a)) + 
         geom_bar(stat = "identity", width = 1) + 
         coord_polar("y", start = 0) + 
-        facet_wrap( ~input$x) +
-        theme_void() 
-      
-      d
+        facet_wrap( ~shortlistpie$b) +
+        theme_void()
     } else NULL
   })
 
