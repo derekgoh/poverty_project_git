@@ -268,9 +268,9 @@ server <- function(input, output, session) {
   output$plot2 <- renderPlot({
     if (input$type == "Pie Chart") {
       ggplot(shortlistpied(), aes_string(x = factor(1),  y = "Percentage", fill = input$y)) + 
-        geom_bar(stat = "identity", width = 1, position = position_fill()) + 
+        geom_bar(stat = "identity", width = 1, position = position_fill()) +
         coord_polar("y") + 
-        facet_wrap( ~input$x) + 
+        facet_wrap( ~get(input$x)) + 
         theme_void()
     } else NULL
   })
