@@ -49,8 +49,8 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                             
                                                                mainPanel(width = 8,
                                                                          br(), br(), 
-                                                                         plotlyOutput(outputId = "plot"),
-                                                                         plotOutput(outputId = "plot2"),
+                                                                         div(id='showplot', plotlyOutput(outputId = "plot")),
+                                                                         div(id='showplot2', plotOutput(outputId = "plot2")),
                                                                          br(),
                                                                          h5(textOutput("description"))
                                                                          )
@@ -239,6 +239,10 @@ server <- function(input, output, session) {
   # Create plot
   output$plot <- renderPlotly({
     if (input$type == "Scatter Plot") {
+      show ("showplot") 
+    } else {
+      hide ("showplot")
+    }
     ggplotly({
       p <- ggplot(data = variable_source(), aes_string(x = input$x, y = input$y)) +
         geom_point(size = input$size, col = input$color) +
@@ -254,9 +258,6 @@ server <- function(input, output, session) {
       }
       p
       })
-      } else {
-      hide("plot")
-      }
   })
   
   shortlistpied <- reactive({
@@ -279,8 +280,8 @@ server <- function(input, output, session) {
         coord_polar("y") + 
         facet_wrap( ~get(input$x)) + 
         theme_void()
-      } else NULL
-  })
+    } else NULL
+  }) 
   
   # Create description of plot
   output$description <- renderText({
