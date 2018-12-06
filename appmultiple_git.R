@@ -27,10 +27,10 @@ f21 <- read.csv("followup21.csv")
 f24 <- read.csv("followup24.csv")
 
 #UI
-ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", theme = shinytheme ("cosmo"), useShinyjs(), 
+ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", theme = shinytheme ("cosmo"), 
                  tabPanel("Explore Data", tabsetPanel(type = "tabs",
                                                       id = "tabsetpanel",
-                                                      tabPanel(title = "Plot", sidebarPanel(width = 4,
+                                                      tabPanel(title = "Plot", useShinyjs(), sidebarPanel(width = 4,
                                                                                             h2("Plotting"),
                                                                                             
                                                                                             #Type of plot
@@ -49,7 +49,7 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                             
                                                                mainPanel(width = 8,
                                                                          br(), br(), 
-                                                                         plotlyOutput(outputId = "plot")),
+                                                                         plotlyOutput(outputId = "plot"),
                                                                          plotOutput(outputId = "plot2"),
                                                                          br(),
                                                                          h5(textOutput("description"))
@@ -93,6 +93,7 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                 br(), br(), 
                                                                 downloadButton(outputId = "codebook", label = "Download codebook"))
                                                       )
+                 )
                  ),
                  
                  tabPanel("About", sidebarPanel(width = 4, tags$img(src = "graphic.png", width = "85%", height = "85%", style = "display:block; margin-left:auto; margin-right: auto;")
@@ -238,7 +239,7 @@ server <- function(input, output, session) {
   # Create plot
   output$plot <- renderPlotly({
     if (input$type == "Scatter Plot") {
-      ggplotly({
+    ggplotly({
       p <- ggplot(data = variable_source(), aes_string(x = input$x, y = input$y)) +
         geom_point(size = input$size, col = input$color) +
         labs(x = x(),
@@ -252,10 +253,10 @@ server <- function(input, output, session) {
         p <- p + geom_smooth(method = "lm")
       }
       p
-    })
-    } else {
+      })
+      } else {
       hide("plot")
-    }
+      }
   })
   
   shortlistpied <- reactive({
@@ -278,9 +279,9 @@ server <- function(input, output, session) {
         coord_polar("y") + 
         facet_wrap( ~get(input$x)) + 
         theme_void()
-    } else NULL
+      } else NULL
   })
-
+  
   # Create description of plot
   output$description <- renderText({
     paste("The plot above shows the relationship between",
