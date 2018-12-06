@@ -15,6 +15,7 @@ library(shinyjs)
 shortlist <- read.csv("shortlist.csv")
 shortlistpie <- read.csv("shortlistpie.csv")
 shortlistscatter <- read.csv("shortlistscatter.csv")
+shortlistbar <- read.csv("shortlistbar.csv")
 
 baseline <- read.csv("baseline.publicuse.oct17.csv")
 f3 <- read.csv("followup3.csv")
@@ -119,7 +120,7 @@ server <- function(input, output, session) {
     } else if (input$type == "Pie Chart") {
       variable <- shortlistpie
     } else if (input$type == "Bar Chart") {
-      variable <- shortlistpie
+      variable <- shortlistbar
     }
     return(variable)
   })
@@ -132,8 +133,16 @@ server <- function(input, output, session) {
       vnames <- colnames(variable_source())
       radioButtons("y", "Y Variable", vnames, "Education")
     } else if (input$type == "Bar Chart") {
-      vnames <- colnames(variable_source())
-      radioButtons("y", "Y Variable", vnames, "Education")
+      radioButtons(inputId = "y", 
+                   label = "Variable:", 
+                   choices = c("Biling Hardship" = "imp_billindsev",
+                               "Financial Hardship" = "imp_financindsev", 
+                               "Food Hardship" = "imp_foodindsev",
+                               "Housing Hardship" = "imp_houseindsev", 
+                               "Health Issues" = "sevhealthd", 
+                               "Poverty Line" = "spmpov", 
+                               "Household Resources" = "spmres"), 
+                   selected = "sevhealthd")
     }
   })
   
@@ -145,8 +154,7 @@ server <- function(input, output, session) {
       vnames <- colnames(variable_source())
       radioButtons("x", "X Variable", vnames, "Gender")
     } else if (input$type == "Bar Chart") {
-      vnames <- colnames(variable_source())
-      radioButtons("x", "X Variable", vnames, "Gender")
+      return (NULL)
     }
   })
   
