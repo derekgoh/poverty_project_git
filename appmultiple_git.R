@@ -270,8 +270,9 @@ server <- function(input, output, session) {
   output$plot2 <- renderPlot({
     if (input$type == "Pie Chart") {
       ggplot(shortlistpied(), aes_string(x = factor(1),  y = "Percentage", fill = input$y)) + 
-        geom_bar(stat = "identity", width = 1, position = position_fill()) +
-        geom_text(aes(x = 1.25, y = label_pos, label = perc_text), size = 4) +
+        geom_bar(stat = "identity", width = 1) +
+        geom_text(aes(x = factor(1), y = label_pos, label = perc_text), size = 4) + 
+        scale_fill_distiller(palette = "Oranges") +
         coord_polar("y") + 
         facet_wrap( ~get(input$x)) + 
         theme_void()
