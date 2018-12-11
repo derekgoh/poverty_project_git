@@ -11,6 +11,8 @@ library(plotly)
 library(shinydashboard)
 library(reshape2)
 library(shinyjs)
+library(psych)
+library(gmodels)
 
 shortlist <- read.csv("shortlist.csv")
 shortlistpie <- read.csv("shortlistpie.csv")
