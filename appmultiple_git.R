@@ -58,22 +58,23 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                         ), 
                                                       
                                                       tabPanel(title = "Summary", sidebarPanel(width = 4,
-                                                                                                h2("Summary Statistics"),
-                                                                                                HTML("Select the x and y variables below")
+                                                                                              h2("Summary Statistics"),
+                                                                                              HTML("Select the x and y variables below"),
+                                                                                              br(), br(),
+                                                                                              radioButtons("x2", "X Variable", colnames(shortlist), "imp_female"),
+                                                                                              radioButtons("y2", "Y Variable", colnames(shortlist), "imp_educat")
                                                       ), 
                                                       
                                                       mainPanel(width = 8,
                                                                 br(), br(),
-                                                                HTML ("Description of X Variable"),
-                                                                br(), br(), 
-                                                                DT::dataTableOutput(outputId = "povertytable"), 
-                                                                br(), br(), 
-                                                                HTML ("Description of Y Variable"),
-                                                                br(), br(), 
-                                                                DT::dataTableOutput(outputId = "povertytable"), 
-                                                                br(), br(), 
-                                                                HTML ("Cross-Table of X and Y Variable"), 
-                                                                DT::dataTableOutput(outputId = "povertytable"))
+                                                                HTML ("Description of X Variable"), 
+                                                                verbatimTextOutput(outputId = "xtable"), 
+                                                                br(), br(),
+                                                                HTML ("Description of Y Variable"), 
+                                                                verbatimTextOutput(outputId = "ytable"),
+                                                                br(), br(),
+                                                                HTML ("Cross-Table of X and Y Variables"), 
+                                                                verbatimTextOutput(outputId = "crosstable"))
                                                       ),
                                                      
                                                       tabPanel(title = "Datasets", sidebarPanel(width = 4,
@@ -232,6 +233,9 @@ server <- function(input, output, session) {
   # x and y as reactive expressions
   x <- reactive({ toTitleCase(str_replace_all(input$x, "_", " ")) })
   y <- reactive({ toTitleCase(str_replace_all(input$y, "_", " ")) })
+  
+  x2 <- reactive({ toTitleCase(str_replace_all(input$x2, "_", " ")) })
+  y2 <- reactive({ toTitleCase(str_replace_all(input$y2, "_", " ")) })
 
   #Reactive dataset variable 
   data_source <- reactive ({
@@ -319,6 +323,28 @@ server <- function(input, output, session) {
           "for",
           nrow(shortlist),
           "participants.")
+  })
+
+  output$xtable <- renderPrint ({
+    xtab <- describe(shortlist[input$x2])
+    xtab
+  })
+  
+  output$ytable <- renderPrint ({
+    ytab <- describe(shortlist[input$y2])
+    ytab
+  })
+  
+  mytab <- reactive({
+    shortlist %>% 
+      select_(input$x2, input$y2) 
+    return (mytab)
+  })
+  
+  output$crosstable <- renderPrint ({
+    crosstab <- CrossTable(shortlist$imp_billindsev, shortlist$imp_educat, 
+                           prop.chisq = FALSE, prop.t = FALSE, prop.r = FALSE)
+    crosstab
   })
   
   # Print data table
