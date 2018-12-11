@@ -32,45 +32,37 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                  tabPanel("Explore Data", tabsetPanel(type = "tabs",
                                                       id = "tabsetpanel",
                                                       tabPanel(title = "Plot", useShinyjs(), sidebarPanel(width = 4,
-                                                                                            h2("Plotting"),
-                                                                                            
-                                                                                            #Type of plot
-                                                                                            radioButtons(inputId = "type", 
-                                                                                                         label = "Type of Plot:", 
-                                                                                                         choices = c("Scatter Plot", "Pie Chart", "Bar Chart"), 
-                                                                                                         selected = "Scatter Plot"),
-                                                                                            
-                                                                                            uiOutput("x1"),
-                                                                                            uiOutput("y1"),
-                                                                                            uiOutput("title"), 
-                                                                                            uiOutput("sizep"),
-                                                                                            uiOutput("pointc"), 
-                                                                                            uiOutput("best")
+                                                                                                          h2("Plotting"),
+                                                                                                          
+                                                                                                          #Type of plot
+                                                                                                          radioButtons(inputId = "type", 
+                                                                                                                       label = "Type of Plot:", 
+                                                                                                                       choices = c("Scatter Plot", "Pie Chart", "Bar Chart"), 
+                                                                                                                       selected = "Scatter Plot"),
+                                                                                                          
+                                                                                                          uiOutput("x1"),
+                                                                                                          uiOutput("y1"),
+                                                                                                          uiOutput("title"), 
+                                                                                                          uiOutput("sizep"),
+                                                                                                          uiOutput("pointc"), 
+                                                                                                          uiOutput("best")
                                                       ),
-                                                                                            
-                                                               mainPanel(width = 8,
-                                                                         br(), br(), 
-                                                                         div(id='showplot', plotlyOutput(outputId = "plot")),
-                                                                         div(id='showplot2', plotOutput(outputId = "plot2")),
-                                                                         br(),
-                                                                         h5(textOutput("description"))
-                                                                         )
-                                                                        ),
-                                                      tabPanel(title = "Summary", sidebarPanel(width = 4, 
-                                                                                                h2("Summary Statistics"), 
-                                                                                                HTML("Select the X and Y Variables Below")
-                                                                                                ),
-                                                      mainPanel(width = 8, 
+                                                      
+                                                      mainPanel(width = 8,
                                                                 br(), br(), 
-                                                                HTML ("Description of X Variable"))
-                                                                ),
+                                                                div(id='showplot', plotlyOutput(outputId = "plot")),
+                                                                div(id='showplot2', plotOutput(outputId = "plot2")),
+                                                                br(),
+                                                                h5(textOutput("description"))
+                                                      )
+                                                      ), 
                                                       
                                                       tabPanel(title = "Summary", sidebarPanel(width = 4,
-                                                                                              h2("Summary Statistics"),
-                                                                                              HTML("Select the x and y variables below"),
-                                                                                              br(), br(),
-                                                                                              radioButtons("x2", "X Variable", colnames(shortlist), "imp_female"),
-                                                                                              radioButtons("y2", "Y Variable", colnames(shortlist), "imp_educat")
+                                                                                               h2("Summary Statistics"),
+                                                                                               HTML("Select the x and y variables below"),
+                                                                                               br(), br(),
+                                                                                               radioButtons("x2", "X Variable", colnames(shortlist), "imp_female"),
+                                                                                               radioButtons("y2", "Y Variable", colnames(shortlist), "imp_educat")
                                                       ), 
                                                       
                                                       mainPanel(width = 8,
@@ -84,32 +76,32 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                 HTML ("Cross-Table of X and Y Variables"), 
                                                                 verbatimTextOutput(outputId = "crosstable"))
                                                       ),
-                                                     
+                                                      
                                                       tabPanel(title = "Datasets", sidebarPanel(width = 4,
-                                                                    h2("Download Data"),
-                                                                    HTML("Select filetype, dataset and variables, then hit 'Download Data'"), 
-                                                                    br(), br(),
-                                                                    radioButtons(inputId = "filetype",
-                                                                                 label = "Filetype:",
-                                                                                 choices = "csv",
-                                                                                 selected = "csv"),
-                                                                    
-                                                                    radioButtons(inputId = "source", 
-                                                                                 label = "Dataset:", 
-                                                                                 choices = c(
-                                                                                   "Baseline" = "baseline", 
-                                                                                   "Adult and Child Health and Wellbeing" = "f3", 
-                                                                                   "Neighborhoods and Service Utilization" = "f6", 
-                                                                                   "Assets and Debts" = "f9", 
-                                                                                   "First Annual Core Follow-Up" = "f12", 
-                                                                                   "Consumer Expenditures" = "f15", 
-                                                                                   "Employment and Job Search" = "f18", 
-                                                                                   "Adult and Child Health and Wellbeing, Immigration History" = "f21", 
-                                                                                   "Second Annual Core Follow-up" = "f24"), 
-                                                                                 selected = "baseline"), 
-                                                                    
-                                                                    uiOutput("colnames"),
-                                                                    downloadButton(outputId = "download_data", label = "Download Data")
+                                                                                                h2("Download Data"),
+                                                                                                HTML("Select filetype, dataset and variables, then hit 'Download Data'"), 
+                                                                                                br(), br(),
+                                                                                                radioButtons(inputId = "filetype",
+                                                                                                             label = "Filetype:",
+                                                                                                             choices = "csv",
+                                                                                                             selected = "csv"),
+                                                                                                
+                                                                                                radioButtons(inputId = "source", 
+                                                                                                             label = "Dataset:", 
+                                                                                                             choices = c(
+                                                                                                               "Baseline" = "baseline", 
+                                                                                                               "Adult and Child Health and Wellbeing" = "f3", 
+                                                                                                               "Neighborhoods and Service Utilization" = "f6", 
+                                                                                                               "Assets and Debts" = "f9", 
+                                                                                                               "First Annual Core Follow-Up" = "f12", 
+                                                                                                               "Consumer Expenditures" = "f15", 
+                                                                                                               "Employment and Job Search" = "f18", 
+                                                                                                               "Adult and Child Health and Wellbeing, Immigration History" = "f21", 
+                                                                                                               "Second Annual Core Follow-up" = "f24"), 
+                                                                                                             selected = "baseline"), 
+                                                                                                
+                                                                                                uiOutput("colnames"),
+                                                                                                downloadButton(outputId = "download_data", label = "Download Data")
                                                       ), 
                                                       
                                                       mainPanel(width = 8,
@@ -128,16 +120,16 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                  tabPanel("About", sidebarPanel(width = 4, tags$img(src = "graphic.png", width = "85%", height = "85%", style = "display:block; margin-left:auto; margin-right: auto;")
                  ), 
                  mainPanel(width = 8, tags$b("ROBIN HOOD POVERTY TRACKER"), br(), br(),"With funding from Robin Hood, the Poverty Tracker documents the dynamics of poverty and disadvantage in New York City. 
-                          The Poverty Tracker is based on the New York City Longitudinal Survey of Wellbeing, which follows a representative panel of approximately 2,300 New York City households. 
-                          The initial survey, fielded between December 2012 and March 2013, collected detailed information on income, material hardships, and family health and well-being. 
-                          Following the initial survey, respondents were enrolled in a panel to be followed over time, with periodic survey modules at 3-month intervals covering topics like assets and debt, neighborhoods and program service utilization, and adult and child health. 
-                          Every 3-month follow-up contains basic questions on various experiences that families may have experienced in between waves, including moves into and out of the household, gains and losses of jobs, unexpected major expenses, and large gains or losses in income. 
-                          With this rich information in hand, the study seeks to understand how New Yorkers are faring over time. 
-                          A second panel is now underway, which began in 2015. The second panel follows a representative panel of approximately 4,000 New York City households.")
+                           The Poverty Tracker is based on the New York City Longitudinal Survey of Wellbeing, which follows a representative panel of approximately 2,300 New York City households. 
+                           The initial survey, fielded between December 2012 and March 2013, collected detailed information on income, material hardships, and family health and well-being. 
+                           Following the initial survey, respondents were enrolled in a panel to be followed over time, with periodic survey modules at 3-month intervals covering topics like assets and debt, neighborhoods and program service utilization, and adult and child health. 
+                           Every 3-month follow-up contains basic questions on various experiences that families may have experienced in between waves, including moves into and out of the household, gains and losses of jobs, unexpected major expenses, and large gains or losses in income. 
+                           With this rich information in hand, the study seeks to understand how New Yorkers are faring over time. 
+                           A second panel is now underway, which began in 2015. The second panel follows a representative panel of approximately 4,000 New York City households.")
                  
                  )
-)
-                
+                 )
+
 # Server
 server <- function(input, output, session) {
   
@@ -186,7 +178,7 @@ server <- function(input, output, session) {
     }
   })
   
-
+  
   #Variables
   output$y1 <- renderUI ({
     selectiony()
@@ -198,15 +190,15 @@ server <- function(input, output, session) {
   
   # Enter text for plot title
   output$title <- renderUI ({
-  textInput(inputId = "plot_title", 
-            label = "Plot title", 
-            placeholder = "Enter text to be used as plot title")
+    textInput(inputId = "plot_title", 
+              label = "Plot title", 
+              placeholder = "Enter text to be used as plot title")
   })
   
   psize <- reactive ({
     if(input$type == "Scatter Plot") {
       sliderInput(inputId = "size", label = "Point Size", value = 1, min = 1, max = 6)
-  }
+    }
   })
   
   #Size of points
@@ -244,7 +236,7 @@ server <- function(input, output, session) {
   
   x2 <- reactive({ toTitleCase(str_replace_all(input$x2, "_", " ")) })
   y2 <- reactive({ toTitleCase(str_replace_all(input$y2, "_", " ")) })
-
+  
   #Reactive dataset variable 
   data_source <- reactive ({
     if(input$source == "baseline") {
@@ -268,7 +260,7 @@ server <- function(input, output, session) {
     }
     return(data)
   })
-
+  
   #Col Names 
   output$colnames <- renderUI ({
     names <- colnames(data_source())
@@ -289,14 +281,14 @@ server <- function(input, output, session) {
              y = y(),
              color = toTitleCase(str_replace_all(input$z, "_", " ")),
              title = toTitleCase(input$plot_title))
-
-  # Create line of best fit
+      
+      # Create line of best fit
       
       if (input$fit == TRUE) {
         p <- p + geom_smooth(method = "lm")
       }
       p
-      })
+    })
   })
   
   shortlistpied <- reactive({
@@ -332,7 +324,7 @@ server <- function(input, output, session) {
           nrow(shortlist),
           "participants.")
   })
-
+  
   output$xtable <- renderPrint ({
     xtab <- describe(shortlist[input$x2])
     xtab
