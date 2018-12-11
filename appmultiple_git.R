@@ -57,6 +57,25 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                          )
                                                                         ), 
                                                       
+                                                      tabPanel(title = "Summary", sidebarPanel(width = 4,
+                                                                                                h2("Summary Statistics"),
+                                                                                                HTML("Select the x and y variables below")
+                                                      ), 
+                                                      
+                                                      mainPanel(width = 8,
+                                                                br(), br(),
+                                                                HTML ("Description of X Variable"),
+                                                                br(), br(), 
+                                                                DT::dataTableOutput(outputId = "povertytable"), 
+                                                                br(), br(), 
+                                                                HTML ("Description of Y Variable"),
+                                                                br(), br(), 
+                                                                DT::dataTableOutput(outputId = "povertytable"), 
+                                                                br(), br(), 
+                                                                HTML ("Cross-Table of X and Y Variable"), 
+                                                                DT::dataTableOutput(outputId = "povertytable"))
+                                                      ),
+                                                     
                                                       tabPanel(title = "Datasets", sidebarPanel(width = 4,
                                                                     h2("Download Data"),
                                                                     HTML("Select filetype, dataset and variables, then hit 'Download Data'"), 
