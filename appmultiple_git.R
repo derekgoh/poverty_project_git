@@ -55,7 +55,15 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                          br(),
                                                                          h5(textOutput("description"))
                                                                          )
-                                                                        ), 
+                                                                        ),
+                                                      tabPanel(title = "Summary", sidebarPanel(width = 4, 
+                                                                                                h2("Summary Statistics"), 
+                                                                                                HTML("Select the X and Y Variables Below")
+                                                                                                ),
+                                                      mainPanel(width = 8, 
+                                                                br(), br(), 
+                                                                HTML ("Description of X Variable"))
+                                                                ),
                                                       
                                                       tabPanel(title = "Summary", sidebarPanel(width = 4,
                                                                                               h2("Summary Statistics"),
