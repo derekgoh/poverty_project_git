@@ -61,8 +61,8 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                                h2("Summary Statistics"),
                                                                                                HTML("Select the x and y variables below"),
                                                                                                br(), br(),
-                                                                                               radioButtons("x2", "X Variable", colnames(shortlist), "imp_female"),
-                                                                                               radioButtons("y2", "Y Variable", colnames(shortlist), "imp_educat")
+                                                                                               selectInput("x2", "X Variable", colnames(shortlist), "imp_female"),
+                                                                                               selectInput("y2", "Y Variable", colnames(shortlist), "imp_educat")
                                                       ), 
                                                       
                                                       mainPanel(width = 8,
@@ -335,15 +335,10 @@ server <- function(input, output, session) {
     ytab
   })
   
-  mytab <- reactive({
-    shortlist %>% 
-      select_(input$x2, input$y2) 
-    return (mytab)
-  })
-  
   output$crosstable <- renderPrint ({
-    crosstab <- CrossTable(shortlist$imp_billindsev, shortlist$imp_educat, 
-                           prop.chisq = FALSE, prop.t = FALSE, prop.r = FALSE)
+    crosstab <- CrossTable(shortlist[, input$x2], shortlist[, input$y2], 
+                           prop.chisq = FALSE, prop.t = FALSE, prop.r = FALSE, 
+                           dnn = c("X Variable", "Y Variable"))
     crosstab
   })
   
