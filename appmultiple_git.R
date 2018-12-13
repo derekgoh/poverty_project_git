@@ -272,9 +272,11 @@ server <- function(input, output, session) {
   # Create plot
   output$plot <- renderPlotly({
     if (input$type == "Scatter Plot") {
-      show ("showplot") 
+      show ("plot")
+      hide ("plot2")
     } else {
-      hide ("showplot")
+      hide ("plot")
+      show ("plot2")
     }
     ggplotly({
       p <- ggplot(data = variable_source(), aes_string(x = input$x, y = input$y)) +
@@ -306,6 +308,12 @@ server <- function(input, output, session) {
   
   output$plot2 <- renderPlot({
     if (input$type == "Pie Chart") {
+      show ("plot2")
+      hide ("plot")
+    } else {
+      hide ("plot2")
+      show ("plot")
+    }
       ggplot(shortlistpied(), aes_string(x = factor(1),  y = "Percentage", fill = input$y)) + 
         geom_bar(stat = "identity", width = 1) +
         geom_text(aes(x = factor(1), y = label_pos, label = perc_text), size = 4) + 
@@ -313,7 +321,6 @@ server <- function(input, output, session) {
         coord_polar("y") + 
         facet_wrap( ~get(input$x)) + 
         theme_void()
-    } else NULL
   }) 
   
   # Create description of plot
@@ -335,7 +342,7 @@ server <- function(input, output, session) {
   output$ytable <- renderPrint ({
     ytab <- describe(shortlist[input$y2])
     ytab
-  })
+  }) 
   
   output$crosstable <- renderPrint ({
     crosstab <- CrossTable(shortlist[, input$x2], shortlist[, input$y2], 
