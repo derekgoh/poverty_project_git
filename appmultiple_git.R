@@ -54,6 +54,7 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                 br(), br(), 
                                                                 plotlyOutput(outputId = "plot"),
                                                                 plotOutput(outputId = "plot2"),
+                                                                plotlyOutput(outputId = "plot3"),
                                                                 br(),
                                                                 h5(textOutput("description"))
                                                       )
@@ -281,8 +282,10 @@ server <- function(input, output, session) {
     if (input$type == "Scatter Plot") {
       show ("plot")
       hide ("plot2")
+      hide("plot3")
     } else {
       hide ("plot")
+      show ("plot3")
       show ("plot2")
     }
     ggplotly({
@@ -317,8 +320,10 @@ server <- function(input, output, session) {
     if (input$type == "Pie Chart") {
       show ("plot2")
       hide ("plot")
+      hide ("plot3")
     } else {
       hide ("plot2")
+      show ("plot3")
       show ("plot")
     }
       ggplot(shortlistpied(), aes_string(x = factor(1),  y = "Percentage", fill = input$y)) + 
@@ -329,6 +334,26 @@ server <- function(input, output, session) {
         facet_wrap( ~get(input$x)) + 
         theme_void()
   }) 
+  
+  output$plot3 <- renderPlotly({
+    if (input$type == "Bar Chart") {
+      show ("plot3")
+      hide ("plot2")
+      hide ("plot")
+    } else {
+      hide ("plot3")
+      show ("plot2")
+      show ("plot")
+    }
+    ggplotly({
+    b <- ggplot(data = variable_source(), aes_string(x = input$x)) +
+      geom_bar(stat = "count", position = "stack") +
+      labs(x = x(),
+           y = y(),
+           color = toTitleCase(str_replace_all(input$z, "_", " ")),
+           title = toTitleCase(input$plot_title))
+    })
+  })
   
   # Create description of plot
   output$description <- renderText({

@@ -192,7 +192,22 @@ d
   })
   
 ```{r}
+shortlist <- read.csv("shortlist.csv")
+xy3table <- table(shortlist$imp_educat, shortlist$imp_female)
+xy3table
 
+```
 
+```{r}
+mytab <- shortlist %>% 
+      select(imp_billindsev, imp_educat) 
+print (mytab)
+```
+```{r}
+b <- shortlist %>%
+  group_by(imp_educat, spmres) %>%
+  summarize(mean_resources = mean(spmres, na.rm = TRUE))
+
+print(b)
 ```
 
