@@ -205,9 +205,16 @@ print (mytab)
 ```
 ```{r}
 b <- shortlist %>%
-  group_by(imp_educat, spmres) %>%
-  summarize(mean_resources = mean(spmres, na.rm = TRUE))
+  group_by(imp_educat) %>%
+  summarize(count = n(), 
+            totalB = sum(spmres), 
+            meanB = totalB / count)
+
 
 print(b)
+```
+
+```{r}
+sum(shortlist$imp_educat == 1)
 ```
 

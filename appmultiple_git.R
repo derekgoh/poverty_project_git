@@ -335,6 +335,14 @@ server <- function(input, output, session) {
         theme_void()
   }) 
   
+  b <- reactive ({ 
+    shortlistbar %>%
+    group_by_(input$x) %>%
+    summarize(count = n(), 
+              totalY = sum(input$y), 
+              meanY = totalY / count)
+  })
+  
   output$plot3 <- renderPlotly({
     if (input$type == "Bar Chart") {
       show ("plot3")
@@ -346,14 +354,14 @@ server <- function(input, output, session) {
       show ("plot")
     }
     ggplotly({
-    b <- ggplot(data = variable_source(), aes_string(x = input$x)) +
-      geom_bar(stat = "count", position = "stack") +
-      labs(x = x(),
-           y = y(),
-           color = toTitleCase(str_replace_all(input$z, "_", " ")),
-           title = toTitleCase(input$plot_title))
+      b <- ggplot(data = b(), aes_string(x = input$x, y = "meanY")) +
+        geom_col() +
+        labs(x = x(),
+             y = y(),
+             color = toTitleCase(str_replace_all(input$z, "_", " ")),
+             title = toTitleCase(input$plot_title))
+      })
     })
-  })
   
   # Create description of plot
   output$description <- renderText({
