@@ -52,8 +52,8 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                       
                                                       mainPanel(width = 8,
                                                                 br(), br(), 
-                                                                div(id='showplot', plotlyOutput(outputId = "plot")),
-                                                                div(id='showplot2', plotOutput(outputId = "plot2")),
+                                                                plotlyOutput(outputId = "plot"),
+                                                                plotOutput(outputId = "plot2"),
                                                                 br(),
                                                                 h5(textOutput("description"))
                                                       )
@@ -156,15 +156,10 @@ server <- function(input, output, session) {
       radioButtons("y", "Y Variable", vnames, "Education")
     } else if (input$type == "Bar Chart") {
       radioButtons(inputId = "y", 
-                   label = "Variable:", 
-                   choices = c("Biling Hardship" = "imp_billindsev",
-                               "Financial Hardship" = "imp_financindsev", 
-                               "Food Hardship" = "imp_foodindsev",
-                               "Housing Hardship" = "imp_houseindsev", 
-                               "Health Issues" = "sevhealthd", 
-                               "Poverty Line" = "spmpov", 
+                   label = " Y Variable:", 
+                   choices = c("Age" = "r_age",
                                "Household Resources" = "spmres"), 
-                   selected = "sevhealthd")
+                   selected = "spmres")
     }
   })
   
@@ -176,7 +171,19 @@ server <- function(input, output, session) {
       vnames <- colnames(variable_source())
       radioButtons("x", "X Variable", vnames, "Gender")
     } else if (input$type == "Bar Chart") {
-      return (NULL)
+      radioButtons(inputId = "x", 
+                   label = "X Variable:",
+                   choices = c("Education Level" = "imp_educat",
+                               "Gender" = "imp_female",
+                               "Race" = "imp_race", 
+                               "General Hardship" = "sevhard",
+                               "Billing Hardship" = "imp_billindsev",
+                               "Financial Hardship" = "imp_financindsev", 
+                               "Food Hardship" = "imp_foodindsev",
+                               "Housing Hardship" = "imp_houseindsev", 
+                               "Health Issues" = "sevhealthd", 
+                               "Poverty Line" = "spmpov"), 
+                   selected = "imp_educat")
     }
   })
   
