@@ -339,7 +339,7 @@ server <- function(input, output, session) {
     shortlistbar %>%
     group_by_(input$x) %>%
     summarize(count = n(), 
-              totalY = sum(input$y), 
+              totalY = sum(get(input$y)), 
               meanY = totalY / count)
   })
   
@@ -353,12 +353,12 @@ server <- function(input, output, session) {
       show ("plot2")
       show ("plot")
     }
+    print(b)
     ggplotly({
       b <- ggplot(data = b(), aes_string(x = input$x, y = "meanY")) +
-        geom_col() +
+        geom_bar(stat = "identity", fill = "cadetblue3") + 
         labs(x = x(),
              y = y(),
-             color = toTitleCase(str_replace_all(input$z, "_", " ")),
              title = toTitleCase(input$plot_title))
       })
     })

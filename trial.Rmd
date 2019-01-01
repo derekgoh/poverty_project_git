@@ -200,18 +200,27 @@ xy3table
 
 ```{r}
 mytab <- shortlist %>% 
-      select(imp_billindsev, imp_educat) 
+      select(imp_billindsev, r_age) 
 print (mytab)
 ```
+
 ```{r}
 b <- shortlist %>%
-  group_by(imp_educat) %>%
+  group_by(imp_billindsev) %>%
   summarize(count = n(), 
-            totalB = sum(spmres), 
+            totalB = sum(as.numeric(r_age)), 
             meanB = totalB / count)
 
 
 print(b)
+```
+
+
+```{r}
+ggplot(data = b, aes(x = imp_educat, y = meanB)) +
+        geom_col() +
+        labs(x = "vweb",
+             y = "wevwe")
 ```
 
 ```{r}
