@@ -339,7 +339,7 @@ server <- function(input, output, session) {
     shortlistbar %>%
     group_by_(input$x) %>%
     summarize(count = n(), 
-              totalY = sum(get(input$y)), 
+              totalY = sum(get(input$y), na.rm = TRUE), 
               meanY = totalY / count)
   })
   
