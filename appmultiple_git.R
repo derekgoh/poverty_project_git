@@ -282,7 +282,7 @@ server <- function(input, output, session) {
     if (input$type == "Scatter Plot") {
       show ("plot")
       hide ("plot2")
-      hide("plot3")
+      hide ("plot3")
     } else {
       hide ("plot")
       show ("plot3")
