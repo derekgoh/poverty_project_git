@@ -125,7 +125,8 @@ server <- function(input, output, session) {
         theme_void()
     } else {
       ggplot(data = edited_bar(), aes_string(x = input$x, y = "meanY")) +
-        geom_bar(stat = "identity", fill = "cornflowerblue") + 
+        geom_bar(stat = "identity", fill = "cornflowerblue", width = 0.5) +
+        geom_text(aes_string(label = "meanY"), vjust = -0.5) +
         labs(x = x(),
              y = y(),
              title = toTitleCase(input$plot_title))
