@@ -29,6 +29,7 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                                                                            "Health Problem" = "sevhealthd", 
                                                                                                                                            "Gender" = "imp_female", 
                                                                                                                                            "Race" = "imp_race", 
+                                                                                                                                           "Age" = "imp_age",
                                                                                                                                            "Education Level" = "imp_educat"), "spmpov"),
                                                                                                           selectInput("y", "Y Variable", c("SPM Poverty" = "spmpov", 
                                                                                                                                            "Material Hardship" = "sevhard", 
@@ -48,8 +49,10 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                 HTML ("Description of Y Variable"), 
                                                                 verbatimTextOutput(outputId = "ytable"),
                                                                 br(), br(),
-                                                                HTML ("Cross-Table of X and Y Variables"), 
-                                                                verbatimTextOutput(outputId = "crosstable"))
+                                                                actionButton("crosstable", "Click Here to View Cross-Table of X and Y Variable"),
+                                                                actionButton("reset", "Clear", style = "color: #fff; background-color: #337ab7; border-color: #2e6da4"),
+                                                                br(), br(), 
+                                                                verbatimTextOutput(outputId = "table"))
                                                       )
                                                       )
                           ), 
@@ -126,7 +129,7 @@ server <- function(input, output, session) {
         theme_void()
     } else {
       ggplot(data = edited_bar(), aes_string(x = input$x, y = "meanY")) +
-        geom_bar(stat = "identity", fill = "cornflowerblue", width = 0.5) +
+        geom_bar(stat = "identity", fill = "lightsalmon2", width = 0.5) +
         geom_text(aes(label = b), vjust = -0.5) +
         labs(x = x(),
              y = y(),
@@ -144,11 +147,17 @@ server <- function(input, output, session) {
     ytab
   }) 
   
-  output$crosstable <- renderPrint ({
-    crosstab <- CrossTable(edited[, input$x], edited[, input$y], 
-                           prop.chisq = FALSE, prop.t = FALSE, prop.r = FALSE, 
-                           dnn = c("X Variable", "Y Variable"))
-    crosstab
+  observeEvent(input$crosstable, {
+    output$table <- renderPrint ({
+      crosstab <- CrossTable(edited[, input$x], edited[, input$y], 
+                             prop.chisq = FALSE, prop.t = FALSE, prop.r = FALSE, 
+                             dnn = c("X Variable", "Y Variable"))
+      crosstab
+    })
+  })
+  
+  observeEvent(input$reset, {
+    output$table <- NULL
   })
 }
 
