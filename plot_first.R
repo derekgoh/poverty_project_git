@@ -356,7 +356,7 @@ server <- function(input, output, session) {
     print(b)
     ggplotly({
       b <- ggplot(data = b(), aes_string(x = input$x, y = "meanY")) +
-        geom_bar(stat = "identity", fill = "cornflowerblue") + 
+        geom_bar(stat = "identity", fill = "cornflowerblue") +
         labs(x = x(),
              y = y(),
              title = toTitleCase(input$plot_title))

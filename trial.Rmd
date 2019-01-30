@@ -227,3 +227,9 @@ ggplot(data = b, aes(x = imp_educat, y = meanB)) +
 sum(shortlist$imp_educat == 1)
 ```
 
+
+```{r}
+edited <- read.csv("for_Derek.csv")
+colnames(edited)
+```
+
