@@ -99,7 +99,8 @@ server <- function(input, output, session) {
       group_by_(input$x) %>%
       summarize(count = n(), 
                 totalY = sum(get(input$y), na.rm = TRUE), 
-                meanY = totalY / count)
+                meanY = totalY / count) %>%
+      mutate(b = format(round(meanY, digits = 2), nsmall = 2))
   })
   
   # Create plot
@@ -126,7 +127,7 @@ server <- function(input, output, session) {
     } else {
       ggplot(data = edited_bar(), aes_string(x = input$x, y = "meanY")) +
         geom_bar(stat = "identity", fill = "cornflowerblue", width = 0.5) +
-        geom_text(aes_string(label = "meanY"), vjust = -0.5) +
+        geom_text(aes(label = b), vjust = -0.5) +
         labs(x = x(),
              y = y(),
              title = toTitleCase(input$plot_title))
