@@ -143,6 +143,7 @@ server <- function(input, output, session) {
         scale_fill_distiller(palette = "Oranges") +
         coord_polar("y") + 
         facet_wrap( ~get(input$x)) + 
+        labs(title = toTitleCase(input$plot_title)) +
         theme_void()
     } else {
       ggplot(data = edited_bar(), aes_string(x = input$x, y = "meanY")) +
