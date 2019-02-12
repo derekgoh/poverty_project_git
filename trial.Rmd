@@ -233,3 +233,28 @@ edited <- read.csv("for_Derek.csv")
 colnames(edited)
 ```
 
+```{r}
+count(filter(edited, spmpov == 0 & imp_female == 0))
+count(edited, imp_female == 0)
+```
+
+```{r}
+str(edited$imp_race)
+```
+
+```{r}
+b <- edited %>%
+  group_by(sevhard, imp_educat) %>% 
+  summarize(Percentage = n()) %>%
+  group_by(sevhard) %>%
+  mutate(Percentage = Percentage / sum(Percentage) * 100) %>%
+  arrange(sevhard)
+
+b
+```
+
+```{r}
+count(filter(edited, sevhard == 0 & imp_educat == 1))
+count(edited, imp_educat == 1)
+```
+
