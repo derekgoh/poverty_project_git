@@ -47,6 +47,7 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                                                                            "Gender" = "imp_female",
                                                                                                                                            "SPM Resources" = "spmres",
                                                                                                                                            "Age" = "imp_age",
+                                                                                                                                           "Race" = "imp_race",
                                                                                                                                            "Education Level" = "imp_educat"), "imp_female"),
                                                                                                           uiOutput("title")), 
                                                       mainPanel(width = 8,
@@ -219,7 +220,9 @@ server <- function(input, output, session) {
         labs(title = toTitleCase(input$plot_title)) +
         theme_void()
     } else if ((input$x == "spmpov" & input$y == "imp_educat") | (input$x == "sevhard" & input$y == "imp_educat") 
-               | (input$x == "sevhealthd" & input$y == "imp_educat") | (input$x == "imp_female" & input$y == "imp_educat")) {
+               | (input$x == "sevhealthd" & input$y == "imp_educat") | (input$x == "imp_female" & input$y == "imp_educat")
+               | (input$x == "spmpov" & input$y == "imp_race") | (input$x == "sevhard" & input$y == "imp_race") 
+               | (input$x == "sevhealthd" & input$y == "imp_race") | (input$x == "imp_female" & input$y == "imp_race")) {
       ggplot(data = edited_stackbar(), aes_string(x = input$x, y = "Percentage", fill = input$y)) +
         geom_bar(stat = "identity", width = 0.5) +
         geom_text(aes(label = perc_text1), position = position_stack(vjust = 0.5)) +
