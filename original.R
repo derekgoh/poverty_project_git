@@ -160,7 +160,9 @@ server <- function(input, output, session) {
               label = "Plot title", 
               placeholder = "Enter text to be used as plot title")
   })
-
+  
+  edited$imp_race <- parse_number(edited$imp_race)
+  
   # Data Cleaning for Bar Chart
   edited_bar <- reactive ({ 
     edited %>%
@@ -171,7 +173,7 @@ server <- function(input, output, session) {
       mutate(b = format(round(meanY, digits = 2), nsmall = 2))
   })
   
-  #Data Cleaning for Stacked Bar Chart 
+  #Data Cleaning for Stacked Bar Chart
   edited_stackbar <- reactive ({
     edited %>%
       group_by_(input$x, input$y) %>% 
@@ -195,17 +197,25 @@ server <- function(input, output, session) {
           geom_smooth(method = "lm")
         sp
       })
-    } else if ((input$x == "spmpov" & input$y == "sevhard") | (input$x == "spmpov" & input$y == "sevhealthd")
-               | (input$x == "spmpov" & input$y == "imp_female") | (input$x == "sevhard" & input$y == "spmpov") 
-               | (input$x == "sevhard" & input$y == "sevhealthd") | (input$x == "sevhard" & input$y == "imp_female")
-               | (input$x == "sevhealthd" & input$y == "spmpov") | (input$x == "sevhealthd" & input$y == "sevhard")
-               | (input$x == "sevhealthd" & input$y == "imp_female") | (input$x == "imp_female" & input$y == "spmpov")
-               | (input$x == "imp_female" & input$y == "sevhard") | (input$x == "imp_female" & input$y == "sevhealthd")
-               | (input$x == "spmpov" & input$y == "imp_educat") | (input$x == "sevhard" & input$y == "imp_educat") 
-               | (input$x == "sevhealthd" & input$y == "imp_educat") | (input$x == "imp_female" & input$y == "imp_educat")
-               | (input$x == "spmpov" & input$y == "imp_race") | (input$x == "sevhard" & input$y == "imp_race") 
-               | (input$x == "sevhealthd" & input$y == "imp_race") | (input$x == "imp_female" & input$y == "imp_race")
-               | (input$x == "imp_race" & input$y == "imp_educat")) {
+    } else if ((input$x == "spmpov" & input$y == "spmres") | (input$x == "spmpov" & input$y == "imp_age")
+               | (input$x == "sevhard" & input$y == "spmres") | (input$x == "sevhard" & input$y == "imp_age")
+               | (input$x == "sevhealthd" & input$y == "spmres") | (input$x == "sevhealthd" & input$y == "imp_age")
+               | (input$x == "imp_female" & input$y == "spmres") | (input$x == "imp_female" & input$y == "imp_age")
+               | (input$x == "imp_race" & input$y == "spmres") | (input$x == "imp_race" & input$y == "imp_age") 
+               | (input$x == "imp_educat" & input$y == "spmres") | (input$x == "imp_educat" & input$y == "imp_age")
+               | (input$x == "imp_age" & input$y == "spmpov") | (input$x == "imp_age" & input$y == "sevhard") 
+               | (input$x == "imp_age" & input$y == "sevhealthd") | (input$x == "imp_age" & input$y == "imp_female") 
+               | (input$x == "imp_age" & input$y == "imp_race") | (input$x == "imp_age" & input$y == "imp_educat")) {
+      ggplotly({
+        bc <- ggplot(data = edited_bar(), aes_string(x = input$x, y = "meanY")) +
+          geom_bar(stat = "identity", fill = "lightsalmon2", width = 0.5) +
+          geom_text(aes(label = b, vjust = 1)) +
+          labs(x = x(),
+               y = y(),
+               title = toTitleCase(input$plot_title))
+        bc
+      })
+    } else {
       ggplotly({
       sbc <- ggplot(data = edited_stackbar(), aes_string(x = input$x, y = "Percentage", fill = input$y)) +
         geom_bar(stat = "identity", width = 0.5) +
@@ -215,16 +225,6 @@ server <- function(input, output, session) {
              y = y(),
              title = toTitleCase(input$plot_title))
       sbc
-      })
-    } else {
-      ggplotly({
-        bc <- ggplot(data = edited_bar(), aes_string(x = input$x, y = "meanY")) +
-          geom_bar(stat = "identity", fill = "lightsalmon2", width = 0.5) +
-          geom_text(aes(label = b, vjust = 1)) +
-          labs(x = x(),
-               y = y(),
-               title = toTitleCase(input$plot_title))
-        bc
       })
     }
     })
