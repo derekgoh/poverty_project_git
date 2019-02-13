@@ -48,7 +48,9 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                                                                            "Age" = "imp_age",
                                                                                                                                            "Race" = "imp_race",
                                                                                                                                            "Education Level" = "imp_educat"), "imp_female"),
-                                                                                                          uiOutput("title")),
+                                                                                                          uiOutput("title"),
+                                                                                                          uiOutput("line")),
+                                                               
                                                       mainPanel(width = 8,
                                                                 br(), br(),
                                                                 plotlyOutput(outputId = "plot"),
@@ -161,6 +163,16 @@ server <- function(input, output, session) {
               placeholder = "Enter text to be used as plot title")
   })
   
+  lbf <- reactive ({
+    if(input$x == "imp_age" & input$y == "spmres") {
+      checkboxInput(inputId = "fit", label = "Add line of best fit", value = FALSE)
+    }
+  })
+  
+  output$line <- renderUI ({
+    lbf()
+  })
+  
   edited$imp_race <- parse_number(edited$imp_race)
   
   # Data Cleaning for Bar Chart
@@ -193,8 +205,13 @@ server <- function(input, output, session) {
           geom_point() +
           labs(x = x(),
                y = y(),
-               title = toTitleCase(input$plot_title)) + 
-          geom_smooth(method = "lm")
+               title = toTitleCase(input$plot_title)) 
+        
+        # Create line of best fit
+        
+        if (input$fit == TRUE) {
+          sp <- sp + geom_smooth(method = "lm")
+        }
         sp
       })
     } else if ((input$x == "spmpov" & input$y == "spmres") | (input$x == "spmpov" & input$y == "imp_age")
