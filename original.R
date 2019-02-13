@@ -37,7 +37,6 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                                                                            "Material Hardship" = "sevhard", 
                                                                                                                                            "Health Problem" = "sevhealthd", 
                                                                                                                                            "Gender" = "imp_female",
-                                                                                                                                           "SPM Resources" = "spmres",
                                                                                                                                            "Age" = "imp_age",
                                                                                                                                            "Race" = "imp_race", 
                                                                                                                                            "Education Level" = "imp_educat"), "spmpov"),
@@ -49,10 +48,10 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                                                                            "Age" = "imp_age",
                                                                                                                                            "Race" = "imp_race",
                                                                                                                                            "Education Level" = "imp_educat"), "imp_female"),
-                                                                                                          uiOutput("title")), 
+                                                                                                          uiOutput("title")),
                                                       mainPanel(width = 8,
                                                                 br(), br(),
-                                                                plotOutput(outputId = "plot"),
+                                                                plotlyOutput(outputId = "plot"),
                                                                 br(), br(), 
                                                                 HTML ("Description of X Variable"), 
                                                                 verbatimTextOutput(outputId = "xtable"), 
@@ -161,18 +160,6 @@ server <- function(input, output, session) {
               label = "Plot title", 
               placeholder = "Enter text to be used as plot title")
   })
-  
-  #Data Cleaning for Pie Chart
-  edited_pie <- reactive({
-    edited %>% 
-      group_by_(input$y, input$x) %>% 
-      summarize(Percentage = n()) %>%
-      group_by_(input$x) %>%
-      mutate(Percentage = Percentage / sum(Percentage) * 100) %>%
-      arrange_(input$x) %>% 
-      mutate(label_pos = cumsum(Percentage) - Percentage / 2,
-             perc_text = paste0(round(Percentage), "%"))
-  })
 
   # Data Cleaning for Bar Chart
   edited_bar <- reactive ({ 
@@ -192,51 +179,53 @@ server <- function(input, output, session) {
       group_by_(input$x) %>%
       mutate(Percentage = Percentage / sum(Percentage) * 100) %>%
       arrange_(input$x) %>%
-      mutate(label_pos1 = cumsum(Percentage) - Percentage / 2,
-             perc_text1 = paste0(round(Percentage), "%"))
+      mutate(label_pos = cumsum(Percentage) - Percentage / 2,
+             perc_text = paste0(round(Percentage), "%"))
   })
   
   # Create plot
-  output$plot <- renderPlot({
+  output$plot <- renderPlotly({
     if ((input$x == "spmres" & input$y == "imp_age") | (input$x == "imp_age" & input$y == "spmres")) {
-      ggplot(edited, aes_string(x = input$x, y = input$y)) +
-        geom_point() +
-        labs(x = x(),
-             y = y(),
-             title = toTitleCase(input$plot_title)) +
-        geom_smooth(method = "lm")
+      ggplotly({
+        sp <- ggplot(edited, aes_string(x = input$x, y = input$y)) +
+          geom_point() +
+          labs(x = x(),
+               y = y(),
+               title = toTitleCase(input$plot_title)) + 
+          geom_smooth(method = "lm")
+        sp
+      })
     } else if ((input$x == "spmpov" & input$y == "sevhard") | (input$x == "spmpov" & input$y == "sevhealthd")
                | (input$x == "spmpov" & input$y == "imp_female") | (input$x == "sevhard" & input$y == "spmpov") 
                | (input$x == "sevhard" & input$y == "sevhealthd") | (input$x == "sevhard" & input$y == "imp_female")
                | (input$x == "sevhealthd" & input$y == "spmpov") | (input$x == "sevhealthd" & input$y == "sevhard")
                | (input$x == "sevhealthd" & input$y == "imp_female") | (input$x == "imp_female" & input$y == "spmpov")
-               | (input$x == "imp_female" & input$y == "sevhard") | (input$x == "imp_female" & input$y == "sevhealthd")) {
-      ggplot(edited_pie(), aes_string(x = factor(1),  y = "Percentage", fill = input$y)) + 
-        geom_bar(stat = "identity", width = 1) +
-        geom_text(aes(x = factor(1), y = label_pos, label = perc_text), size = 4) + 
-        scale_fill_distiller(palette = "Oranges") +
-        coord_polar("y") + 
-        facet_wrap( ~get(input$x)) + 
-        labs(title = toTitleCase(input$plot_title)) +
-        theme_void()
-    } else if ((input$x == "spmpov" & input$y == "imp_educat") | (input$x == "sevhard" & input$y == "imp_educat") 
+               | (input$x == "imp_female" & input$y == "sevhard") | (input$x == "imp_female" & input$y == "sevhealthd")
+               | (input$x == "spmpov" & input$y == "imp_educat") | (input$x == "sevhard" & input$y == "imp_educat") 
                | (input$x == "sevhealthd" & input$y == "imp_educat") | (input$x == "imp_female" & input$y == "imp_educat")
                | (input$x == "spmpov" & input$y == "imp_race") | (input$x == "sevhard" & input$y == "imp_race") 
-               | (input$x == "sevhealthd" & input$y == "imp_race") | (input$x == "imp_female" & input$y == "imp_race")) {
-      ggplot(data = edited_stackbar(), aes_string(x = input$x, y = "Percentage", fill = input$y)) +
+               | (input$x == "sevhealthd" & input$y == "imp_race") | (input$x == "imp_female" & input$y == "imp_race")
+               | (input$x == "imp_race" & input$y == "imp_educat")) {
+      ggplotly({
+      sbc <- ggplot(data = edited_stackbar(), aes_string(x = input$x, y = "Percentage", fill = input$y)) +
         geom_bar(stat = "identity", width = 0.5) +
-        geom_text(aes(label = perc_text1), position = position_stack(vjust = 0.5)) +
+        geom_text(aes(label = perc_text), position = position_stack(vjust = 0.5)) +
         scale_fill_distiller(palette = "Oranges") +
         labs(x = x(),
              y = y(),
              title = toTitleCase(input$plot_title))
+      sbc
+      })
     } else {
-      ggplot(data = edited_bar(), aes_string(x = input$x, y = "meanY")) +
-        geom_bar(stat = "identity", fill = "lightsalmon2", width = 0.5) +
-        geom_text(aes(label = b, vjust = -0.5)) +
-        labs(x = x(),
-             y = y(),
-             title = toTitleCase(input$plot_title))
+      ggplotly({
+        bc <- ggplot(data = edited_bar(), aes_string(x = input$x, y = "meanY")) +
+          geom_bar(stat = "identity", fill = "lightsalmon2", width = 0.5) +
+          geom_text(aes(label = b, vjust = 1)) +
+          labs(x = x(),
+               y = y(),
+               title = toTitleCase(input$plot_title))
+        bc
+      })
     }
     })
   
