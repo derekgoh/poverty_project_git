@@ -14,7 +14,7 @@ library(shinyjs)
 library(psych)
 library(gmodels)
 
-edited <- read.csv("for_Derek.csv")
+edited <- read.csv("finaldata.csv")
 baseline <- read.csv("baseline.publicuse.oct17.csv")
 f3 <- read.csv("followup3.csv")
 f6 <- read.csv("followup6.csv")
@@ -33,21 +33,21 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                                           h2("Plotting"),
                                                                                                           
                                                                                                           #Type of plot
-                                                                                                          selectInput("x", "X Variable", c("SPM Poverty" = "spmpov", 
-                                                                                                                                           "Material Hardship" = "sevhard", 
-                                                                                                                                           "Health Problem" = "sevhealthd", 
-                                                                                                                                           "Gender" = "imp_female",
-                                                                                                                                           "Age" = "imp_age",
-                                                                                                                                           "Race" = "imp_race", 
-                                                                                                                                           "Education Level" = "imp_educat"), "spmpov"),
-                                                                                                          selectInput("y", "Y Variable", c("SPM Poverty" = "spmpov", 
-                                                                                                                                           "Material Hardship" = "sevhard", 
-                                                                                                                                           "Health Problem" = "sevhealthd", 
-                                                                                                                                           "Gender" = "imp_female",
-                                                                                                                                           "SPM Resources" = "spmres",
-                                                                                                                                           "Age" = "imp_age",
-                                                                                                                                           "Race" = "imp_race",
-                                                                                                                                           "Education Level" = "imp_educat"), "imp_female"),
+                                                                                                          selectInput("x", "X Variable", c("SPM Poverty" = "in_poverty", 
+                                                                                                                                           "Material Hardship" = "severe_material_hardship", 
+                                                                                                                                           "Health Problem" = "severe_health_problem", 
+                                                                                                                                           "Gender" = "respondent_gender",
+                                                                                                                                           "Age" = "respondent_age",
+                                                                                                                                           "Race" = "respondent_race", 
+                                                                                                                                           "Education Level" = "respondent_education_level"), "in_poverty"),
+                                                                                                          selectInput("y", "Y Variable", c("SPM Poverty" = "in_poverty", 
+                                                                                                                                           "Material Hardship" = "severe_material_hardship", 
+                                                                                                                                           "Health Problem" = "severe_health_problem", 
+                                                                                                                                           "Gender" = "respondent_gender",
+                                                                                                                                           "SPM Resources" = "household_resources", 
+                                                                                                                                           "Age" = "respondent_age",
+                                                                                                                                           "Race" = "respondent_race", 
+                                                                                                                                           "Education Level" = "respondent_education_level"), "respondent_gender"),
                                                                                                           uiOutput("title"),
                                                                                                           uiOutput("line")),
                                                                
@@ -122,6 +122,15 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
 # Server
 server <- function(input, output, session) {
   
+  #Data Cleaning for Labels
+  edited$respondent_race <- parse_number(edited$respondent_race)
+  edited$respondent_education_level <- parse_number(edited$respondent_education_level)
+  edited$respondent_gender <- parse_number(edited$respondent_gender)
+  edited$severe_material_hardship <- parse_number(edited$severe_material_hardship)
+  edited$severe_health_problem <- parse_number(edited$severe_health_problem)
+  edited$in_poverty <- parse_number(edited$in_poverty)
+  
+  
   # x and y as reactive expressions
   x <- reactive({ toTitleCase(str_replace_all(input$x, "_", " ")) })
   y <- reactive({ toTitleCase(str_replace_all(input$y, "_", " ")) })
@@ -164,7 +173,7 @@ server <- function(input, output, session) {
   })
   
   lbf <- reactive ({
-    if(input$x == "imp_age" & input$y == "spmres") {
+    if(input$x == "respondent_age" & input$y == "household_resources") {
       checkboxInput(inputId = "fit", label = "Add line of best fit", value = FALSE)
     }
   })
@@ -172,8 +181,6 @@ server <- function(input, output, session) {
   output$line <- renderUI ({
     lbf()
   })
-  
-  edited$imp_race <- parse_number(edited$imp_race)
   
   # Data Cleaning for Bar Chart
   edited_bar <- reactive ({ 
@@ -199,7 +206,7 @@ server <- function(input, output, session) {
   
   # Create plot
   output$plot <- renderPlotly({
-    if ((input$x == "spmres" & input$y == "imp_age") | (input$x == "imp_age" & input$y == "spmres")) {
+    if ((input$x == "household_resources" & input$y == "respondent_age") | (input$x == "respondent_age" & input$y == "household_resources")) {
       ggplotly({
         sp <- ggplot(edited, aes_string(x = input$x, y = input$y)) +
           geom_point() +
@@ -214,15 +221,15 @@ server <- function(input, output, session) {
         }
         sp
       })
-    } else if ((input$x == "spmpov" & input$y == "spmres") | (input$x == "spmpov" & input$y == "imp_age")
-               | (input$x == "sevhard" & input$y == "spmres") | (input$x == "sevhard" & input$y == "imp_age")
-               | (input$x == "sevhealthd" & input$y == "spmres") | (input$x == "sevhealthd" & input$y == "imp_age")
-               | (input$x == "imp_female" & input$y == "spmres") | (input$x == "imp_female" & input$y == "imp_age")
-               | (input$x == "imp_race" & input$y == "spmres") | (input$x == "imp_race" & input$y == "imp_age") 
-               | (input$x == "imp_educat" & input$y == "spmres") | (input$x == "imp_educat" & input$y == "imp_age")
-               | (input$x == "imp_age" & input$y == "spmpov") | (input$x == "imp_age" & input$y == "sevhard") 
-               | (input$x == "imp_age" & input$y == "sevhealthd") | (input$x == "imp_age" & input$y == "imp_female") 
-               | (input$x == "imp_age" & input$y == "imp_race") | (input$x == "imp_age" & input$y == "imp_educat")) {
+    } else if ((input$x == "in_poverty" & input$y == "household_resources") | (input$x == "in_poverty" & input$y == "respondent_age")
+               | (input$x == "severe_material_hardship" & input$y == "household_resources") | (input$x == "severe_material_hardship" & input$y == "respondent_age")
+               | (input$x == "severe_health_problem" & input$y == "household_resources") | (input$x == "severe_health_problem" & input$y == "respondent_age")
+               | (input$x == "respondent_gender" & input$y == "household_resources") | (input$x == "respondent_gender" & input$y == "respondent_age")
+               | (input$x == "respondent_race" & input$y == "household_resources") | (input$x == "respondent_race" & input$y == "respondent_age") 
+               | (input$x == "respondent_education_level" & input$y == "household_resources") | (input$x == "respondent_education_level" & input$y == "respondent_age")
+               | (input$x == "respondent_age" & input$y == "in_poverty") | (input$x == "respondent_age" & input$y == "severe_material_hardship") 
+               | (input$x == "respondent_age" & input$y == "severe_health_problem") | (input$x == "respondent_age" & input$y == "respondent_gender") 
+               | (input$x == "respondent_age" & input$y == "respondent_race") | (input$x == "respondent_age" & input$y == "respondent_education_level")) {
       ggplotly({
         bc <- ggplot(data = edited_bar(), aes_string(x = input$x, y = "meanY")) +
           geom_bar(stat = "identity", fill = "lightsalmon2", width = 0.5) +
