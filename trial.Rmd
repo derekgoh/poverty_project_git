@@ -231,7 +231,20 @@ sum(shortlist$imp_educat == 1)
 ```{r}
 edited <- read.csv("for_Derek.csv")
 colnames(edited)
+str(edited$imp_race)
 ```
+
+```{r}
+levels(edited$imp_race)
+as.character(levels(edited$imp_race))
+as.numeric(as.character(levels(edited$imp_race)))
+```
+
+```{r}
+library(readr)
+parse_number(edited$imp_race)
+```
+
 
 ```{r}
 count(filter(edited, spmpov == 0 & imp_female == 0))
@@ -256,5 +269,13 @@ b
 ```{r}
 count(filter(edited, sevhard == 0 & imp_educat == 1))
 count(edited, imp_educat == 1)
+```
+
+```{r}
+describe(edited)
+```
+```{r}
+g <- read.csv("finaldata.csv")
+str(g$sevhard)
 ```
 

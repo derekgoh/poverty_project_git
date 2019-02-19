@@ -244,7 +244,8 @@ server <- function(input, output, session) {
       sbc <- ggplot(data = edited_stackbar(), aes_string(x = input$x, y = "Percentage", fill = input$y)) +
         geom_bar(stat = "identity", width = 0.5) +
         geom_text(aes(label = perc_text), position = position_stack(vjust = 0.5)) +
-        scale_fill_distiller(palette = "Oranges") +
+        scale_fill_distiller(palette = "Oranges", 
+                             breaks = c(0, 1, 2, 3, 4, 5)) +
         labs(x = x(),
              y = y(),
              title = toTitleCase(input$plot_title))
