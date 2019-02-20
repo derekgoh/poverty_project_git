@@ -37,6 +37,7 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                                                                            "Material Hardship" = "severe_material_hardship", 
                                                                                                                                            "Health Problem" = "severe_health_problem", 
                                                                                                                                            "Gender" = "respondent_gender",
+                                                                                                                                           "SPM Resources" = "household_resources",
                                                                                                                                            "Age" = "respondent_age",
                                                                                                                                            "Race" = "respondent_race", 
                                                                                                                                            "Education Level" = "respondent_education_level"), "in_poverty"),
