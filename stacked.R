@@ -134,13 +134,13 @@ server <- function(input, output, session) {
                           labels = c("Male", "Female"))
   edited$material_hardship <- factor(parse_number(edited$material_hardship), 
                                      levels = c(0:1), 
-                                     labels = c("No", "Yes"))
+                                     labels = c("No Hardship", "Hardship"))
   edited$health_problem <- factor(parse_number(edited$health_problem), 
                                   levels = c(0:1), 
-                                  labels = c("No", "Yes"))
+                                  labels = c("No Problem", "Problem"))
   edited$in_poverty <- factor(parse_number(edited$in_poverty), 
                               levels = c(0:1), 
-                              labels = c("No", "Yes"))
+                              labels = c("Not in Poverty", "Poverty"))
   
   edited$age <- factor(cut(edited$age, 
                            breaks = c(-1, 34, 44, 54, 64, 120), 
