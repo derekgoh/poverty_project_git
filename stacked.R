@@ -48,23 +48,22 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                                                                            "Age" = "respondent_age",
                                                                                                                                            "Race" = "respondent_race", 
                                                                                                                                            "Education Level" = "respondent_education_level"), "respondent_gender"),
-                                                                                                          uiOutput("title"),
-                                                                                                          uiOutput("line")),
-                                                               
-                                                      mainPanel(width = 8,
-                                                                br(), br(),
-                                                                plotlyOutput(outputId = "plot"),
-                                                                br(), br(), 
-                                                                HTML ("Description of X Variable"), 
-                                                                verbatimTextOutput(outputId = "xtable"), 
-                                                                br(), br(),
-                                                                HTML ("Description of Y Variable"), 
-                                                                verbatimTextOutput(outputId = "ytable"),
-                                                                br(), br(),
-                                                                actionButton("crosstable", "Click Here to View Cross-Table of X and Y Variable"),
-                                                                actionButton("reset", "Clear", style = "color: #fff; background-color: #337ab7; border-color: #2e6da4"),
-                                                                br(), br(), 
-                                                                verbatimTextOutput(outputId = "table"))
+                                                                                                          uiOutput("title")),
+                                                                                                          
+                                                               mainPanel(width = 8,
+                                                                         br(), br(),
+                                                                         plotlyOutput(outputId = "plot"),
+                                                                         br(), br(), 
+                                                                         HTML ("Description of X Variable"), 
+                                                                         verbatimTextOutput(outputId = "xtable"), 
+                                                                         br(), br(),
+                                                                         HTML ("Description of Y Variable"), 
+                                                                         verbatimTextOutput(outputId = "ytable"),
+                                                                         br(), br(),
+                                                                         actionButton("crosstable", "Click Here to View Cross-Table of X and Y Variable"),
+                                                                         actionButton("reset", "Clear", style = "color: #fff; background-color: #337ab7; border-color: #2e6da4"),
+                                                                         br(), br(), 
+                                                                         verbatimTextOutput(outputId = "table"))
                                                       ),
                                                       tabPanel(title = "Datasets", sidebarPanel(width = 4,
                                                                                                 h2("Download Data"),
@@ -105,7 +104,7 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                       )
                  )
                  ), 
-                                                      
+                 
                  tabPanel("About", sidebarPanel(width = 4, tags$img(src = "graphic.png", width = "85%", height = "85%", style = "display:block; margin-left:auto; margin-right: auto;")
                  ), 
                  mainPanel(width = 8, tags$b("ROBIN HOOD POVERTY TRACKER"), br(), br(),"With funding from Robin Hood, the Poverty Tracker documents the dynamics of poverty and disadvantage in New York City. 
@@ -130,18 +129,28 @@ server <- function(input, output, session) {
                                                levels = c(1:4), 
                                                labels = c("Less than HS", "HS Graduate or GED", "Some College or Associate's Degree", "Bachelor's Degree or More"))
   edited$respondent_gender <- factor(parse_number(edited$respondent_gender), 
-                                               levels = c(0:1), 
-                                               labels = c("Male", "Female"))
-  edited$severe_material_hardship <- factor(parse_number(edited$severe_material_hardship), 
                                      levels = c(0:1), 
-                                     labels = c("No", "Yes"))
-  edited$severe_health_problem <- factor(parse_number(edited$severe_health_problem), 
+                                     labels = c("Male", "Female"))
+  edited$severe_material_hardship <- factor(parse_number(edited$severe_material_hardship), 
                                             levels = c(0:1), 
                                             labels = c("No", "Yes"))
-  edited$in_poverty <- factor(parse_number(edited$in_poverty), 
+  edited$severe_health_problem <- factor(parse_number(edited$severe_health_problem), 
                                          levels = c(0:1), 
                                          labels = c("No", "Yes"))
-    
+  edited$in_poverty <- factor(parse_number(edited$in_poverty), 
+                              levels = c(0:1), 
+                              labels = c("No", "Yes"))
+  
+  edited$respondent_age <- factor(cut(edited$respondent_age, 
+                                      breaks = c(-1, 34, 44, 54, 64, 120), 
+                                      label = c("0 to 34", "35 to 44", "45 to 54", "55 to 64", "65 and Above"), 
+                                      ordered = TRUE))
+  
+  edited$household_resources <- factor(cut(edited$household_resources,
+                                           breaks = c(-1, 23759.25, 47266.25, 89429.03, 424000), 
+                                           label = c("First Quantile", "Second Quantile", "Third Quantile", "Fourth Quantile"), 
+                                           ordered = TRUE))
+  
   # x and y as reactive expressions
   x <- reactive({ toTitleCase(str_replace_all(input$x, "_", " ")) })
   y <- reactive({ toTitleCase(str_replace_all(input$y, "_", " ")) })
@@ -183,26 +192,6 @@ server <- function(input, output, session) {
               placeholder = "Enter text to be used as plot title")
   })
   
-  lbf <- reactive ({
-    if(input$x == "respondent_age" & input$y == "household_resources") {
-      checkboxInput(inputId = "fit", label = "Add line of best fit", value = FALSE)
-    }
-  })
-  
-  output$line <- renderUI ({
-    lbf()
-  })
-  
-  # Data Cleaning for Bar Chart
-  edited_bar <- reactive ({ 
-    edited %>%
-      group_by_(input$x) %>%
-      summarize(count = n(), 
-                totalY = sum(get(input$y), na.rm = TRUE), 
-                meanY = totalY / count) %>%
-      mutate(b = format(round(meanY, digits = 2), nsmall = 2))
-  })
-  
   #Data Cleaning for Stacked Bar Chart
   edited_stackbar <- reactive ({
     edited %>%
@@ -217,52 +206,17 @@ server <- function(input, output, session) {
   
   # Create plot
   output$plot <- renderPlotly({
-    if ((input$x == "household_resources" & input$y == "respondent_age") | (input$x == "respondent_age" & input$y == "household_resources")) {
       ggplotly({
-        sp <- ggplot(edited, aes_string(x = input$x, y = input$y)) +
-          geom_point() +
-          labs(x = x(),
-               y = y(),
-               title = toTitleCase(input$plot_title)) 
-        
-        # Create line of best fit
-        
-        if (input$fit == TRUE) {
-          sp <- sp + geom_smooth(method = "lm")
-        }
-        sp
-      })
-    } else if ((input$x == "in_poverty" & input$y == "household_resources") | (input$x == "in_poverty" & input$y == "respondent_age")
-               | (input$x == "severe_material_hardship" & input$y == "household_resources") | (input$x == "severe_material_hardship" & input$y == "respondent_age")
-               | (input$x == "severe_health_problem" & input$y == "household_resources") | (input$x == "severe_health_problem" & input$y == "respondent_age")
-               | (input$x == "respondent_gender" & input$y == "household_resources") | (input$x == "respondent_gender" & input$y == "respondent_age")
-               | (input$x == "respondent_race" & input$y == "household_resources") | (input$x == "respondent_race" & input$y == "respondent_age") 
-               | (input$x == "respondent_education_level" & input$y == "household_resources") | (input$x == "respondent_education_level" & input$y == "respondent_age")
-               | (input$x == "respondent_age" & input$y == "in_poverty") | (input$x == "respondent_age" & input$y == "severe_material_hardship") 
-               | (input$x == "respondent_age" & input$y == "severe_health_problem") | (input$x == "respondent_age" & input$y == "respondent_gender") 
-               | (input$x == "respondent_age" & input$y == "respondent_race") | (input$x == "respondent_age" & input$y == "respondent_education_level")) {
-      ggplotly({
-        bc <- ggplot(data = edited_bar(), aes_string(x = input$x, y = "meanY")) +
-          geom_bar(stat = "identity", fill = "lightsalmon2", width = 0.5) +
-          geom_text(aes(label = b, vjust = 1)) +
+        sbc <- ggplot(data = edited_stackbar(), aes_string(x = input$x, y = "Percentage", fill = input$y)) +
+          geom_bar(stat = "identity", width = 0.5) +
+          geom_text(aes(label = perc_text), position = position_stack(vjust = 0.5)) +
+          scale_fill_brewer(name = y(), palette = "Spectral", direction = 1)  +
           labs(x = x(),
                y = y(),
                title = toTitleCase(input$plot_title))
-        bc
+        sbc
       })
-    } else {
-      ggplotly({
-      sbc <- ggplot(data = edited_stackbar(), aes_string(x = input$x, y = "Percentage", fill = input$y)) +
-        geom_bar(stat = "identity", width = 0.5) +
-        geom_text(aes(label = perc_text), position = position_stack(vjust = 0.5)) +
-        scale_fill_brewer(name = y(), palette = "Spectral", direction = 1)  +
-        labs(x = x(),
-             y = y(),
-             title = toTitleCase(input$plot_title))
-      sbc
-      })
-    }
-    })
+  })
   
   output$xtable <- renderPrint ({
     xtab <- describe(edited[input$x])
@@ -277,15 +231,15 @@ server <- function(input, output, session) {
   observeEvent(input$crosstable, {
     output$table <- renderPrint ({
       crosstab <- CrossTable(edited[, input$x], edited[, input$y], 
-                           prop.chisq = FALSE, prop.t = FALSE, prop.r = FALSE, 
-                           dnn = c("X Variable", "Y Variable"))
+                             prop.chisq = FALSE, prop.t = FALSE, prop.r = FALSE, 
+                             dnn = c("X Variable", "Y Variable"))
       crosstab
-  })
+    })
   })
   
   observeEvent(input$reset, {
     output$table <- NULL
-    })
+  })
   
   # Print data table
   output$povertytable <- DT::renderDataTable(
