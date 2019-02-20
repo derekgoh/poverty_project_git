@@ -276,6 +276,6 @@ describe(edited)
 ```
 ```{r}
 g <- read.csv("finaldata.csv")
-str(g$sevhard)
+describe(g)
 ```
 

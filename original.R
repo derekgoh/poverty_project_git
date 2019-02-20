@@ -123,13 +123,24 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
 server <- function(input, output, session) {
   
   #Data Cleaning for Labels
-  edited$respondent_race <- parse_number(edited$respondent_race)
-  edited$respondent_education_level <- parse_number(edited$respondent_education_level)
-  edited$respondent_gender <- parse_number(edited$respondent_gender)
-  edited$severe_material_hardship <- parse_number(edited$severe_material_hardship)
-  edited$severe_health_problem <- parse_number(edited$severe_health_problem)
-  edited$in_poverty <- parse_number(edited$in_poverty)
-  
+  edited$respondent_race <- factor(parse_number(edited$respondent_race), 
+                                   levels = c(1:5), 
+                                   labels = c("White Non-Hispanic", "Black Non-Hispanic", "Asian Non-Hispanic", "Other / MultiRacial", "Hispanic"))
+  edited$respondent_education_level <- ordered(parse_number(edited$respondent_education_level), 
+                                               levels = c(1:4), 
+                                               labels = c("Less than HS", "HS Graduate or GED", "Some College or Associate's Degree", "Bachelor's Degree or More"))
+  edited$respondent_gender <- factor(parse_number(edited$respondent_gender), 
+                                               levels = c(0:1), 
+                                               labels = c("Male", "Female"))
+  edited$severe_material_hardship <- factor(parse_number(edited$severe_material_hardship), 
+                                     levels = c(0:1), 
+                                     labels = c("No", "Yes"))
+  edited$severe_health_problem <- factor(parse_number(edited$severe_health_problem), 
+                                            levels = c(0:1), 
+                                            labels = c("No", "Yes"))
+  edited$in_poverty <- factor(parse_number(edited$in_poverty), 
+                                         levels = c(0:1), 
+                                         labels = c("No", "Yes"))
   
   # x and y as reactive expressions
   x <- reactive({ toTitleCase(str_replace_all(input$x, "_", " ")) })
@@ -244,8 +255,7 @@ server <- function(input, output, session) {
       sbc <- ggplot(data = edited_stackbar(), aes_string(x = input$x, y = "Percentage", fill = input$y)) +
         geom_bar(stat = "identity", width = 0.5) +
         geom_text(aes(label = perc_text), position = position_stack(vjust = 0.5)) +
-        scale_fill_distiller(palette = "Oranges", 
-                             breaks = c(0, 1, 2, 3, 4, 5)) +
+        scale_fill_brewer(name = y(), palette = "Spectral", direction = 1)  +
         labs(x = x(),
              y = y(),
              title = toTitleCase(input$plot_title))
