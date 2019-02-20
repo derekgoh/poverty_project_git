@@ -34,21 +34,21 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                                           
                                                                                                           #Type of plot
                                                                                                           selectInput("x", "X Variable", c("SPM Poverty" = "in_poverty", 
-                                                                                                                                           "Material Hardship" = "severe_material_hardship", 
-                                                                                                                                           "Health Problem" = "severe_health_problem", 
-                                                                                                                                           "Gender" = "respondent_gender",
+                                                                                                                                           "Material Hardship" = "material_hardship", 
+                                                                                                                                           "Health Problem" = "health_problem", 
+                                                                                                                                           "Gender" = "gender",
                                                                                                                                            "SPM Resources" = "household_resources",
-                                                                                                                                           "Age" = "respondent_age",
-                                                                                                                                           "Race" = "respondent_race", 
-                                                                                                                                           "Education Level" = "respondent_education_level"), "in_poverty"),
+                                                                                                                                           "Age" = "age",
+                                                                                                                                           "Race" = "race", 
+                                                                                                                                           "Education Level" = "education_level"), "in_poverty"),
                                                                                                           selectInput("y", "Y Variable", c("SPM Poverty" = "in_poverty", 
-                                                                                                                                           "Material Hardship" = "severe_material_hardship", 
-                                                                                                                                           "Health Problem" = "severe_health_problem", 
-                                                                                                                                           "Gender" = "respondent_gender",
+                                                                                                                                           "Material Hardship" = "material_hardship", 
+                                                                                                                                           "Health Problem" = "health_problem", 
+                                                                                                                                           "Gender" = "gender",
                                                                                                                                            "SPM Resources" = "household_resources", 
-                                                                                                                                           "Age" = "respondent_age",
-                                                                                                                                           "Race" = "respondent_race", 
-                                                                                                                                           "Education Level" = "respondent_education_level"), "respondent_gender"),
+                                                                                                                                           "Age" = "age",
+                                                                                                                                           "Race" = "race", 
+                                                                                                                                           "Education Level" = "education_level"), "gender"),
                                                                                                           uiOutput("title")),
                                                                                                           
                                                                mainPanel(width = 8,
@@ -123,29 +123,29 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
 server <- function(input, output, session) {
   
   #Data Cleaning for Labels
-  edited$respondent_race <- factor(parse_number(edited$respondent_race), 
-                                   levels = c(1:5), 
-                                   labels = c("White Non-Hispanic", "Black Non-Hispanic", "Asian Non-Hispanic", "Other / MultiRacial", "Hispanic"))
-  edited$respondent_education_level <- ordered(parse_number(edited$respondent_education_level), 
-                                               levels = c(1:4), 
-                                               labels = c("Less than HS", "HS Graduate or GED", "Some College or Associate's Degree", "Bachelor's Degree or More"))
-  edited$respondent_gender <- factor(parse_number(edited$respondent_gender), 
+  edited$race <- factor(parse_number(edited$race), 
+                        levels = c(1:5), 
+                        labels = c("White Non-Hispanic", "Black Non-Hispanic", "Asian Non-Hispanic", "Other / MultiRacial", "Hispanic"))
+  edited$education_level <- ordered(parse_number(edited$education_level), 
+                                    levels = c(1:4), 
+                                    labels = c("Less than HS", "HS Graduate or GED", "Some College or Associate's Degree", "Bachelor's Degree or More"))
+  edited$gender <- factor(parse_number(edited$gender), 
+                          levels = c(0:1), 
+                          labels = c("Male", "Female"))
+  edited$material_hardship <- factor(parse_number(edited$material_hardship), 
                                      levels = c(0:1), 
-                                     labels = c("Male", "Female"))
-  edited$severe_material_hardship <- factor(parse_number(edited$severe_material_hardship), 
-                                            levels = c(0:1), 
-                                            labels = c("No", "Yes"))
-  edited$severe_health_problem <- factor(parse_number(edited$severe_health_problem), 
-                                         levels = c(0:1), 
-                                         labels = c("No", "Yes"))
+                                     labels = c("No", "Yes"))
+  edited$health_problem <- factor(parse_number(edited$health_problem), 
+                                  levels = c(0:1), 
+                                  labels = c("No", "Yes"))
   edited$in_poverty <- factor(parse_number(edited$in_poverty), 
                               levels = c(0:1), 
                               labels = c("No", "Yes"))
   
-  edited$respondent_age <- factor(cut(edited$respondent_age, 
-                                      breaks = c(-1, 34, 44, 54, 64, 120), 
-                                      label = c("0 to 34", "35 to 44", "45 to 54", "55 to 64", "65 and Above"), 
-                                      ordered = TRUE))
+  edited$age <- factor(cut(edited$age, 
+                           breaks = c(-1, 34, 44, 54, 64, 120), 
+                           label = c("0 to 34", "35 to 44", "45 to 54", "55 to 64", "65 and Above"), 
+                           ordered = TRUE))
   
   edited$household_resources <- factor(cut(edited$household_resources,
                                            breaks = c(-1, 23759.25, 47266.25, 89429.03, 424000), 

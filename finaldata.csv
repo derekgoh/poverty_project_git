@@ -1,4 +1,4 @@
-respondent_age,respondent_education_level,respondent_gender,respondent_race,severe_material_hardship,severe_health_problem,in_poverty,household_resources
+age,education_level,gender,race,material_hardship,health_problem,in_poverty,household_resources
 35,4. Bachelor's degree or more,1. Female,5. Hispanic,0. No,0. No,0. No,55974.609
 61,3. Some college or associat's degree,0. Male,1. White Non-Hispanic,0. No,0. No,0. No,245598.83
 48,3. Some college or associat's degree,0. Male,2. Black Non-Hispanic,0. No,0. No,0. No,19499.5
