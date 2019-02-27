@@ -33,22 +33,66 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                                           h2("Plotting"),
                                                                                                           
                                                                                                           #Type of plot
-                                                                                                          selectInput("x", "X Variable", c("SPM Poverty" = "in_poverty", 
-                                                                                                                                           "Material Hardship" = "material_hardship", 
-                                                                                                                                           "Health Problem" = "health_problem", 
+                                                                                                          selectInput("x", "X Variable", c("SPM Poverty Baseline" = "in_poverty_SPM",
+                                                                                                                                           "OPM Poverty Baseline" = "in_poverty_OPM",
+                                                                                                                                           "Material Hardship Baseline" = "material_hardship", 
+                                                                                                                                           "Health Problem Baseline" = "health_problem",
+                                                                                                                                           "SPM Income to Needs Ratio" = "SPM_income_to_needs", 
+                                                                                                                                           "OPM Income to Needs Ratio" = "OPM_income_to_needs", 
                                                                                                                                            "Gender" = "gender",
-                                                                                                                                           "SPM Resources" = "household_resources",
                                                                                                                                            "Age" = "age",
                                                                                                                                            "Race" = "race", 
-                                                                                                                                           "Education Level" = "education_level"), "in_poverty"),
-                                                                                                          selectInput("y", "Y Variable", c("SPM Poverty" = "in_poverty", 
-                                                                                                                                           "Material Hardship" = "material_hardship", 
-                                                                                                                                           "Health Problem" = "health_problem", 
+                                                                                                                                           "Education Level" = "education_level", 
+                                                                                                                                           "Number of Children" = "number_of_children", 
+                                                                                                                                           "Number of Household Members" = "number_of_household_members", 
+                                                                                                                                           "SPM Poverty Year 1" = "in_poverty_SPM_t1",
+                                                                                                                                           "OPM Poverty Year 1" = "in_poverty_OPM_t1",
+                                                                                                                                           "Material Hardship Year 1" = "material_hardship_t1", 
+                                                                                                                                           "Health Problem Year 1" = "health_problem_t1",
+                                                                                                                                           "SPM Income to Needs Ratio Year 1" = "SPM_income_to_needs_t1", 
+                                                                                                                                           "OPM Income to Needs Ratio Year 1" = "OPM_income_to_needs_t1",
+                                                                                                                                           "SPM Poverty Year 2" = "in_poverty_SPM_t2",
+                                                                                                                                           "OPM Poverty Year 2" = "in_poverty_OPM_t2",
+                                                                                                                                           "Material Hardship Year 2" = "material_hardship_t2", 
+                                                                                                                                           "Health Problem Year 2" = "health_problem_t2",
+                                                                                                                                           "SPM Income to Needs Ratio Year 2" = "SPM_income_to_needs_t2", 
+                                                                                                                                           "OPM Income to Needs Ratio Year 2" = "OPM_income_to_needs_t2", 
+                                                                                                                                           "SPM Household Resources Baseline" = "SPM_top_coded_resources",
+                                                                                                                                           "OPM Household Resources Baseline" = "OPM_top_coded_resources",
+                                                                                                                                           "SPM Household Resources Year 1" = "SPM_top_coded_resources_t1",
+                                                                                                                                           "OPM Household Resources Year 1" = "OPM_top_coded_resources_t1", 
+                                                                                                                                           "SPM Household Resources Year 2" = "SPM_top_coded_resources_t2",
+                                                                                                                                           "OPM Household Resources Year 2" = "OPM_top_coded_resources_t2"), "in_poverty_SPM"),
+                                                                                                          selectInput("y", "Y Variable", c("SPM Poverty Baseline" = "in_poverty_SPM",
+                                                                                                                                           "OPM Poverty Baseline" = "in_poverty_OPM",
+                                                                                                                                           "Material Hardship Baseline" = "material_hardship", 
+                                                                                                                                           "Health Problem Baseline" = "health_problem",
+                                                                                                                                           "SPM Income to Needs Ratio" = "SPM_income_to_needs", 
+                                                                                                                                           "OPM Income to Needs Ratio" = "OPM_income_to_needs", 
                                                                                                                                            "Gender" = "gender",
-                                                                                                                                           "SPM Resources" = "household_resources", 
                                                                                                                                            "Age" = "age",
                                                                                                                                            "Race" = "race", 
-                                                                                                                                           "Education Level" = "education_level"), "gender"),
+                                                                                                                                           "Education Level" = "education_level", 
+                                                                                                                                           "Number of Children" = "number_of_children", 
+                                                                                                                                           "Number of Household Members" = "number_of_household_members", 
+                                                                                                                                           "SPM Poverty Year 1" = "in_poverty_SPM_t1",
+                                                                                                                                           "OPM Poverty Year 1" = "in_poverty_OPM_t1",
+                                                                                                                                           "Material Hardship Year 1" = "material_hardship_t1", 
+                                                                                                                                           "Health Problem Year 1" = "health_problem_t1",
+                                                                                                                                           "SPM Income to Needs Ratio Year 1" = "SPM_income_to_needs_t1", 
+                                                                                                                                           "OPM Income to Needs Ratio Year 1" = "OPM_income_to_needs_t1",
+                                                                                                                                           "SPM Poverty Year 2" = "in_poverty_SPM_t2",
+                                                                                                                                           "OPM Poverty Year 2" = "in_poverty_OPM_t2",
+                                                                                                                                           "Material Hardship Year 2" = "material_hardship_t2", 
+                                                                                                                                           "Health Problem Year 2" = "health_problem_t2",
+                                                                                                                                           "SPM Income to Needs Ratio Year 2" = "SPM_income_to_needs_t2", 
+                                                                                                                                           "OPM Income to Needs Ratio Year 2" = "OPM_income_to_needs_t2", 
+                                                                                                                                           "SPM Household Resources Baseline" = "SPM_top_coded_resources",
+                                                                                                                                           "OPM Household Resources Baseline" = "OPM_top_coded_resources",
+                                                                                                                                           "SPM Household Resources Year 1" = "SPM_top_coded_resources_t1",
+                                                                                                                                           "OPM Household Resources Year 1" = "OPM_top_coded_resources_t1", 
+                                                                                                                                           "SPM Household Resources Year 2" = "SPM_top_coded_resources_t2",
+                                                                                                                                           "OPM Household Resources Year 2" = "OPM_top_coded_resources_t2"), "gender"),
                                                                                                           uiOutput("title")),
                                                                                                           
                                                                mainPanel(width = 8,
@@ -138,19 +182,90 @@ server <- function(input, output, session) {
   edited$health_problem <- factor(parse_number(edited$health_problem), 
                                   levels = c(0:1), 
                                   labels = c("No Problem", "Problem"))
-  edited$in_poverty <- factor(parse_number(edited$in_poverty), 
+  edited$in_poverty_SPM <- factor(parse_number(edited$in_poverty_SPM), 
                               levels = c(0:1), 
                               labels = c("Not in Poverty", "Poverty"))
-  
   edited$age <- factor(cut(edited$age, 
                            breaks = c(-1, 34, 44, 54, 64, 120), 
                            label = c("0 to 34", "35 to 44", "45 to 54", "55 to 64", "65 and Above"), 
                            ordered = TRUE))
-  
-  edited$household_resources <- factor(cut(edited$household_resources,
-                                           breaks = c(-1, 23759.25, 47266.25, 89429.03, 424000), 
+  edited$number_of_children <- factor(cut(edited$number_of_children,
+                                           breaks = c(-1, 0, 2, 4, 8), 
+                                           label = c("0", "1-2", "3-4", "5 or More"), 
+                                           ordered = TRUE))
+  edited$number_of_household_members <- factor(cut(edited$number_of_household_members,
+                                          breaks = c(-1, 1, 3, 6, 10), 
+                                          label = c("1", "2-3", "4-6", "7 or More"), 
+                                          ordered = TRUE))
+  edited$in_poverty_OPM <- factor(parse_number(edited$in_poverty_OPM), 
+                                  levels = c(0:1), 
+                                  labels = c("Not in Poverty", "Poverty"))
+  edited$SPM_income_to_needs <- ordered(parse_number(edited$SPM_income_to_needs), 
+                                    levels = c(1:4), 
+                                    labels = c("Less than 100%", "100% - 200%", "200% - 300%", "More than 300%"))
+  edited$OPM_income_to_needs <- ordered(parse_number(edited$OPM_income_to_needs), 
+                                        levels = c(1:4), 
+                                        labels = c("Less than 100%", "100% - 200%", "200% - 300%", "More than 300%"))
+  edited$in_poverty_SPM_t1 <- factor(parse_number(edited$in_poverty_SPM_t1), 
+                                  levels = c(0:1), 
+                                  labels = c("Not in Poverty", "Poverty"))
+  edited$in_poverty_OPM_t1 <- factor(parse_number(edited$in_poverty_OPM_t1), 
+                                  levels = c(0:1), 
+                                  labels = c("Not in Poverty", "Poverty"))
+  edited$material_hardship_t1 <- factor(parse_number(edited$material_hardship_t1), 
+                                     levels = c(0:1), 
+                                     labels = c("No Hardship", "Hardship"))
+  edited$health_problem_t1 <- factor(parse_number(edited$health_problem_t1), 
+                                  levels = c(0:1), 
+                                  labels = c("No Problem", "Problem"))
+  edited$SPM_income_to_needs_t1 <- ordered(parse_number(edited$SPM_income_to_needs_t1), 
+                                        levels = c(1:4), 
+                                        labels = c("Less than 100%", "100% - 200%", "200% - 300%", "More than 300%"))
+  edited$OPM_income_to_needs_t1 <- ordered(parse_number(edited$OPM_income_to_needs_t1), 
+                                        levels = c(1:4), 
+                                        labels = c("Less than 100%", "100% - 200%", "200% - 300%", "More than 300%"))
+  edited$in_poverty_SPM_t2 <- factor(parse_number(edited$in_poverty_SPM_t2), 
+                                     levels = c(0:1), 
+                                     labels = c("Not in Poverty", "Poverty"))
+  edited$in_poverty_OPM_t2 <- factor(parse_number(edited$in_poverty_OPM_t2), 
+                                     levels = c(0:1), 
+                                     labels = c("Not in Poverty", "Poverty"))
+  edited$material_hardship_t2 <- factor(parse_number(edited$material_hardship_t2), 
+                                        levels = c(0:1), 
+                                        labels = c("No Hardship", "Hardship"))
+  edited$health_problem_t2 <- factor(parse_number(edited$health_problem_t2), 
+                                     levels = c(0:1), 
+                                     labels = c("No Problem", "Problem"))
+  edited$SPM_income_to_needs_t2 <- ordered(parse_number(edited$SPM_income_to_needs_t2), 
+                                           levels = c(1:4), 
+                                           labels = c("Less than 100%", "100% - 200%", "200% - 300%", "More than 300%"))
+  edited$OPM_income_to_needs_t2 <- ordered(parse_number(edited$OPM_income_to_needs_t2), 
+                                           levels = c(1:4), 
+                                           labels = c("Less than 100%", "100% - 200%", "200% - 300%", "More than 300%"))
+  edited$SPM_top_coded_resources <- factor(cut(edited$edited$SPM_top_coded_resources,
+                                           breaks = c(-1, 23759, 47266, 89429, 424000), 
                                            label = c("First Quantile", "Second Quantile", "Third Quantile", "Fourth Quantile"), 
                                            ordered = TRUE))
+  edited$OPM_top_coded_resources <- factor(cut(edited$edited$OPM_top_coded_resources,
+                                               breaks = c(-1, 19902, 51995, 108196, 600001), 
+                                               label = c("First Quantile", "Second Quantile", "Third Quantile", "Fourth Quantile"), 
+                                               ordered = TRUE))
+  edited$SPM_top_coded_resources_t1 <- factor(cut(edited$edited$SPM_top_coded_resources_t1,
+                                               breaks = c(-1, 24018, 49563, 93568, 400000), 
+                                               label = c("First Quantile", "Second Quantile", "Third Quantile", "Fourth Quantile"), 
+                                               ordered = TRUE))
+  edited$OPM_top_coded_resources_t1 <- factor(cut(edited$edited$OPM_top_coded_resources_t1,
+                                               breaks = c(-1, 18000, 55000, 116928, 600001), 
+                                               label = c("First Quantile", "Second Quantile", "Third Quantile", "Fourth Quantile"), 
+                                               ordered = TRUE))
+  edited$SPM_top_coded_resources_t2 <- factor(cut(edited$edited$SPM_top_coded_resources_t2,
+                                               breaks = c(-1, 22484, 46199, 91723, 400000), 
+                                               label = c("First Quantile", "Second Quantile", "Third Quantile", "Fourth Quantile"), 
+                                               ordered = TRUE))
+  edited$OPM_top_coded_resources_t2 <- factor(cut(edited$edited$OPM_top_coded_resources_t2,
+                                               breaks = c(-1, 17000, 52034, 117877, 490000), 
+                                               label = c("First Quantile", "Second Quantile", "Third Quantile", "Fourth Quantile"), 
+                                               ordered = TRUE))
   
   # x and y as reactive expressions
   x <- reactive({ toTitleCase(str_replace_all(input$x, "_", " ")) })
