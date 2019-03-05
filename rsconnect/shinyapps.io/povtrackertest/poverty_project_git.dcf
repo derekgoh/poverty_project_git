@@ -1,0 +1,10 @@
+name: poverty_project_git
+title:
+username:
+account: povtrackertest
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 765396
+bundleId: 1917351
+url: https://povtrackertest.shinyapps.io/poverty_project_git/
+when: 1551802548.71836
