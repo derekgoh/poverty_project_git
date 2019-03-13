@@ -351,10 +351,11 @@ d$in_poverty_SPM_y2 <- factor(parse_number(d$in_poverty_SPM_y2),
                                  levels = c(0:1), 
                                  labels = c("Not in Poverty", "Poverty"))
 
-edited_stackbar <- completeFun(d, c("in_poverty_SPM", "in_poverty_SPM_y1", "in_poverty_SPM_y2")) %>%
-    group_by("in_poverty_SPM") %>%
-    summarize(Percentage = n()) %>%
-    mutate(Percentage = Percentage / sum(Percentage) * 100) 
+edited_stackbar <- d %>%
+  group_by("in_poverty_SPM") %>%
+  summarize(Percentage = n()) %>%
+  group_by("in_poverty_SPM") %>%
+  mutate(Percentage = Percentage / sum(Percentage) * 100)
 
 edited_stackbar
 ```
