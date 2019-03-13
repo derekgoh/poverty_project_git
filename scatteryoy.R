@@ -15,6 +15,7 @@ library(psych)
 library(gmodels)
 
 edited <- read.csv("finaldata.csv")
+f1 <- read.csv("test.csv")
 
 #UI
 ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", theme = shinytheme ("cosmo"), 
@@ -74,6 +75,23 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                          HTML ("Description of Y Variable"), 
                                                                          verbatimTextOutput(outputId = "ytable"))
                                                                          
+                                                      ),
+                                                      tabPanel(title = "Year-On-Year Comparisons", sidebarPanel(width = 4,
+                                                                                                                h2("Plotting"),
+                                                                                                                selectInput("v", "Variable of Interest", c("SPM Poverty" = "in_poverty_SPM",
+                                                                                                                                                           "OPM Poverty" = "in_poverty_OPM",
+                                                                                                                                                           "Material Hardship" = "material_hardship", 
+                                                                                                                                                           "Health Problem" = "health_problem",
+                                                                                                                                                           "SPM Household Resources" = "SPM_household_resources",
+                                                                                                                                                           "OPM Household Resources" = "OPM_household_resources",
+                                                                                                                                                           "SPM Income to Needs Ratio" = "SPM_income_to_needs", 
+                                                                                                                                                           "OPM Income to Needs Ratio" = "OPM_income_to_needs"), "in_poverty_SPM")
+                                                      ),
+                                                      mainPanel(width = 8,
+                                                                br(), br(),
+                                                                plotlyOutput(outputId = "plot2"),
+                                                                br(), br(), 
+                                                                h5(textOutput("description2")))
                                                       )
                                                       )
                  )
@@ -93,7 +111,14 @@ server <- function(input, output, session) {
   }
   
   edited_scatter <- reactive ({
-      completeFun(edited, c(input$x, input$y)) 
+      completeFun(edited, c(input$x, input$y)) %>% 
+      group_by_(input$x, input$y) %>%
+      summarize(Percentage = n()) %>%
+      group_by_(input$x) %>%
+      mutate(Percentage = Percentage / sum(Percentage) * 100) %>%
+      arrange_(input$x) %>%
+      mutate(label_pos = cumsum(Percentage) - Percentage / 2,
+             perc_text = paste0(round(Percentage), "%"))
   })
   
 
@@ -134,7 +159,49 @@ server <- function(input, output, session) {
   output$ytable <- renderPrint ({
     ytab <- describe(edited[input$y])
     ytab
-  }) 
+  })
+  
+  f1$in_poverty_SPM <- factor(parse_number(f1$in_poverty_SPM), 
+                                 levels = c(0:1), 
+                                 labels = c("Not in Poverty", "Poverty"))
+  
+  f1$in_poverty_SPM_y1 <- factor(parse_number(f1$in_poverty_SPM_y1), 
+                                     levels = c(0:1), 
+                                     labels = c("Not in Poverty", "Poverty"))
+  
+  f1$in_poverty_SPM_y2 <- factor(parse_number(f1$in_poverty_SPM_y2), 
+                                 levels = c(0:1), 
+                                 labels = c("Not in Poverty", "Poverty"))
+  
+  data_source <- reactive ({
+    if(input$v == "in_poverty_SPM") {
+      data <- f1
+    } 
+    return(data)
+  })
+
+  edited_stackbar <- reactive ({
+    completeFun(data_source(), c("in_poverty_SPM", "in_poverty_SPM_y1", "in_poverty_SPM_y2")) %>%
+      group_by_("in_poverty_SPM", "in_poverty_SPM_y1", "in_poverty_SPM_y2") %>%
+      summarize(Percentage = n()) %>%
+      mutate(Percentage = Percentage / sum(Percentage) * 100) %>%
+      mutate(label_pos = cumsum(Percentage) - Percentage / 2,
+             perc_text = paste0(round(Percentage), "%"))
+  })
+  
+  # Create plot
+  output$plot2 <- renderPlotly({
+    ggplotly({
+      sbc <- ggplot(data = edited_stackbar(), aes(x = c("y1", "y2", "y3"), y = "Percentage", fill = "Percentage")) +
+        geom_bar(stat = "identity", width = 0.5) +
+        geom_text(aes(label = perc_text), position = position_stack(vjust = 0.5)) +
+        scale_fill_brewer(name = y(), palette = "Spectral", direction = 1)  +
+        labs(x = x(),
+             y = y(),
+             title = toTitleCase(input$plot_title))
+      sbc
+    })
+  })
 }
 
 # Create a Shiny app object
