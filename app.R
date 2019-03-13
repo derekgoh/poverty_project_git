@@ -309,10 +309,14 @@ server <- function(input, output, session) {
   })
   
   #Data Cleaning for Stacked Bar Chart
+  completeFun <- function(data, desiredCols) {
+    completeVec <- complete.cases(data[, desiredCols])
+    return(data[completeVec, ])
+  }
+
   edited_stackbar <- reactive ({
-    edited %>%
+    completeFun(edited, c(input$x, input$y)) %>%
       group_by_(input$x, input$y) %>%
-      na.omit() %>%
       summarize(Percentage = n()) %>%
       group_by_(input$x) %>%
       mutate(Percentage = Percentage / sum(Percentage) * 100) %>%
