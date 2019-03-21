@@ -369,6 +369,14 @@ server <- function(input, output, session) {
                   rownames = FALSE)
   )
   
+  b <- reactive ({
+    completeFun(edited, c(input$x, input$y)) %>%
+      group_by_(input$x, input$y) %>%
+      summarize(count = n(), 
+                totalY = sum(get(input$y), na.rm = TRUE), 
+                meanY = totalY / count)
+  })
+  
   # Download codebook
   output$codebook <- downloadHandler(
     filename = function () {
