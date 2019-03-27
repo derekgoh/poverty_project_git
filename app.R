@@ -104,7 +104,7 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                          verbatimTextOutput(outputId = "xtable"), 
                                                                          HTML ("Description of Y Variable"), 
                                                                          verbatimTextOutput(outputId = "ytable"),
-                                                                         HTML ("More Summary Statistics"),
+                                                                         HTML ("More Summary Statistics (Only For Select Variables)"),
                                                                          verbatimTextOutput(outputId = "sumtable"), 
                                                                          br(), br(),
                                                                          actionButton("crosstable", "Click Here to View Cross-Table of X and Y Variable"),
@@ -319,9 +319,9 @@ server <- function(input, output, session) {
   edited_stackbar <- reactive ({
     completeFun(edited, c(input$x, input$y)) %>%
       group_by_(input$x, input$y) %>%
-      summarize(Percentage = n()) %>%
+      summarize(Percentage = mean(factor*n())) %>%
       group_by_(input$x) %>%
-      mutate(Percentage = Percentage / sum(Percentage) * 100) %>%
+      mutate(Percentage = (Percentage / sum(Percentage)) * 100) %>%
       arrange_(input$x) %>%
       mutate(label_pos = cumsum(Percentage) - Percentage / 2,
              perc_text = paste0(round(Percentage), "%"))
