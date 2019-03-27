@@ -15,6 +15,7 @@ library(psych)
 library(gmodels)
 
 edited <- read.csv("finaldata.csv")
+edited1 <- read.csv("finaldata1.csv")
 baseline <- read.csv("baseline.publicuse.oct17.csv")
 f3 <- read.csv("followup3.csv")
 f6 <- read.csv("followup6.csv")
@@ -101,9 +102,10 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                          br(), br(), 
                                                                          HTML ("Description of X Variable"), 
                                                                          verbatimTextOutput(outputId = "xtable"), 
-                                                                         br(), br(),
                                                                          HTML ("Description of Y Variable"), 
                                                                          verbatimTextOutput(outputId = "ytable"),
+                                                                         HTML ("More Summary Statistics"),
+                                                                         verbatimTextOutput(outputId = "sumtable"), 
                                                                          br(), br(),
                                                                          actionButton("crosstable", "Click Here to View Cross-Table of X and Y Variable"),
                                                                          actionButton("reset", "Clear", style = "color: #fff; background-color: #337ab7; border-color: #2e6da4"),
@@ -349,6 +351,19 @@ server <- function(input, output, session) {
     ytab
   }) 
   
+  sumdata <- reactive ({
+    completeFun(edited1, c(input$x, input$y)) %>%
+      group_by_(input$x) %>%
+      summarize(count = n(), 
+                meanY = mean(get(input$y)),
+                medianY = median(get(input$y)), 
+                sdY = sd(get(input$y)))
+  })
+  
+  output$sumtable <- renderPrint ({
+    sumdata()
+  })
+  
   observeEvent(input$crosstable, {
     output$table <- renderPrint ({
       crosstab <- CrossTable(edited[, input$x], edited[, input$y], 
@@ -368,14 +383,6 @@ server <- function(input, output, session) {
                   options = list(pageLength = 10), 
                   rownames = FALSE)
   )
-  
-  b <- reactive ({
-    completeFun(edited, c(input$x, input$y)) %>%
-      group_by_(input$x, input$y) %>%
-      summarize(count = n(), 
-                totalY = sum(get(input$y), na.rm = TRUE), 
-                meanY = totalY / count)
-  })
   
   # Download codebook
   output$codebook <- downloadHandler(
