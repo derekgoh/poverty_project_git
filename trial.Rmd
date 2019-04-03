@@ -327,6 +327,30 @@ g1
 ```
 
 ```{r}
+g1 <- 
+  g %>%
+      group_by_("gender", "number_of_children") %>%
+      na.omit() %>%
+      summarize(Percentage = n())  %>%
+      group_by_("number_of_children") %>%
+      mutate(Percentage = (Percentage / sum(Percentage)) * 100) %>%
+      arrange_("number_of_children")
+g1
+```
+
+```{r}
+g1 <- 
+  g %>%
+      group_by_("gender", "number_of_children") %>%
+      na.omit() %>%
+      summarize(count = n()) %>%
+  mutate(totalX = sum(count))
+
+max(g1$totalX)
+```
+
+
+```{r}
 d <- read.csv("test.csv")
 ```
 
@@ -336,6 +360,19 @@ edited_stackbar <-
       summarize(Percentage = n())
 
 edited_stackbar
+```
+
+```{r}
+b <- cbind(c(1,2,3,4,5), c(3,6,7,8,4))
+b
+b * 45
+str(b)
+```
+
+
+```{r}
+d <- read.csv("finaldata.csv")
+str(d)
 ```
 
 ```{r}
