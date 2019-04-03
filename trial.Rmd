@@ -276,7 +276,10 @@ describe(edited)
 ```
 ```{r}
 g <- read.csv("finaldata.csv")
-describe(g)
+str(g$faca)
+z <- g %>%
+  summarize(a = mean(faca*n()))
+z
 ```
 
 ```{r}
@@ -316,7 +319,7 @@ g1 <-
   g %>%
       group_by_("gender", "number_of_children") %>%
       na.omit()  %>%
-      summarize(Percentage = mean(factor*n()))  %>%
+      summarize(Percentage = mean(fach*n()))  %>%
       group_by_("number_of_children") %>%
       mutate(Percentage = (Percentage / sum(Percentage)) * 100) %>%
       arrange_("number_of_children")
