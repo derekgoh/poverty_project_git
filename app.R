@@ -387,16 +387,32 @@ server <- function(input, output, session) {
     return(data[completeVec, ])
   }
   
-  edited_stackbar <- reactive ({
-    completeFun(edited, c(input$x, input$y)) %>%
-      group_by_(input$x, input$y) %>%
-      summarize(Percentage = n()) %>%
-      group_by_(input$x) %>%
-      mutate(Percentage = (Percentage / sum(Percentage)) * 100) %>%
-      arrange_(input$x) %>%
-      mutate(label_pos = cumsum(Percentage) - Percentage / 2,
-             perc_text = paste0(round(Percentage), "%"))
-  })
+  
+  
+  
+  
+  
+  # edited_stackbar <- reactive ({
+  #   completeFun(edited, c(input$x, input$y, input$weight)) %>%
+  #     select_(input$x, input$y, input$weight) %>%
+  #     group_by_(input$x, input$y) %>%
+  #     summarize(totalw = sum(input$weight)) %>%
+  #     mutate(Percentage = (totalw / sum(totalw)) * 100) %>%
+  #     arrange_(input$x) %>%
+  #     mutate(label_pos = cumsum(Percentage) - Percentage / 2,
+  #            perc_text = paste0(round(Percentage), "%"))
+  # })
+  
+  # edited_stackbar <- reactive ({
+  #   completeFun(edited, c(input$x, input$y, wfac())) %>%
+  #     select_(input$x, input$y, wfac()) %>%
+  #     group_by_(input$x, input$y) %>%
+  #     summarize(totalw = sum(wfac())) %>%
+  #     mutate(Percentage = (totalw / sum(totalw)) * 100) %>%
+  #     arrange_(input$x) %>%
+  #     mutate(label_pos = cumsum(Percentage) - Percentage / 2,
+  #            perc_text = paste0(round(Percentage), "%"))
+  # })
   
   # Create plot
   output$plot <- renderPlotly({

@@ -293,8 +293,6 @@ completeFun <- function(data, desiredCols) {
   return(data[completeVec, ])
 }
 
-nrow(completeFun(g, c("SPM_household_resources_y2", "gender")))
-
 ```
 
 ```{r}
@@ -413,5 +411,156 @@ edited_stackbar <- a %>%
            perc_text = paste0(round(Percentage), "%"))
 
 
+```
+
+```{r}
+edited2 <- read.csv("finaldata.csv")
+```
+
+```{r}
+ edited2$race <- factor(parse_number(edited2$race), 
+                        levels = c(1:5), 
+                        labels = c("White Non-Hispanic", "Black Non-Hispanic", "Asian Non-Hispanic", "Other / MultiRacial", "Hispanic"))
+  edited2$education_level <- ordered(parse_number(edited2$education_level), 
+                                    levels = c(1:4), 
+                                    labels = c("Less than HS", "HS Graduate or GED", "Some College or Associate's Degree", "Bachelor's Degree or More"))
+  edited2$gender <- factor(parse_number(edited2$gender), 
+                          levels = c(0:1), 
+                          labels = c("Male", "Female"))
+  edited2$material_hardship <- factor(parse_number(edited2$material_hardship), 
+                                     levels = c(0:1), 
+                                     labels = c("No Hardship", "Hardship"))
+  edited2$health_problem <- factor(parse_number(edited2$health_problem), 
+                                  levels = c(0:1), 
+                                  labels = c("No Problem", "Problem"))
+  edited2$in_poverty_SPM <- factor(parse_number(edited2$in_poverty_SPM), 
+                                  levels = c(0:1), 
+                                  labels = c("Not in Poverty", "Poverty"))
+  edited2$age <- factor(cut(edited2$age, 
+                           breaks = c(-1, 34, 44, 54, 64, 120), 
+                           label = c("0 to 34", "35 to 44", "45 to 54", "55 to 64", "65 and Above"), 
+                           ordered = TRUE))
+  edited2$number_of_children <- factor(cut(edited2$number_of_children,
+                                          breaks = c(-1, 0, 2, 4, 8), 
+                                          label = c("0 Children", "1-2 Children", "3-4 Children", "5 or More Children"), 
+                                          ordered = TRUE))
+  edited2$number_of_household_members <- factor(cut(edited2$number_of_household_members,
+                                                   breaks = c(-1, 1, 3, 6, 10), 
+                                                   label = c("1 Member", "2-3 Members", "4-6 Members", "7 or More Members"), 
+                                                   ordered = TRUE))
+  edited2$in_poverty_OPM <- factor(parse_number(edited2$in_poverty_OPM), 
+                                  levels = c(0:1), 
+                                  labels = c("Not in Poverty", "Poverty"))
+  edited2$SPM_income_to_needs <- ordered(parse_number(edited2$SPM_income_to_needs), 
+                                        levels = c(1:4), 
+                                        labels = c("Ratio: Less than 100%", "Ratio: 100% - 200%", "Ratio: 200% - 300%", "Ratio: More than 300%"))
+  edited2$OPM_income_to_needs <- ordered(parse_number(edited2$OPM_income_to_needs), 
+                                        levels = c(1:4), 
+                                        labels = c("Ratio: Less than 100%", "Ratio: 100% - 200%", "Ratio: 200% - 300%", "Ratio: More than 300%"))
+  edited2$in_poverty_SPM_y1 <- factor(parse_number(edited2$in_poverty_SPM_y1), 
+                                     levels = c(0:1), 
+                                     labels = c("Not in Poverty", "Poverty"))
+  edited2$in_poverty_OPM_y1 <- factor(parse_number(edited2$in_poverty_OPM_y1), 
+                                     levels = c(0:1), 
+                                     labels = c("Not in Poverty", "Poverty"))
+  edited2$material_hardship_y1 <- factor(parse_number(edited2$material_hardship_y1), 
+                                        levels = c(0:1), 
+                                        labels = c("No Hardship", "Hardship"))
+  edited2$health_problem_y1 <- factor(parse_number(edited2$health_problem_y1), 
+                                     levels = c(0:1), 
+                                     labels = c("No Problem", "Problem"))
+  edited2$SPM_income_to_needs_y1 <- ordered(parse_number(edited2$SPM_income_to_needs_y1), 
+                                           levels = c(1:4), 
+                                           labels = c("Ratio: Less than 100%", "Ratio: 100% - 200%", "Ratio: 200% - 300%", "Ratio: More than 300%"))
+  edited2$OPM_income_to_needs_y1 <- ordered(parse_number(edited2$OPM_income_to_needs_y1), 
+                                           levels = c(1:4), 
+                                           labels = c("Ratio: Less than 100%", "Ratio: 100% - 200%", "Ratio: 200% - 300%", "Ratio: More than 300%"))
+  edited2$in_poverty_SPM_y2 <- factor(parse_number(edited2$in_poverty_SPM_y2), 
+                                     levels = c(0:1), 
+                                     labels = c("Not in Poverty", "Poverty"))
+  edited2$in_poverty_OPM_y2 <- factor(parse_number(edited2$in_poverty_OPM_y2), 
+                                     levels = c(0:1), 
+                                     labels = c("Not in Poverty", "Poverty"))
+  edited2$material_hardship_y2 <- factor(parse_number(edited2$material_hardship_y2), 
+                                        levels = c(0:1), 
+                                        labels = c("No Hardship", "Hardship"))
+  edited2$health_problem_y2 <- factor(parse_number(edited2$health_problem_y2), 
+                                     levels = c(0:1), 
+                                     labels = c("No Problem", "Problem"))
+  edited2$SPM_income_to_needs_y2 <- ordered(parse_number(edited2$SPM_income_to_needs_y2), 
+                                           levels = c(1:4), 
+                                           labels = c("Ratio: Less than 100%", "Ratio: 100% - 200%", "Ratio: 200% - 300%", "Ratio: More than 300%"))
+  edited2$OPM_income_to_needs_y2 <- ordered(parse_number(edited2$OPM_income_to_needs_y2), 
+                                           levels = c(1:4), 
+                                           labels = c("Ratio: Less than 100%", "Ratio: 100% - 200%", "Ratio: 200% - 300%", "Ratio: More than 300%"))
+  edited2$SPM_household_resources <- factor(cut(edited2$SPM_household_resources,
+                                               breaks = c(-1, 23759, 47266, 89429, 424000), 
+                                               label = c("First Quantile", "Second Quantile", "Third Quantile", "Fourth Quantile"), 
+                                               ordered = TRUE))
+  edited2$OPM_household_resources <- factor(cut(edited2$OPM_household_resources,
+                                               breaks = c(-1, 19902, 51995, 108196, 600001), 
+                                               label = c("First Quantile", "Second Quantile", "Third Quantile", "Fourth Quantile"), 
+                                               ordered = TRUE))
+  edited2$SPM_household_resources_y1 <- factor(cut(edited2$SPM_household_resources_y1,
+                                                  breaks = c(-1, 24018, 49563, 93568, 400000), 
+                                                  label = c("First Quantile", "Second Quantile", "Third Quantile", "Fourth Quantile"), 
+                                                  ordered = TRUE))
+  edited2$OPM_household_resources_y1 <- factor(cut(edited2$OPM_household_resources_y1,
+                                                  breaks = c(-1, 18000, 55000, 116928, 600001), 
+                                                  label = c("First Quantile", "Second Quantile", "Third Quantile", "Fourth Quantile"), 
+                                                  ordered = TRUE))
+  edited2$SPM_household_resources_y2 <- factor(cut(edited2$SPM_household_resources_y2,
+                                                  breaks = c(-1, 22484, 46199, 91723, 400000), 
+                                                  label = c("First Quantile", "Second Quantile", "Third Quantile", "Fourth Quantile"), 
+                                                  ordered = TRUE))
+  edited2$OPM_household_resources_y2 <- factor(cut(edited2$OPM_household_resources_y2,
+                                                  breaks = c(-1, 17000, 52034, 117877, 490000), 
+                                                  label = c("First Quantile", "Second Quantile", "Third Quantile", "Fourth Quantile"), 
+                                                  ordered = TRUE))
+  
+```
+
+```{r}
+str(edited2)
+```
+
+```{r}
+library(data.table)
+dt <- as.data.table(edited2)
+dt2 <- dt[,lapply(.SD,weighted.mean,w=faca),by=list(gender, race)]
+print(dt2)
+```
+
+```{r}
+  edited_stackbar <- completeFun(edited2, c(age, race)) %>%
+      group_by_(age, race) %>%
+      summarize(Percentage = n()) %>%
+      group_by_(age) %>%
+      mutate(Percentage = (Percentage / sum(Percentage)) * 100) %>%
+      arrange_(age) %>%
+      mutate(label_pos = cumsum(Percentage) - Percentage / 2,
+             perc_text = paste0(round(Percentage), "%"))
+  })
+```
+
+```{r}
+a <- cbind(c(1, 0, 1, 0, 1), c(1, 1, 2, 2, 1), c(100, 200, 300, 50, 500))
+colnames(a) <- c("gender", "race", "weights")
+a <- as.data.frame(a)
+a
+```
+
+```{r}
+a_stack <- a %>%
+  na.omit() %>%
+  group_by(gender, race, weights) %>%
+  group_by(gender, race) %>%
+  summarise_all(funs(sum)) %>% 
+  mutate(Percentage = (weights / sum(weights)) * 100) %>%
+  arrange(gender)
+```
+
+```{r}
+a_stack
 ```
 
