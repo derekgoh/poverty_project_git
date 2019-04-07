@@ -555,8 +555,8 @@ a_stack <- a %>%
   na.omit() %>%
   group_by(gender, race, weights) %>%
   group_by(gender, race) %>%
-  summarise_all(funs(sum)) %>% 
-  mutate(Percentage = (weights / sum(weights)) * 100) %>%
+  summarize(totalw = sum(weights)) %>% 
+  mutate(Percentage = (totalw / sum(totalw)) * 100) %>%
   arrange(gender)
 ```
 
