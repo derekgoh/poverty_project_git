@@ -348,21 +348,6 @@ server <- function(input, output, session) {
     return(data)
   })
   
-  #Reactive Weights
-  newweights <- reactiveValues()
-  observeEvent(input$weight == "fac1", {
-    newweights$n <- edited$fac1
-  })
-  observeEvent(input$weight == "fach", {
-    newweights$n <- edited$fach
-  })
-  observeEvent(input$weight == "faca", {
-    newweights$n <- edited$faca
-  })
-  observeEvent(input$weight == "facp", {
-    newweights$n <- edited$facp
-  })
-  
   #Col Names 
   output$colnames <- renderUI ({
     names <- colnames(data_source())
@@ -388,17 +373,6 @@ server <- function(input, output, session) {
     return(data[completeVec, ])
   }
   
-  # edited_stackbar <- reactive ({
-  #   completeFun(edited, c(input$x, input$y, input$weight)) %>%
-  #     select_(input$x, input$y, input$weight) %>%
-  #     group_by_(input$x, input$y) %>%
-  #     summarise_all(funs(sum)) %>%
-  #     mutate(Percentage = (input$weight / sum(input$weight)) * 100) %>%
-  #     arrange_(input$x) %>%
-  #     mutate(label_pos = cumsum(Percentage) - Percentage / 2,
-  #            perc_text = paste0(round(Percentage), "%"))
-  # })
-  
   edited_stackbar <- reactive ({
     completeFun(edited, c(input$x, input$y, input$weight)) %>%
       select_(input$x, input$y, input$weight) %>%
@@ -409,17 +383,6 @@ server <- function(input, output, session) {
       mutate(label_pos = cumsum(Percentage) - Percentage / 2,
              perc_text = paste0(round(Percentage), "%"))
   })
-
-  # edited_stackbar <- reactive ({
-  #   completeFun(edited, c(input$x, input$y, input$weight)) %>%
-  #     select_(input$x, input$y, input$weight) %>%
-  #     group_by_(input$x, input$y) %>%
-  #     summarize(totalw = sum(newweights$n)) %>%
-  #     mutate(Percentage = (totalw / sum(totalw)) * 100) %>%
-  #     arrange_(input$x) %>%
-  #     mutate(label_pos = cumsum(Percentage) - Percentage / 2,
-  #            perc_text = paste0(round(Percentage), "%"))
-  # })
 
   # Create plot
   output$plot <- renderPlotly({
