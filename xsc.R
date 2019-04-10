@@ -94,9 +94,10 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                                                                            "OPM Household Resources Year 2" = "OPM_household_resources_y2",
                                                                                                                                            "SPM Income to Needs Ratio Year 2" = "SPM_income_to_needs_y2", 
                                                                                                                                            "OPM Income to Needs Ratio Year 2" = "OPM_income_to_needs_y2"), "age"),
-                                                                                                          selectInput("weight", "Weights", c("Adults" = "faca", 
+                                                                                                          selectInput("weight", "Weights", c("Non-Weighted" = "fac1", 
+                                                                                                                                             "Adults" = "faca", 
                                                                                                                                              "Households" = "fach", 
-                                                                                                                                             "People" = "facp"), "faca"), 
+                                                                                                                                             "People" = "facp"), "fac1"), 
                                                                                                           uiOutput("title")),
                                                                
                                                                mainPanel(width = 8,
@@ -115,6 +116,51 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                          br(), br(), 
                                                                          verbatimTextOutput(outputId = "table"))
                                                       ),
+                                                      
+                                                      tabPanel(title = "Summary", sidebarPanel(width = 4,
+                                                                                               h2("Summary Statistics"),
+                                                                                               
+                                                                                               selectInput("var", "Variable of Choice", c("Race" = "race",
+                                                                                                                                          "Age" = "age",
+                                                                                                                                          "Gender" = "gender",
+                                                                                                                                          "Education Level" = "education_level",
+                                                                                                                                          "Number of Children" = "number_of_children", 
+                                                                                                                                          "Number of Household Members" = "number_of_household_members",
+                                                                                                                                          "SPM Poverty Baseline" = "in_poverty_SPM",
+                                                                                                                                          "OPM Poverty Baseline" = "in_poverty_OPM",
+                                                                                                                                          "Material Hardship Baseline" = "material_hardship", 
+                                                                                                                                          "Health Problem Baseline" = "health_problem",
+                                                                                                                                          "SPM Household Resources Baseline" = "SPM_household_resources",
+                                                                                                                                          "OPM Household Resources Baseline" = "OPM_household_resources",
+                                                                                                                                          "SPM Income to Needs Ratio" = "SPM_income_to_needs", 
+                                                                                                                                          "OPM Income to Needs Ratio" = "OPM_income_to_needs", 
+                                                                                                                                          "SPM Poverty Year 1" = "in_poverty_SPM_y1",
+                                                                                                                                          "OPM Poverty Year 1" = "in_poverty_OPM_y1",
+                                                                                                                                          "Material Hardship Year 1" = "material_hardship_y1", 
+                                                                                                                                          "Health Problem Year 1" = "health_problem_y1",
+                                                                                                                                          "SPM Household Resources Year 1" = "SPM_household_resources_y1",
+                                                                                                                                          "OPM Household Resources Year 1" = "OPM_household_resources_y1",
+                                                                                                                                          "SPM Income to Needs Ratio Year 1" = "SPM_income_to_needs_y1", 
+                                                                                                                                          "OPM Income to Needs Ratio Year 1" = "OPM_income_to_needs_y1",
+                                                                                                                                          "SPM Poverty Year 2" = "in_poverty_SPM_y2",
+                                                                                                                                          "OPM Poverty Year 2" = "in_poverty_OPM_y2",
+                                                                                                                                          "Material Hardship Year 2" = "material_hardship_y2", 
+                                                                                                                                          "Health Problem Year 2" = "health_problem_y2",
+                                                                                                                                          "SPM Household Resources Year 2" = "SPM_household_resources_y2",
+                                                                                                                                          "OPM Household Resources Year 2" = "OPM_household_resources_y2",
+                                                                                                                                          "SPM Income to Needs Ratio Year 2" = "SPM_income_to_needs_y2", 
+                                                                                                                                          "OPM Income to Needs Ratio Year 2" = "OPM_income_to_needs_y2"), "race"), 
+                                                                                               uiOutput("title1")
+                                                                                               
+                                                      ),
+                                                      
+                                                      mainPanel(width = 8,
+                                                                br(), br(),
+                                                                plotlyOutput(outputId = "plot1"),
+                                                                br(), 
+                                                                h5(textOutput("description")))
+                                                      ), 
+                                                      
                                                       tabPanel(title = "Datasets", sidebarPanel(width = 4,
                                                                                                 h2("Download Data"),
                                                                                                 HTML("Select filetype, dataset and variables, then hit 'Download Data'"), 
@@ -152,6 +198,7 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                 br(), br(), 
                                                                 downloadButton(outputId = "codebook", label = "Download codebook"))
                                                       )
+                                                      
                  )
                  ), 
                  
@@ -272,9 +319,10 @@ server <- function(input, output, session) {
                                                   label = c("First Quantile", "Second Quantile", "Third Quantile", "Fourth Quantile"), 
                                                   ordered = TRUE))
   
-  # x and y as reactive expressions
+  # x, y and var as reactive expressions
   x <- reactive({ toTitleCase(str_replace_all(input$x, "_", " ")) })
   y <- reactive({ toTitleCase(str_replace_all(input$y, "_", " ")) })
+  var <- reactive({ toTitleCase(str_replace_all(input$var, "_", " ")) })
   
   #Reactive dataset variable 
   data_source <- reactive ({
@@ -300,15 +348,18 @@ server <- function(input, output, session) {
     return(data)
   })
   
-  newsource <- reactive ({
-    if (input$weight == "faca") {
-      d <- edited*(edited$faca)
+  #Reactive Weights
+  wfac <- reactive ({
+    if (input$weight == "fac1") {
+      f <- edited$fac1
+    } else if(input$weight == "faca") {
+      f <- edited$faca
     } else if (input$weight == "fach") {
-      d <- edited*(edited$fach)
+      f <- edited$fach
     } else if (input$weight == "facp") {
-      d <- edited*(edited$facp)
+      f <- edited$facp
     }
-    return(d)
+    return(f)
   })
   
   #Col Names 
@@ -324,6 +375,12 @@ server <- function(input, output, session) {
               placeholder = "Enter text to be used as plot title")
   })
   
+  output$title1 <- renderUI ({
+    textInput(inputId = "plot_title1", 
+              label = "Plot title", 
+              placeholder = "Enter text to be used as plot title")
+  })
+  
   #Data Cleaning for Stacked Bar Chart
   completeFun <- function(data, desiredCols) {
     completeVec <- complete.cases(data[, desiredCols])
@@ -331,7 +388,7 @@ server <- function(input, output, session) {
   }
   
   edited_stackbar <- reactive ({
-    completeFun(newsource(), c(input$x, input$y)) %>%
+    completeFun(edited, c(input$x, input$y)) %>%
       group_by_(input$x, input$y) %>%
       summarize(Percentage = n()) %>%
       group_by_(input$x) %>%
@@ -389,6 +446,34 @@ server <- function(input, output, session) {
   
   observeEvent(input$reset, {
     output$table <- NULL
+  })
+  
+  edited_nombar <- reactive ({ 
+    completeFun(edited, input$var) %>%
+      group_by_(input$var) %>%
+      summarize(count = n()) %>%
+      mutate(perc_text1 = paste0(round(count)))
+  })
+  
+  output$plot1 <- renderPlotly({
+    ggplotly({
+      nb <- ggplot(data = edited_nombar(), aes_string(x = input$var, y = "count")) +
+        geom_bar(stat = "identity", fill = "lightsalmon2") +
+        geom_text(aes(label = perc_text1), position = position_stack(vjust = 0.5)) + 
+        labs(x = x(),
+             y = "Number of Observations",
+             title = toTitleCase(input$plot_title1))
+    })
+  })
+  
+  output$description <- renderText({
+    paste("The plot above shows the relationship between",
+          x(),
+          "and",
+          y(),
+          "for",
+          nrow(na.omit(edited[input$var])),
+          "participants.")
   })
   
   # Print data table

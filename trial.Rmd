@@ -521,7 +521,7 @@ edited2 <- read.csv("finaldata.csv")
 ```
 
 ```{r}
-str(edited2)
+str(edited2$SPM_household_resources_y1)
 ```
 
 ```{r}
@@ -562,5 +562,57 @@ a_stack <- a %>%
 
 ```{r}
 a_stack
+```
+
+```{r}
+a_stack2 <- a %>%
+  na.omit() %>%
+  group_by(gender, race, weights) %>%
+  group_by(gender, race) %>%
+  summarize(totalw = sum(weights)) %>% 
+  mutate(mean = sum(totalw*race) / sum(totalw)) %>%
+  ungroup() %>%
+  group_by(gender)
+```
+
+```{r}
+a_stack2
+```
+
+
+```{r}
+a_stack5 <- a %>%
+  na.omit() %>%
+  group_by(gender, race, weights) %>%
+  group_by(gender, race) %>%
+  summarize(totalw = sum(weights)) %>% 
+  mutate(median = median(totalw*race)) %>%
+  ungroup() %>%
+  group_by(gender)
+```
+
+```{r}
+a_stack5
+```
+
+
+```{r}
+a_stack1 <- a %>%
+  na.omit() %>%
+  group_by(gender, race, weights) %>%
+  group_by(gender) %>%
+  summarize(totalw = sum(weights), 
+            totaln = n()) %>% 
+  mutate(mean = ((totalw*totaln) / sum(totalw*totaln))) %>%
+  arrange(gender)
+```
+
+```{r}
+a_stack1
+```
+
+```{r}
+a <- read.csv("finaldata.csv")
+str(a)
 ```
 

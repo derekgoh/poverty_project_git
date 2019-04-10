@@ -108,9 +108,9 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                          verbatimTextOutput(outputId = "xtable"), 
                                                                          HTML ("Description of Y Variable"), 
                                                                          verbatimTextOutput(outputId = "ytable"),
-                                                                         HTML ("More Summary Statistics (Only For Select Variables)"),
+                                                                         HTML ("More Summary Statistics"),
                                                                          verbatimTextOutput(outputId = "sumtable"), 
-                                                                         br(), br(),
+                                                                         br(),
                                                                          actionButton("crosstable", "Click Here to View Cross-Table of X and Y Variable"),
                                                                          actionButton("reset", "Clear", style = "color: #fff; background-color: #337ab7; border-color: #2e6da4"),
                                                                          br(), br(), 
@@ -158,7 +158,9 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                 br(), br(),
                                                                 plotlyOutput(outputId = "plot1"),
                                                                 br(), 
-                                                                h5(textOutput("description")))
+                                                                tags$u ("Description"), 
+                                                                h5(textOutput("description")), 
+                                                                verbatimTextOutput(outputId = "mtable"))
                                                       ), 
                                                       
                                                       tabPanel(title = "Datasets", sidebarPanel(width = 4,
@@ -408,18 +410,44 @@ server <- function(input, output, session) {
     ytab
   }) 
   
+  edited1$race <- parse_number(edited1$race)
+  edited1$education_level <- parse_number(edited1$education_level)
+  edited1$gender <- parse_number(edited1$gender)
+  edited1$in_poverty_SPM <- parse_number(edited1$in_poverty_SPM)
+  edited1$material_hardship <- parse_number(edited1$material_hardship)
+  edited1$health_problem <- parse_number(edited1$health_problem)
+  edited1$material_hardship_y1 <- parse_number(edited1$material_hardship_y1)
+  edited1$material_hardship_y2 <- parse_number(edited1$material_hardship_y2)
+  edited1$SPM_income_to_needs <- parse_number(edited1$SPM_income_to_needs)
+  edited1$OPM_income_to_needs <- parse_number(edited1$OPM_income_to_needs)
+  edited1$OPM_income_to_needs_y1 <- parse_number(edited1$OPM_income_to_needs_y1)
+  edited1$OPM_income_to_needs_y2 <- parse_number(edited1$OPM_income_to_needs_y2)
+  
   sumdata <- reactive ({
     completeFun(edited1, c(input$x, input$y)) %>%
       group_by_(input$x) %>%
-      summarize(count = n(), 
+      summarize(count = n(),
                 meanY = mean(get(input$y)),
-                medianY = median(get(input$y)), 
+                medianY = median(get(input$y)),
                 sdY = sd(get(input$y)))
   })
   
   output$sumtable <- renderPrint ({
     sumdata()
   })
+  
+  # wmean <- reactive ({
+  #   completeFun(edited, c(input$x, input$y, input$weight)) %>%
+  #     select_(input$x, input$y, input$weight) %>%
+  #     group_by_(input$x, input$y) %>%
+  #     summarize(totalw = sum(get(input$weight))) %>%
+  #     mutate(mean = sum(totalw*get(input$y)) / sum(totalw)) %>%
+  #     arrange_(input$x)
+  # })
+  # 
+  # output$weightedmean <- renderPrint ({
+  #   wmean()
+  # })
   
   observeEvent(input$crosstable, {
     output$table <- renderPrint ({
@@ -450,6 +478,23 @@ server <- function(input, output, session) {
              y = "Number of Observations",
              title = toTitleCase(input$plot_title1))
     })
+  })
+  
+  df2 <- reactive ({
+    if (input$var == "age" | "number_of_children" | "number_of_household_members" | "SPM_household_resources" |
+        "OPM_household_resources" | "SPM_household_resources_y1" | "OPM_household_resources_y1" |
+        "SPM_household_resources_y2" | "OPM_household_resources_y2") {
+    as.numeric(edited1[input$var])
+    }
+  }) 
+  
+  output$mtable <- renderPrint ({
+    if (input$var == "age" | input$var == "number_of_children" | input$var == "number_of_household_members" | 
+        input$var == "SPM_household_resources" | input$var == "OPM_household_resources" | input$var == "SPM_household_resources_y1" | 
+        input$var == "OPM_household_resources_y1" | input$var == "SPM_household_resources_y2" | input$var == "OPM_household_resources_y2") {
+    mtab <- describe(edited1[input$var])
+    mtab
+    }
   })
   
   output$description <- renderText({
