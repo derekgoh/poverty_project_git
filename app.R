@@ -150,6 +150,11 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                                                                           "OPM Household Resources Year 2" = "OPM_household_resources_y2",
                                                                                                                                           "SPM Income to Needs Ratio Year 2" = "SPM_income_to_needs_y2", 
                                                                                                                                           "OPM Income to Needs Ratio Year 2" = "OPM_income_to_needs_y2"), "race"), 
+                                                                                               
+                                                                                               selectInput("weight2", "Weights", c("Non-Weighted" = "fac1", 
+                                                                                                                                  "Adults" = "faca", 
+                                                                                                                                  "Households" = "fach", 
+                                                                                                                                  "People" = "facp"), "fac1"),
                                                                                                uiOutput("title1")
                                                                                                
                                                       ),
@@ -160,7 +165,8 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                 br(), 
                                                                 tags$u ("Description"), 
                                                                 h5(textOutput("description")), 
-                                                                verbatimTextOutput(outputId = "mtable"))
+                                                                verbatimTextOutput(outputId = "mtable"),
+                                                                verbatimTextOutput(outputId = "weightm"))
                                                       ), 
                                                       
                                                       tabPanel(title = "Datasets", sidebarPanel(width = 4,
@@ -465,8 +471,11 @@ server <- function(input, output, session) {
   edited_nombar <- reactive ({ 
     completeFun(edited, input$var) %>%
       group_by_(input$var) %>%
-      summarize(count = n()) %>%
-      mutate(perc_text1 = paste0(round(count)))
+      summarize(count = mean(n()*get(input$weight2)),
+                each = sum(get(input$weight2)*as.numeric(get(input$var)))) %>%
+      mutate(finalcount = sum(count), 
+             finalmean = sum(each) / finalcount,
+             perc_text1 = paste0(round(count)))
   })
   
   output$plot1 <- renderPlotly({
@@ -474,38 +483,46 @@ server <- function(input, output, session) {
       nb <- ggplot(data = edited_nombar(), aes_string(x = input$var, y = "count")) +
         geom_bar(stat = "identity", fill = "lightsalmon2") +
         geom_text(aes(label = perc_text1), position = position_stack(vjust = 0.5)) + 
-        labs(x = x(),
+        labs(x = var(),
              y = "Number of Observations",
              title = toTitleCase(input$plot_title1))
     })
   })
   
-  df2 <- reactive ({
-    if (input$var == "age" | "number_of_children" | "number_of_household_members" | "SPM_household_resources" |
-        "OPM_household_resources" | "SPM_household_resources_y1" | "OPM_household_resources_y1" |
-        "SPM_household_resources_y2" | "OPM_household_resources_y2") {
-    as.numeric(edited1[input$var])
-    }
-  }) 
-  
+  edited_nombarc <- reactive ({
+    completeFun(edited1, input$var) %>%
+      group_by_(input$var) %>%
+      summarize(countc = mean(n() * get(input$weight2)),
+                eachc = sum(get(input$weight2) * as.numeric(get(input$var)))) %>%
+      mutate(finalcountc = sum(countc),
+             finalmeanc = sum(eachc) / finalcountc
+      )
+  })
+
   output$mtable <- renderPrint ({
     if (input$var == "age" | input$var == "number_of_children" | input$var == "number_of_household_members" | 
         input$var == "SPM_household_resources" | input$var == "OPM_household_resources" | input$var == "SPM_household_resources_y1" | 
         input$var == "OPM_household_resources_y1" | input$var == "SPM_household_resources_y2" | input$var == "OPM_household_resources_y2") {
-    mtab <- describe(edited1[input$var])
+    mtab <- unique(edited_nombarc()["finalmeanc"])
     mtab
     }
   })
-  
+
   output$description <- renderText({
-    paste("The plot above shows the relationship between",
+    paste("The plot above shows that there are",
+          unique(edited_nombar()["finalcount"]),
+          "observations", 
+          "for the",
           x(),
-          "and",
-          y(),
-          "for",
-          nrow(na.omit(edited[input$var])),
-          "participants.")
+          "variable."
+    )
   })
+  
+  output$weightm <- renderPrint ({
+    b <- unique(edited_nombar()["finalmean"])
+    b
+  })
+
   
   # Print data table
   output$povertytable <- DT::renderDataTable(

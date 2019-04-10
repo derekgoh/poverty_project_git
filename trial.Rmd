@@ -569,14 +569,18 @@ a_stack2 <- a %>%
   na.omit() %>%
   group_by(gender, race, weights) %>%
   group_by(gender, race) %>%
-  summarize(totalw = sum(weights)) %>% 
-  mutate(mean = sum(totalw*race) / sum(totalw)) %>%
+  summarize(totalw = mean(weights), 
+            each = sum(totalw*as.numeric(race))) %>% 
+  mutate(mean2 = sum(each) / sum(totalw)) %>%
   ungroup() %>%
   group_by(gender)
 ```
 
 ```{r}
 a_stack2
+```
+```{r}
+a[c("gender", "weights")]
 ```
 
 
@@ -593,6 +597,20 @@ a_stack5 <- a %>%
 
 ```{r}
 a_stack5
+```
+
+```{r}
+a_stack4 <- a %>%
+  na.omit() %>%
+  group_by(gender) %>%
+  summarize(count = mean(n()*weights)) %>%
+  mutate(mean = sum(count))
+
+a_stack4["mean"]
+```
+```{r}
+b <- unique(a_stack4["mean"])
+b
 ```
 
 
