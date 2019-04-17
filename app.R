@@ -165,8 +165,8 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                 br(), 
                                                                 tags$u ("Description"), 
                                                                 h5(textOutput("description")), 
-                                                                verbatimTextOutput(outputId = "mtable"),
-                                                                verbatimTextOutput(outputId = "weightm"))
+                                                                verbatimTextOutput(outputId = "weightm"),
+                                                                verbatimTextOutput(outputId = "mtable"))
                                                       ), 
                                                       
                                                       tabPanel(title = "Datasets", sidebarPanel(width = 4,
@@ -468,16 +468,16 @@ server <- function(input, output, session) {
     output$table <- NULL
   })
   
-  edited_nombar <- reactive ({ 
+  edited_nombar <- reactive ({
     completeFun(edited, input$var) %>%
       group_by_(input$var) %>%
       summarize(count = mean(n()*get(input$weight2)),
                 each = sum(get(input$weight2)*as.numeric(get(input$var)))) %>%
-      mutate(finalcount = sum(count), 
-             finalmean = sum(each) / finalcount,
+      mutate(finalcount = sum(count),
+             Mean = sum(each) / finalcount,
              perc_text1 = paste0(round(count)))
   })
-  
+
   output$plot1 <- renderPlotly({
     ggplotly({
       nb <- ggplot(data = edited_nombar(), aes_string(x = input$var, y = "count")) +
@@ -491,11 +491,9 @@ server <- function(input, output, session) {
   
   edited_nombarc <- reactive ({
     completeFun(edited1, input$var) %>%
-      group_by_(input$var) %>%
-      summarize(countc = mean(n() * get(input$weight2)),
-                eachc = sum(get(input$weight2) * as.numeric(get(input$var)))) %>%
-      mutate(finalcountc = sum(countc),
-             finalmeanc = sum(eachc) / finalcountc
+      mutate(WMean = weightedMean(as.numeric(get(input$var)), get(input$weight2)), 
+             WMedian = weightedMedian(as.numeric(get(input$var)), get(input$weight2)), 
+             WSD = weightedSd(as.numeric(get(input$var)), get(input$weight2))
       )
   })
 
@@ -503,7 +501,7 @@ server <- function(input, output, session) {
     if (input$var == "age" | input$var == "number_of_children" | input$var == "number_of_household_members" | 
         input$var == "SPM_household_resources" | input$var == "OPM_household_resources" | input$var == "SPM_household_resources_y1" | 
         input$var == "OPM_household_resources_y1" | input$var == "SPM_household_resources_y2" | input$var == "OPM_household_resources_y2") {
-    mtab <- unique(edited_nombarc()["finalmeanc"])
+    mtab <- as.data.frame(c(unique(edited_nombarc()["WMean"]), unique(edited_nombarc()["WMedian"]), unique(edited_nombarc()["WSD"])))
     mtab
     }
   })
@@ -519,7 +517,7 @@ server <- function(input, output, session) {
   })
   
   output$weightm <- renderPrint ({
-    b <- unique(edited_nombar()["finalmean"])
+    b <- unique(edited_nombar()["Mean"])
     b
   })
 

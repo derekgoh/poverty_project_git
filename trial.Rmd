@@ -551,6 +551,14 @@ a
 ```
 
 ```{r}
+library(matrixStats)
+b <- weightedMedian(a$race, a$weights)
+c <- weightedMean(a$gender, a$weights)
+c
+```
+
+
+```{r}
 a_stack <- a %>%
   na.omit() %>%
   group_by(gender, race, weights) %>%
@@ -562,6 +570,17 @@ a_stack <- a %>%
 
 ```{r}
 a_stack
+```
+
+
+```{r}
+a_stack10 <- a %>%
+  na.omit() %>%
+  group_by(gender, race, weights) %>%
+  group_by(gender, race) %>%
+  summarize(totalw = sum(weights)) %>% 
+  mutate(Percentage = (totalw / sum(totalw)) * 100) %>%
+  arrange(gender)
 ```
 
 ```{r}
@@ -627,6 +646,16 @@ a_stack1 <- a %>%
 
 ```{r}
 a_stack1
+```
+
+
+```{r}
+a_stack11 <- a %>%
+  na.omit() %>%
+  group_by(gender, race, weights) %>%
+  group_by(gender) %>%
+  mutate(mean = weightedMean(gender, weights))
+a_stack11
 ```
 
 ```{r}
