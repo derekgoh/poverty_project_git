@@ -257,9 +257,11 @@ str(edited$imp_race)
 
 ```{r}
 b <- edited %>%
-  group_by(sevhard, imp_educat) %>% 
-  summarize(Percentage = n()) %>%
+  group_by(sevhard, imp_age) %>% 
+  na.omit() %>% 
+  ungroup() %>% 
   group_by(sevhard) %>%
+  summarize(Percentage = n()) %>%
   mutate(Percentage = Percentage / sum(Percentage) * 100) %>%
   arrange(sevhard)
 
@@ -339,24 +341,13 @@ edited_stackbar
 ```
 
 ```{r}
-d$in_poverty_SPM <- factor(parse_number(d$in_poverty_SPM), 
-                                 levels = c(0:1), 
-                                 labels = c("Not in Poverty", "Poverty"))
-  
-d$in_poverty_SPM_y1 <- factor(parse_number(d$in_poverty_SPM_y1), 
-                                     levels = c(0:1), 
-                                     labels = c("Not in Poverty", "Poverty"))
-  
-d$in_poverty_SPM_y2 <- factor(parse_number(d$in_poverty_SPM_y2), 
-                                 levels = c(0:1), 
-                                 labels = c("Not in Poverty", "Poverty"))
-
-edited_stackbar <- d %>%
-  group_by("in_poverty_SPM") %>%
+edited_8 <- d %>%
+  group_by(in_poverty_SPM, in_poverty_SPM_y1, in_poverty_SPM_y2) %>% 
+  na.omit() %>% 
   summarize(Percentage = n()) %>%
-  group_by("in_poverty_SPM") %>%
   mutate(Percentage = Percentage / sum(Percentage) * 100)
+  
 
-edited_stackbar
+edited_8
 ```
 
