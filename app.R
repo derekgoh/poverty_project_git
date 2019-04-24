@@ -1,3 +1,4 @@
+## Import Packages
 library(shiny)
 library(shinythemes)
 library(plyr)
@@ -14,6 +15,7 @@ library(shinyjs)
 library(psych)
 library(gmodels)
 
+## Import CSV Files
 edited <- read.csv("finaldata.csv")
 edited1 <- read.csv("finaldata1.csv")
 baseline <- read.csv("baseline.publicuse.oct17.csv")
@@ -26,14 +28,16 @@ f18 <- read.csv("followup18.csv")
 f21 <- read.csv("followup21.csv")
 f24 <- read.csv("followup24.csv")
 
-#UI
+## UI
 ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", theme = shinytheme ("cosmo"), 
+                 
+                 # Main Tab 1
                  tabPanel("Explore Data", tabsetPanel(type = "tabs",
                                                       id = "tabsetpanel",
+                                                      
+                                                      # Sub-Tab 1
                                                       tabPanel(title = "Plot", useShinyjs(), sidebarPanel(width = 4,
                                                                                                           h2("Plotting"),
-                                                                                                          
-                                                                                                          #Type of plot
                                                                                                           selectInput("x", "X Variable", c("Race" = "race",
                                                                                                                                            "Age" = "age",
                                                                                                                                            "Gender" = "gender",
@@ -111,6 +115,8 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                          HTML ("More Summary Statistics"),
                                                                          verbatimTextOutput(outputId = "sumtable"), 
                                                                          br(),
+                                                                         verbatimTextOutput(outputId = "sumtable1"), 
+                                                                         br(), 
                                                                          actionButton("crosstable", "Click Here to View Cross-Table of X and Y Variable"),
                                                                          actionButton("reset", "Clear", style = "color: #fff; background-color: #337ab7; border-color: #2e6da4"),
                                                                          br(), br(), 
@@ -156,7 +162,7 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                                                                   "Households" = "fach", 
                                                                                                                                   "People" = "facp"), "fac1"),
                                                                                                uiOutput("title1")
-                                                                                               
+ 
                                                       ),
                                                       
                                                       mainPanel(width = 8,
@@ -332,7 +338,7 @@ server <- function(input, output, session) {
   y <- reactive({ toTitleCase(str_replace_all(input$y, "_", " ")) })
   var <- reactive({ toTitleCase(str_replace_all(input$var, "_", " ")) })
   
-  #Reactive dataset variable 
+  #Reactive Dataset Variable 
   data_source <- reactive ({
     if(input$source == "baseline") {
       data <- baseline 
@@ -362,7 +368,7 @@ server <- function(input, output, session) {
     checkboxGroupInput("selected_var", "Variables:", names, "subject_id")
   })
   
-  # Enter text for plot title
+  # Plot Title
   output$title <- renderUI ({
     textInput(inputId = "plot_title", 
               label = "Plot title", 
@@ -370,8 +376,8 @@ server <- function(input, output, session) {
   })
   
   output$title1 <- renderUI ({
-    textInput(inputId = "plot_title1", 
-              label = "Plot title", 
+    textInput(inputId = "plot_title1",
+              label = "Plot title",
               placeholder = "Enter text to be used as plot title")
   })
   
@@ -391,7 +397,7 @@ server <- function(input, output, session) {
       mutate(perc_text = paste0(round(Percentage), "%"))
   })
 
-  # Create plot
+  # Create Plot
   output$plot <- renderPlotly({
     ggplotly({
       sbc <- ggplot(data = edited_stackbar(), aes_string(x = input$x, y = "Percentage", fill = input$y)) +
@@ -405,6 +411,7 @@ server <- function(input, output, session) {
     })
   })
   
+  ## Summary Statistics
   output$xtable <- renderPrint ({
     xtab <- describe(edited[input$x])
     xtab
@@ -415,6 +422,7 @@ server <- function(input, output, session) {
     ytab
   }) 
   
+  #Data Cleaning for Edited1
   edited1$race <- parse_number(edited1$race)
   edited1$education_level <- parse_number(edited1$education_level)
   edited1$gender <- parse_number(edited1$gender)
@@ -438,21 +446,31 @@ server <- function(input, output, session) {
   })
   
   output$sumtable <- renderPrint ({
-    sumdata()
+    as.data.frame(sumdata())
   })
   
   # wmean <- reactive ({
-  #   completeFun(edited, c(input$x, input$y, input$weight)) %>%
-  #     select_(input$x, input$y, input$weight) %>%
-  #     group_by_(input$x, input$y) %>%
-  #     summarize(totalw = sum(get(input$weight))) %>%
-  #     mutate(mean = sum(totalw*get(input$y)) / sum(totalw)) %>%
-  #     arrange_(input$x)
+  #   completeFun(edited1, c(input$x, input$y)) %>%
+  #     group_by_(input$x) %>%
+  #     mutate(Count = n(),
+  #            Cont_Mean = weightedMean(as.numeric(get(input$y)), get(input$weight)),
+  #            Cont_Median = weightedMedian(as.numeric(get(input$y)), get(input$weight)),
+  #            Cont_SD = weightedSd(as.numeric(get(input$y)), get(input$weight)))
   # })
-  # 
-  # output$weightedmean <- renderPrint ({
-  #   wmean()
-  # })
+
+  
+  wmean <- reactive ({
+    completeFun(edited, c(input$x, input$y, input$weight)) %>%
+      select_(input$x, input$y, input$weight) %>%
+      group_by_(input$x, input$y) %>%
+      summarize(totalw = sum(get(input$weight))) %>%
+      mutate(mean = sum(totalw*get(input$y)) / sum(totalw)) %>%
+      arrange_(input$x)
+  })
+
+  output$sumtable1 <- renderPrint ({
+    wmean()
+  })
   
   observeEvent(input$crosstable, {
     output$table <- renderPrint ({
@@ -467,6 +485,8 @@ server <- function(input, output, session) {
     output$table <- NULL
   })
   
+  ## Data Cleaning for Individual Charts
+  
   edited_nombar <- reactive ({
     completeFun(edited, input$var) %>%
       group_by_(input$var) %>%
@@ -477,6 +497,7 @@ server <- function(input, output, session) {
              perc_text1 = paste0(round(count)))
   })
 
+  ## Create Plot (Individual)
   output$plot1 <- renderPlotly({
     ggplotly({
       nb <- ggplot(data = edited_nombar(), aes_string(x = input$var, y = "count")) +
@@ -488,11 +509,13 @@ server <- function(input, output, session) {
     })
   })
   
+  
+  ## Summary Statistics (Individual)
   edited_nombarc <- reactive ({
     completeFun(edited1, input$var) %>%
-      mutate(WMean = weightedMean(as.numeric(get(input$var)), get(input$weight2)), 
-             WMedian = weightedMedian(as.numeric(get(input$var)), get(input$weight2)), 
-             WSD = weightedSd(as.numeric(get(input$var)), get(input$weight2))
+      mutate(Cont_Mean = weightedMean(as.numeric(get(input$var)), get(input$weight2)), 
+             Cont_Median = weightedMedian(as.numeric(get(input$var)), get(input$weight2)), 
+             Cont_SD = weightedSd(as.numeric(get(input$var)), get(input$weight2))
       )
   })
 
@@ -500,7 +523,7 @@ server <- function(input, output, session) {
     if (input$var == "age" | input$var == "number_of_children" | input$var == "number_of_household_members" | 
         input$var == "SPM_household_resources" | input$var == "OPM_household_resources" | input$var == "SPM_household_resources_y1" | 
         input$var == "OPM_household_resources_y1" | input$var == "SPM_household_resources_y2" | input$var == "OPM_household_resources_y2") {
-    mtab <- as.data.frame(c(unique(edited_nombarc()["WMean"]), unique(edited_nombarc()["WMedian"]), unique(edited_nombarc()["WSD"])))
+    mtab <- as.data.frame(c(unique(edited_nombarc()["Cont_Mean"]), unique(edited_nombarc()["Cont_Median"]), unique(edited_nombarc()["Cont_SD"])))
     mtab
     }
   })
@@ -516,7 +539,7 @@ server <- function(input, output, session) {
   })
   
   output$weightm <- renderPrint ({
-    b <- unique(edited_nombar()["Mean"])
+    b <- as.data.frame(unique(edited_nombar()["Mean"]))
     b
   })
 
