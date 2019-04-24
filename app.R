@@ -388,8 +388,7 @@ server <- function(input, output, session) {
       summarize(totalw = sum(get(input$weight))) %>%
       mutate(Percentage = (totalw / sum(totalw)) * 100) %>%
       arrange_(input$x) %>%
-      mutate(label_pos = cumsum(Percentage) - Percentage / 2,
-             perc_text = paste0(round(Percentage), "%"))
+      mutate(perc_text = paste0(round(Percentage), "%"))
   })
 
   # Create plot
