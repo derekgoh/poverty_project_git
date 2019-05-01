@@ -511,6 +511,21 @@ server <- function(input, output, session) {
   
   
   ## Summary Statistics (Individual)
+  output$description <- renderText({
+    paste("The plot above shows that there are",
+          unique(edited_nombar()["finalcount"]),
+          "observations", 
+          "for the",
+          x(),
+          "variable."
+    )
+  })
+  
+  output$weightm <- renderPrint ({
+    b <- as.data.frame(unique(edited_nombar()["Mean"]))
+    b
+  })
+  
   edited_nombarc <- reactive ({
     completeFun(edited1, input$var) %>%
       mutate(Cont_Mean = weightedMean(as.numeric(get(input$var)), get(input$weight2)), 
@@ -527,31 +542,15 @@ server <- function(input, output, session) {
     mtab
     }
   })
-
-  output$description <- renderText({
-    paste("The plot above shows that there are",
-          unique(edited_nombar()["finalcount"]),
-          "observations", 
-          "for the",
-          x(),
-          "variable."
-    )
-  })
   
-  output$weightm <- renderPrint ({
-    b <- as.data.frame(unique(edited_nombar()["Mean"]))
-    b
-  })
-
-  
-  # Print data table
+  # Print Data Table
   output$povertytable <- DT::renderDataTable(
     DT::datatable(data = data_source()[input$selected_var],
                   options = list(pageLength = 10), 
                   rownames = FALSE)
   )
   
-  # Download codebook
+  # Download Codebook
   output$codebook <- downloadHandler(
     filename = function () {
       paste0("All_Codebooks", ".zip", sep = "")
@@ -562,7 +561,7 @@ server <- function(input, output, session) {
     contentType = "application/zip"
   )
   
-  # Download data
+  # Download Data
   output$download_data <- downloadHandler(
     filename = function() {
       paste0(input$source, ".csv", sep = "")
