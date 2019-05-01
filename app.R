@@ -14,6 +14,7 @@ library(reshape2)
 library(shinyjs)
 library(psych)
 library(gmodels)
+library(matrixStats)
 
 ## Import CSV Files
 edited <- read.csv("finaldata.csv")
@@ -115,14 +116,13 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                          HTML ("More Summary Statistics"),
                                                                          verbatimTextOutput(outputId = "sumtable"), 
                                                                          br(),
-                                                                         verbatimTextOutput(outputId = "sumtable1"), 
-                                                                         br(), 
                                                                          actionButton("crosstable", "Click Here to View Cross-Table of X and Y Variable"),
                                                                          actionButton("reset", "Clear", style = "color: #fff; background-color: #337ab7; border-color: #2e6da4"),
                                                                          br(), br(), 
                                                                          verbatimTextOutput(outputId = "table"))
                                                       ),
                                                       
+                                                      # Sub-Tab 2
                                                       tabPanel(title = "Summary", sidebarPanel(width = 4,
                                                                                                h2("Summary Statistics"),
                                                                                                
@@ -175,6 +175,7 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                 verbatimTextOutput(outputId = "mtable"))
                                                       ), 
                                                       
+                                                      # Sub-Tab 3
                                                       tabPanel(title = "Datasets", sidebarPanel(width = 4,
                                                                                                 h2("Download Data"),
                                                                                                 HTML("Select filetype, dataset and variables, then hit 'Download Data'"), 
@@ -216,6 +217,7 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                  )
                  ), 
                  
+                 # Main Tab 2
                  tabPanel("About", sidebarPanel(width = 4, tags$img(src = "graphic.png", width = "85%", height = "85%", style = "display:block; margin-left:auto; margin-right: auto;")
                  ), 
                  mainPanel(width = 8, tags$b("ROBIN HOOD POVERTY TRACKER"), br(), br(),"With funding from Robin Hood, the Poverty Tracker documents the dynamics of poverty and disadvantage in New York City. 
@@ -232,7 +234,7 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
 # Server
 server <- function(input, output, session) {
   
-  #Data Cleaning for Labels
+  # Data Cleaning for Labels
   edited$race <- factor(parse_number(edited$race), 
                         levels = c(1:5), 
                         labels = c("White Non-Hispanic", "Black Non-Hispanic", "Asian Non-Hispanic", "Other / MultiRacial", "Hispanic"))
@@ -338,7 +340,7 @@ server <- function(input, output, session) {
   y <- reactive({ toTitleCase(str_replace_all(input$y, "_", " ")) })
   var <- reactive({ toTitleCase(str_replace_all(input$var, "_", " ")) })
   
-  #Reactive Dataset Variable 
+  ## Reactive Dataset Variable 
   data_source <- reactive ({
     if(input$source == "baseline") {
       data <- baseline 
@@ -362,7 +364,7 @@ server <- function(input, output, session) {
     return(data)
   })
   
-  #Col Names 
+  # Col Names 
   output$colnames <- renderUI ({
     names <- colnames(data_source())
     checkboxGroupInput("selected_var", "Variables:", names, "subject_id")
@@ -381,7 +383,7 @@ server <- function(input, output, session) {
               placeholder = "Enter text to be used as plot title")
   })
   
-  #Data Cleaning for Stacked Bar Chart
+  ## Data Cleaning for Stacked Bar Chart
   completeFun <- function(data, desiredCols) {
     completeVec <- complete.cases(data[, desiredCols])
     return(data[completeVec, ])
@@ -397,7 +399,7 @@ server <- function(input, output, session) {
       mutate(perc_text = paste0(round(Percentage), "%"))
   })
 
-  # Create Plot
+  ## Create Plot
   output$plot <- renderPlotly({
     ggplotly({
       sbc <- ggplot(data = edited_stackbar(), aes_string(x = input$x, y = "Percentage", fill = input$y)) +
@@ -422,7 +424,7 @@ server <- function(input, output, session) {
     ytab
   }) 
   
-  #Data Cleaning for Edited1
+  # Parsing Numbers for Edited 1
   edited1$race <- parse_number(edited1$race)
   edited1$education_level <- parse_number(edited1$education_level)
   edited1$gender <- parse_number(edited1$gender)
@@ -439,10 +441,10 @@ server <- function(input, output, session) {
   sumdata <- reactive ({
     completeFun(edited1, c(input$x, input$y)) %>%
       group_by_(input$x) %>%
-      summarize(count = n(),
-                meanY = mean(get(input$y)),
-                medianY = median(get(input$y)),
-                sdY = sd(get(input$y)))
+      summarize(Count = n(),
+                Weighted_Mean = round(weightedMean(as.numeric(get(input$y)), get(input$weight)), digits = 2),
+                Weighted_Median = round(weightedMedian(as.numeric(get(input$y)), get(input$weight)), digits = 2),
+                Weighted_SD = round(weightedSd(as.numeric(get(input$y)), get(input$weight)), digits = 2))
   })
   
   output$sumtable <- renderPrint ({
@@ -452,25 +454,19 @@ server <- function(input, output, session) {
   # wmean <- reactive ({
   #   completeFun(edited1, c(input$x, input$y)) %>%
   #     group_by_(input$x) %>%
-  #     mutate(Count = n(),
-  #            Cont_Mean = weightedMean(as.numeric(get(input$y)), get(input$weight)),
-  #            Cont_Median = weightedMedian(as.numeric(get(input$y)), get(input$weight)),
-  #            Cont_SD = weightedSd(as.numeric(get(input$y)), get(input$weight)))
+  #     summarize(Cont_Mean = weightedMean(as.numeric(get(input$y)), get(input$weight)))
+  #   
   # })
 
   
-  wmean <- reactive ({
-    completeFun(edited, c(input$x, input$y, input$weight)) %>%
-      select_(input$x, input$y, input$weight) %>%
-      group_by_(input$x, input$y) %>%
-      summarize(totalw = sum(get(input$weight))) %>%
-      mutate(mean = sum(totalw*get(input$y)) / sum(totalw)) %>%
-      arrange_(input$x)
-  })
-
-  output$sumtable1 <- renderPrint ({
-    wmean()
-  })
+  # wmean <- reactive ({
+  #   completeFun(edited, c(input$x, input$y, input$weight)) %>%
+  #     select_(input$x, input$y, input$weight) %>%
+  #     group_by_(input$x, input$y) %>%
+  #     summarize(totalw = sum(get(input$weight))) %>%
+  #     mutate(mean = sum(totalw*get(input$y)) / sum(totalw)) %>%
+  #     arrange_(input$x)
+  # })
   
   observeEvent(input$crosstable, {
     output$table <- renderPrint ({
@@ -486,12 +482,14 @@ server <- function(input, output, session) {
   })
   
   ## Data Cleaning for Individual Charts
-  
   edited_nombar <- reactive ({
     completeFun(edited, input$var) %>%
       group_by_(input$var) %>%
       summarize(count = mean(n()*get(input$weight2)),
-                each = sum(get(input$weight2)*as.numeric(get(input$var)))) %>%
+                each = sum(get(input$weight2)*as.numeric(get(input$var))), 
+                wmean = round(weightedMean(as.numeric(get(input$var)), get(input$weight2)), digits = 2),
+                wmedian = round(weightedMedian(as.numeric(get(input$var)), get(input$weight2)), digits = 2),
+                wsd = round(weightedSd(as.numeric(get(input$var)), get(input$weight2)), digits = 2)) %>%
       mutate(finalcount = sum(count),
              Mean = sum(each) / finalcount,
              perc_text1 = paste0(round(count)))
@@ -526,6 +524,8 @@ server <- function(input, output, session) {
     b
   })
   
+  # , unique(edited_nombar()["wmedian"]), unique(edited_nombar()["wsd"])))
+  
   edited_nombarc <- reactive ({
     completeFun(edited1, input$var) %>%
       mutate(Cont_Mean = weightedMean(as.numeric(get(input$var)), get(input$weight2)), 
@@ -543,14 +543,14 @@ server <- function(input, output, session) {
     }
   })
   
-  # Print Data Table
+  ## Print Data Table
   output$povertytable <- DT::renderDataTable(
     DT::datatable(data = data_source()[input$selected_var],
                   options = list(pageLength = 10), 
                   rownames = FALSE)
   )
   
-  # Download Codebook
+  ## Download Codebook
   output$codebook <- downloadHandler(
     filename = function () {
       paste0("All_Codebooks", ".zip", sep = "")
@@ -561,7 +561,7 @@ server <- function(input, output, session) {
     contentType = "application/zip"
   )
   
-  # Download Data
+  ## Download Data
   output$download_data <- downloadHandler(
     filename = function() {
       paste0(input$source, ".csv", sep = "")
@@ -574,5 +574,5 @@ server <- function(input, output, session) {
   )
 }
 
-# Create a Shiny app object
+## Shiny App Object
 shinyApp(ui = ui, server = server)
