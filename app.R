@@ -442,9 +442,9 @@ server <- function(input, output, session) {
     completeFun(edited1, c(input$x, input$y)) %>%
       group_by_(input$x) %>%
       summarize(Count = n(),
-                Weighted_Mean = round(weightedMean(as.numeric(get(input$y)), get(input$weight)), digits = 2),
-                Weighted_Median = round(weightedMedian(as.numeric(get(input$y)), get(input$weight)), digits = 2),
-                Weighted_SD = round(weightedSd(as.numeric(get(input$y)), get(input$weight)), digits = 2))
+                Weighted_Mean = round(weightedMean(get(input$y), get(input$weight)), digits = 2),
+                Weighted_Median = round(weightedMedian(get(input$y), get(input$weight)), digits = 2),
+                Weighted_SD = round(weightedSd(get(input$y), get(input$weight)), digits = 2))
   })
   
   output$sumtable <- renderPrint ({
