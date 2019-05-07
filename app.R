@@ -455,7 +455,6 @@ server <- function(input, output, session) {
   #   completeFun(edited1, c(input$x, input$y)) %>%
   #     group_by_(input$x) %>%
   #     summarize(Cont_Mean = weightedMean(as.numeric(get(input$y)), get(input$weight)))
-  #   
   # })
 
   
@@ -523,8 +522,6 @@ server <- function(input, output, session) {
     b <- as.data.frame(unique(edited_nombar()["Mean"]))
     b
   })
-  
-  # , unique(edited_nombar()["wmedian"]), unique(edited_nombar()["wsd"])))
   
   edited_nombarc <- reactive ({
     completeFun(edited1, input$var) %>%
