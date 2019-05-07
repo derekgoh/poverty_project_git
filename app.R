@@ -99,27 +99,28 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                                                                            "OPM Household Resources Year 2" = "OPM_household_resources_y2",
                                                                                                                                            "SPM Income to Needs Ratio Year 2" = "SPM_income_to_needs_y2", 
                                                                                                                                            "OPM Income to Needs Ratio Year 2" = "OPM_income_to_needs_y2"), "age"),
-                                                                                                          selectInput("weight", "Weights", c("Non-Weighted" = "fac1", 
-                                                                                                                                             "Adults" = "faca", 
-                                                                                                                                             "Households" = "fach", 
-                                                                                                                                             "People" = "facp"), "fac1"), 
+                                                                                                          # selectInput("weight", "Weights", c("Non-Weighted" = "fac1", 
+                                                                                                          #                                    "Adults" = "faca", 
+                                                                                                          #                                    "Households" = "fach", 
+                                                                                                          #                                    "People" = "facp"), "fac1"),
+                                                                                                          selectInput("weight", "Weights", c("Adults" = "faca"), "faca"),
                                                                                                           uiOutput("title")),
                                                                
                                                                mainPanel(width = 8,
                                                                          br(), br(),
-                                                                         plotlyOutput(outputId = "plot"),
-                                                                         br(), br(), 
-                                                                         HTML ("Description of X Variable"), 
-                                                                         verbatimTextOutput(outputId = "xtable"), 
-                                                                         HTML ("Description of Y Variable"), 
-                                                                         verbatimTextOutput(outputId = "ytable"),
-                                                                         HTML ("More Summary Statistics"),
-                                                                         verbatimTextOutput(outputId = "sumtable"), 
-                                                                         br(),
-                                                                         actionButton("crosstable", "Click Here to View Cross-Table of X and Y Variable"),
-                                                                         actionButton("reset", "Clear", style = "color: #fff; background-color: #337ab7; border-color: #2e6da4"),
-                                                                         br(), br(), 
-                                                                         verbatimTextOutput(outputId = "table"))
+                                                                         plotlyOutput(outputId = "plot"))
+                                                                         # br(), br(), 
+                                                                         # HTML ("Description of X Variable"), 
+                                                                         # verbatimTextOutput(outputId = "xtable"), 
+                                                                         # HTML ("Description of Y Variable"), 
+                                                                         # verbatimTextOutput(outputId = "ytable"),
+                                                                         # HTML ("More Summary Statistics"),
+                                                                         # verbatimTextOutput(outputId = "sumtable"), 
+                                                                         # br(),
+                                                                         # actionButton("crosstable", "Click Here to View Cross-Table of X and Y Variable"),
+                                                                         # actionButton("reset", "Clear", style = "color: #fff; background-color: #337ab7; border-color: #2e6da4"),
+                                                                         # br(), br(), 
+                                                                         # verbatimTextOutput(outputId = "table")
                                                       ),
                                                       
                                                       # Sub-Tab 2
@@ -157,10 +158,12 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                                                                           "SPM Income to Needs Ratio Year 2" = "SPM_income_to_needs_y2", 
                                                                                                                                           "OPM Income to Needs Ratio Year 2" = "OPM_income_to_needs_y2"), "race"), 
                                                                                                
-                                                                                               selectInput("weight2", "Weights", c("Non-Weighted" = "fac1", 
-                                                                                                                                  "Adults" = "faca", 
-                                                                                                                                  "Households" = "fach", 
-                                                                                                                                  "People" = "facp"), "fac1"),
+                                                                                               # selectInput("weight2", "Weights", c("Non-Weighted" = "fac1", 
+                                                                                               #                                    "Adults" = "faca", 
+                                                                                               #                                    "Households" = "fach", 
+                                                                                               #                                    "People" = "facp"), "fac1"),
+                                                                                               
+                                                                                               selectInput("weight2", "Weights", c("Adults" = "faca"), "faca"),
                                                                                                uiOutput("title1")
  
                                                       ),
@@ -171,7 +174,7 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                 br(), 
                                                                 tags$u ("Description"), 
                                                                 h5(textOutput("description")), 
-                                                                verbatimTextOutput(outputId = "weightm"),
+                                                                # verbatimTextOutput(outputId = "weightm"),
                                                                 verbatimTextOutput(outputId = "mtable"))
                                                       ), 
                                                       
@@ -179,6 +182,8 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                       tabPanel(title = "Datasets", sidebarPanel(width = 4,
                                                                                                 h2("Download Data"),
                                                                                                 HTML("Select filetype, dataset and variables, then hit 'Download Data'"), 
+                                                                                                br(), br(),
+                                                                                                downloadButton(outputId = "download_data", label = "Download Data"), 
                                                                                                 br(), br(),
                                                                                                 radioButtons(inputId = "filetype",
                                                                                                              label = "Filetype:",
@@ -199,8 +204,8 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                                                "Second Annual Core Follow-up" = "f24"), 
                                                                                                              selected = "baseline"), 
                                                                                                 
-                                                                                                uiOutput("colnames"),
-                                                                                                downloadButton(outputId = "download_data", label = "Download Data")
+                                                                                                uiOutput("colnames")
+                                                                                                
                                                       ),
                                                       
                                                       mainPanel(width = 8,
@@ -254,8 +259,8 @@ server <- function(input, output, session) {
                                   levels = c(0:1), 
                                   labels = c("Not in Poverty", "Poverty"))
   edited$age <- factor(cut(edited$age, 
-                           breaks = c(-1, 34, 44, 54, 64, 120), 
-                           label = c("0 to 34", "35 to 44", "45 to 54", "55 to 64", "65 and Above"), 
+                           breaks = c(17, 34, 44, 54, 64, 120), 
+                           label = c("18 to 34", "35 to 44", "45 to 54", "55 to 64", "65 and Above"), 
                            ordered = TRUE))
   edited$number_of_children <- factor(cut(edited$number_of_children,
                                           breaks = c(-1, 0, 2, 4, 8), 
@@ -398,7 +403,7 @@ server <- function(input, output, session) {
       arrange_(input$x) %>%
       mutate(perc_text = paste0(round(Percentage), "%"))
   })
-
+  
   ## Create Plot
   output$plot <- renderPlotly({
     ggplotly({
@@ -414,15 +419,15 @@ server <- function(input, output, session) {
   })
   
   ## Summary Statistics
-  output$xtable <- renderPrint ({
-    xtab <- describe(edited[input$x])
-    xtab
-  })
-  
-  output$ytable <- renderPrint ({
-    ytab <- describe(edited[input$y])
-    ytab
-  }) 
+  # output$xtable <- renderPrint ({
+  #   xtab <- describe(edited[input$x])
+  #   xtab
+  # })
+  # 
+  # output$ytable <- renderPrint ({
+  #   ytab <- describe(edited[input$y])
+  #   ytab
+  # }) 
   
   # Parsing Numbers for Edited 1
   edited1$race <- parse_number(edited1$race)
@@ -438,47 +443,31 @@ server <- function(input, output, session) {
   edited1$OPM_income_to_needs_y1 <- parse_number(edited1$OPM_income_to_needs_y1)
   edited1$OPM_income_to_needs_y2 <- parse_number(edited1$OPM_income_to_needs_y2)
   
-  sumdata <- reactive ({
-    completeFun(edited1, c(input$x, input$y)) %>%
-      group_by_(input$x) %>%
-      summarize(Count = n(),
-                Weighted_Mean = round(weightedMean(get(input$y), get(input$weight)), digits = 2),
-                Weighted_Median = round(weightedMedian(get(input$y), get(input$weight)), digits = 2),
-                Weighted_SD = round(weightedSd(get(input$y), get(input$weight)), digits = 2))
-  })
-  
-  output$sumtable <- renderPrint ({
-    as.data.frame(sumdata())
-  })
-  
-  # wmean <- reactive ({
+  # sumdata <- reactive ({
   #   completeFun(edited1, c(input$x, input$y)) %>%
   #     group_by_(input$x) %>%
-  #     summarize(Cont_Mean = weightedMean(as.numeric(get(input$y)), get(input$weight)))
+  #     summarize(Count = n(),
+  #               Weighted_Mean = round(weightedMean(get(input$y), get(input$weight)), digits = 2),
+  #               Weighted_Median = round(weightedMedian(get(input$y), get(input$weight)), digits = 2),
+  #               Weighted_SD = round(weightedSd(get(input$y), get(input$weight)), digits = 2))
+  # })
+  # 
+  # output$sumtable <- renderPrint ({
+  #   as.data.frame(sumdata())
   # })
 
-  
-  # wmean <- reactive ({
-  #   completeFun(edited, c(input$x, input$y, input$weight)) %>%
-  #     select_(input$x, input$y, input$weight) %>%
-  #     group_by_(input$x, input$y) %>%
-  #     summarize(totalw = sum(get(input$weight))) %>%
-  #     mutate(mean = sum(totalw*get(input$y)) / sum(totalw)) %>%
-  #     arrange_(input$x)
+  # observeEvent(input$crosstable, {
+  #   output$table <- renderPrint ({
+  #     crosstab <- CrossTable(edited[, input$x], edited[, input$y], 
+  #                            prop.chisq = FALSE, prop.t = FALSE, prop.r = FALSE, 
+  #                            dnn = c("X Variable", "Y Variable"))
+  #     crosstab
+  #   })
   # })
-  
-  observeEvent(input$crosstable, {
-    output$table <- renderPrint ({
-      crosstab <- CrossTable(edited[, input$x], edited[, input$y], 
-                             prop.chisq = FALSE, prop.t = FALSE, prop.r = FALSE, 
-                             dnn = c("X Variable", "Y Variable"))
-      crosstab
-    })
-  })
-  
-  observeEvent(input$reset, {
-    output$table <- NULL
-  })
+  # 
+  # observeEvent(input$reset, {
+  #   output$table <- NULL
+  # })
   
   ## Data Cleaning for Individual Charts
   edited_nombar <- reactive ({
@@ -491,7 +480,9 @@ server <- function(input, output, session) {
                 wsd = round(weightedSd(as.numeric(get(input$var)), get(input$weight2)), digits = 2)) %>%
       mutate(finalcount = sum(count),
              Mean = sum(each) / finalcount,
-             perc_text1 = paste0(round(count)))
+             Percentage2 = (count / finalcount) * 100,
+             perc_text1 = paste0(round(count)), 
+             perc_text2 = paste0(round(Percentage2), "%"))
   })
 
   ## Create Plot (Individual)
@@ -499,13 +490,14 @@ server <- function(input, output, session) {
     ggplotly({
       nb <- ggplot(data = edited_nombar(), aes_string(x = input$var, y = "count")) +
         geom_bar(stat = "identity", fill = "lightsalmon2") +
-        geom_text(aes(label = perc_text1), position = position_stack(vjust = 0.5)) + 
+        geom_text(aes(label = paste(perc_text1, "-", perc_text2)), position = position_stack(vjust = 0.5)) + 
         labs(x = var(),
              y = "Number of Observations",
              title = toTitleCase(input$plot_title1))
     })
   })
   
+  options(scipen=999)
   
   ## Summary Statistics (Individual)
   output$description <- renderText({
@@ -518,10 +510,10 @@ server <- function(input, output, session) {
     )
   })
   
-  output$weightm <- renderPrint ({
-    b <- as.data.frame(unique(edited_nombar()["Mean"]))
-    b
-  })
+  # output$weightm <- renderPrint ({
+  #   b <- as.data.frame(unique(edited_nombar()["Mean"]))
+  #   b
+  # })
   
   edited_nombarc <- reactive ({
     completeFun(edited1, input$var) %>%
