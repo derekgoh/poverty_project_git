@@ -517,9 +517,9 @@ server <- function(input, output, session) {
   
   edited_nombarc <- reactive ({
     completeFun(edited1, input$var) %>%
-      mutate(Cont_Mean = weightedMean(as.numeric(get(input$var)), get(input$weight2)), 
-             Cont_Median = weightedMedian(as.numeric(get(input$var)), get(input$weight2)), 
-             Cont_SD = weightedSd(as.numeric(get(input$var)), get(input$weight2))
+      mutate(Real_Mean = weightedMean(as.numeric(get(input$var)), get(input$weight2)), 
+             Real_Median = weightedMedian(as.numeric(get(input$var)), get(input$weight2)), 
+             Real_SD = weightedSd(as.numeric(get(input$var)), get(input$weight2))
       )
   })
 
@@ -527,7 +527,7 @@ server <- function(input, output, session) {
     if (input$var == "age" | input$var == "number_of_children" | input$var == "number_of_household_members" | 
         input$var == "SPM_household_resources" | input$var == "OPM_household_resources" | input$var == "SPM_household_resources_y1" | 
         input$var == "OPM_household_resources_y1" | input$var == "SPM_household_resources_y2" | input$var == "OPM_household_resources_y2") {
-    mtab <- as.data.frame(c(unique(edited_nombarc()["Cont_Mean"]), unique(edited_nombarc()["Cont_Median"]), unique(edited_nombarc()["Cont_SD"])))
+    mtab <- as.data.frame(c(unique(edited_nombarc()["Real_Mean"]), unique(edited_nombarc()["Real_Median"]), unique(edited_nombarc()["Real_SD"])))
     mtab
     }
   })
