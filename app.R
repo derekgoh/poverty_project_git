@@ -105,7 +105,9 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                                           #                                    "Households" = "fach", 
                                                                                                           #                                    "People" = "facp"), "fac1"),
                                                                                                           
-                                                                                                          selectInput("weight", "Weights", c("Adults" = "faca"), "faca"),
+                                                                                                          selectInput("weight", "Weights", c("Adults" = "faca", 
+                                                                                                                                             "Adults Year 1" = "faca1",
+                                                                                                                                             "Adults Year 2" = "faca2"), "faca"),
                                                                                                           uiOutput("title")),
                                                                
                                                                mainPanel(width = 8,
@@ -165,7 +167,9 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                                #                                    "Households" = "fach",
                                                                                                #                                    "People" = "facp"), "fac1"),
                                                                                                
-                                                                                               selectInput("weight2", "Weights", c("Adults" = "faca"), "faca"),
+                                                                                               selectInput("weight2", "Weights", c("Adults" = "faca",
+                                                                                                                                   "Adults Year 1" = "faca1",
+                                                                                                                                   "Adults Year 2" = "faca2"), "faca"),
                                                                                                uiOutput("title1")
  
                                                       ),
@@ -501,7 +505,7 @@ server <- function(input, output, session) {
   ## Summary Statistics (Individual)
   output$description <- renderText({
     paste("The plot above shows that there are",
-          unique(edited_nombar()["finalcount"]),
+          round(unique(edited_nombar()["finalcount"])),
           "observations", 
           "for the",
           x(),
