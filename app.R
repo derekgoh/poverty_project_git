@@ -238,7 +238,7 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                  )
                  )
 
-# Server
+## Server
 server <- function(input, output, session) {
   
   # Data Cleaning for Labels
@@ -476,10 +476,7 @@ server <- function(input, output, session) {
     completeFun(edited, input$var) %>%
       group_by_(input$var) %>%
       summarize(count = mean(n()*get(input$weight2)),
-                each = sum(get(input$weight2)*as.numeric(get(input$var))), 
-                wmean = round(weightedMean(as.numeric(get(input$var)), get(input$weight2)), digits = 2),
-                wmedian = round(weightedMedian(as.numeric(get(input$var)), get(input$weight2)), digits = 2),
-                wsd = round(weightedSd(as.numeric(get(input$var)), get(input$weight2)), digits = 2)) %>%
+                each = sum(get(input$weight2)*as.numeric(get(input$var)))) %>%
       mutate(finalcount = sum(count),
              Mean = sum(each) / finalcount,
              Percentage2 = (count / finalcount) * 100,
