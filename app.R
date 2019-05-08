@@ -99,17 +99,12 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                                                                            "OPM Household Resources Year 2" = "OPM_household_resources_y2",
                                                                                                                                            "SPM Income to Needs Ratio Year 2" = "SPM_income_to_needs_y2", 
                                                                                                                                            "OPM Income to Needs Ratio Year 2" = "OPM_income_to_needs_y2"), "age"),
-                                                                                                          
-
-                                                                                                          # selectInput("weight", "Weights", c("Non-Weighted" = "fac1",
-                                                                                                          #                                    "Adults" = "faca",
-                                                                                                          #                                    "Households" = "fach",
-
+                                                                    
                                                                                                           # selectInput("weight", "Weights", c("Non-Weighted" = "fac1", 
                                                                                                           #                                    "Adults" = "faca", 
                                                                                                           #                                    "Households" = "fach", 
-
                                                                                                           #                                    "People" = "facp"), "fac1"),
+                                                                                                          
                                                                                                           selectInput("weight", "Weights", c("Adults" = "faca"), "faca"),
                                                                                                           uiOutput("title")),
                                                                
