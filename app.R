@@ -100,9 +100,15 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                                                                            "SPM Income to Needs Ratio Year 2" = "SPM_income_to_needs_y2", 
                                                                                                                                            "OPM Income to Needs Ratio Year 2" = "OPM_income_to_needs_y2"), "age"),
                                                                                                           
+<<<<<<< HEAD
                                                                                                           # selectInput("weight", "Weights", c("Non-Weighted" = "fac1",
                                                                                                           #                                    "Adults" = "faca",
                                                                                                           #                                    "Households" = "fach",
+=======
+                                                                                                          # selectInput("weight", "Weights", c("Non-Weighted" = "fac1", 
+                                                                                                          #                                    "Adults" = "faca", 
+                                                                                                          #                                    "Households" = "fach", 
+>>>>>>> e9901baa84b466231e4cbdb462964daae75132ff
                                                                                                           #                                    "People" = "facp"), "fac1"),
                                                                                                           
                                                                                                           selectInput("weight", "Weights", c("Adults" = "faca"), "faca"),
