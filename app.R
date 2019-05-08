@@ -104,7 +104,6 @@ ui <- navbarPage("Poverty Tracker Data", windowTitle = "Poverty Tracker Data", t
                                                                                                           #                                    "Adults" = "faca", 
                                                                                                           #                                    "Households" = "fach", 
                                                                                                           #                                    "People" = "facp"), "fac1"),
-                                                                                                          
                                                                                                           selectInput("weight", "Weights", c("Adults" = "faca"), "faca"),
                                                                                                           uiOutput("title")),
                                                                
